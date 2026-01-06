@@ -376,7 +376,7 @@
 :T:<N><G:00>Z<"#3.4":.1><EOL>
 :T:<N>(<SUB_PECK>)<EOL>
 :T:<N><G:74> R<"#3.4":OPR_CYCLE_CLEARANCE><EOL>
-:T:<N><G:74><G:99><Z>Q<drill_depth>F<drill_feed><EOL>
+:T:<N><G:74><G:99><Z><drill_depth><drill_feed><EOL>
 *
 :SECTION=CANNED_DRILLING_MULTIPLE
 :T:<N><G:74> R<"#3.4":OPR_CYCLE_CLEARANCE><EOL>
