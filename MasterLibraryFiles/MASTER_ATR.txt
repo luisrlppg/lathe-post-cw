@@ -1,0 +1,9013 @@
+:IDHIGH=18051
+*-----------------------------------
+* attrname=max nibble thickness #1 = attrid=876
+* attrname=max nibble thickness #2 = attrid=877
+*-----------------------------------
+*     TEKSOFT 1-5000  
+*   Numbers 4000 - 5000 allocated for New system Variables
+*-----------------------------------
+*-----------------------------------
+*     LEEPORT 5000-5499    Hong Kong
+*-----------------------------------
+*-----------------------------------
+*     SAEILO USA 5499-5999  
+*-----------------------------------
+*-----------------------------------
+*     SAEILO JAPAN 6000-6499  
+*-----------------------------------
+*-----------------------------------
+*     TONGIL 6500-6999  
+*-----------------------------------
+*-----------------------------------
+*     CDM 7000-7499    Italy
+*-----------------------------------
+*-----------------------------------
+*     O.Y. MERCANTILE 7500-7999   Finland
+*-----------------------------------
+*     NCCS 8000-8499   Australia
+*-----------------------------------
+*     SAEILO GERMANY 8500-8999  
+*-----------------------------------
+*-----------------------------------
+*     RAL CORP       9000-9499  
+*-----------------------------------
+*     RC MACHINERY  9500-9999  
+*-----------------------------------
+*-----------------------------------
+*     VECTOR TECH. 10000-10499  
+*-----------------------------------
+*-----------------------------------
+*     H.R.I.       10500-10999  
+*-----------------------------------
+*     FUTURE TECH. 11000-11499  
+*-----------------------------------
+*-----------------------------------
+*     FUCHS MACHINERY 11500-11999  
+*-----------------------------------
+*-----------------------------------
+*     NORTHTECH   12000-12499  
+* NTPN is the Part number (Post ID) used to Identify the post
+:ATTRNAME=NTPN
+:ATTRTYPE=DESCRIPTOR
+:ATTRVTYPE=CHARACTER
+:ATTRID=12000
+:ATTREND
+*-----------------------------------
+* 12001 to 12004 are used by the NT00033 (Fanuc 3000) and
+* similar to produce a ramp move
+:ATTRNAME=x leading ramp
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=12001
+:ATTREND
+*-----------------------------------
+:ATTRNAME=y leading ramp
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=12002
+:ATTREND
+*-----------------------------------
+:ATTRNAME=x leadout move
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=12003
+:ATTREND
+*-----------------------------------
+:ATTRNAME=y leadout move
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=12004
+:ATTREND
+*-----------------------------------
+* Used by FADAL, HAAS, PHILIPS 432 and YASNAC canned cycles
+:ATTRNAME=min peck
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=12005
+:ATTREND
+*-----------------------------------
+:ATTRNAME=boring d cycle
+:ATTRTYPE=SELECT
+:ATTRID=12006
+:ATTREND
+*-----------------------------------
+:ATTRNAME=v pecking cycle
+:ATTRTYPE=SELECT
+:ATTRID=12007
+:ATTREND
+*-----------------------------------
+* Used by NT00003a,NT00011b ct00280 ct00348 ct00312 mill post
+*:ATTRNAME=x tool change position
+*:ATTRTYPE=VALUE
+*:ATTRVTYPE=DECIMAL
+*:ATTRID=12008
+*:ATTREND
+*-----------------------------------
+* Used by ROGERS LASER post
+:ATTRNAME=kerf width
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=12009
+:ATTREND
+*-----------------------------------
+* 12010 used to 'shift' the Z axis in Mills (NT00033) and derivatives
+:ATTRNAME=z offset
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=12010
+:ATTREND
+*-----------------------------------
+* 12011 used by Mazak Horizontal to position B axis
+:ATTRNAME=rotary table pos
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=12011
+:ATTREND
+*-----------------------------------
+* 12012 is used by NT00033 to reduce the feed during arc moves
+:ATTRNAME=reduced feedrate
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=12012
+:ATTREND
+*-----------------------------------
+* Used by Adflex LASER post NT00026
+:ATTRNAME=inner radius
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=12013
+:ATTREND
+*-----------------------------------
+*12014 Used to define a ZHOME position in nt00059
+:ATTRNAME=z tool change position
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=12014
+:ATTREND
+*-----------------------------------
+*:ATTRNAME=tool tip center
+*:ATTRTYPE=SELECT
+*:ATTRID=12015
+*:ATTREND
+*-----------------------------------
+* Used by NT00106 as the feedrate at start and end of cut
+:ATTRNAME=init slow feedrate
+:ATTRTYPE=SELECT
+:ATTRID=12016
+:ATTREND
+*-----------------------------------
+* Used by NT00106 as the distance for slow feed at lead-in and lead-out
+:ATTRNAME=slowf cut distance
+:ATTRTYPE=SELECT
+:ATTRID=12017
+:ATTREND
+*-----------------------------------
+* Used by Mitsubishi EDM to attach different e-packs
+:ATTRNAME=e pack
+:ATTRTYPE=SELECT
+:ATTRID=12018
+:ATTREND
+*-----------------------------------
+* Used by RL00120,RL00132 Anilam 1400, 1100
+:ATTRNAME=depth between retracts
+:ATTRTYPE=SELECT
+:ATTRID=12019
+:ATTREND
+*-----------------------------------
+* 12020-12034 Used by RL00134 to set G54-G58 Offsets
+:ATTRNAME=g54 offset x
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=12020
+:ATTREND
+*-----------------------------------
+:ATTRNAME=g54 offset y
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=12021
+:ATTREND
+*-----------------------------------
+:ATTRNAME=g54 offset z
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=12022
+:ATTREND
+*-----------------------------------
+:ATTRNAME=g55 offset x
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=12023
+:ATTREND
+*-----------------------------------
+:ATTRNAME=g55 offset y
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=12024
+:ATTREND
+*-----------------------------------
+:ATTRNAME=g55 offset z
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=12025
+:ATTREND
+*-----------------------------------
+:ATTRNAME=g56 offset x
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=12026
+:ATTREND
+*-----------------------------------
+:ATTRNAME=g56 offset y
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=12027
+:ATTREND
+*-----------------------------------
+:ATTRNAME=g56 offset z
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=12028
+:ATTREND
+*-----------------------------------
+:ATTRNAME=g57 offset x
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=12029
+:ATTREND
+*-----------------------------------
+:ATTRNAME=g57 offset y
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=12030
+:ATTREND
+*-----------------------------------
+:ATTRNAME=g57 offset z
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=12031
+:ATTREND
+*-----------------------------------
+:ATTRNAME=g58 offset x
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=12032
+:ATTREND
+*-----------------------------------
+:ATTRNAME=g58 offset y
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=12033
+:ATTREND
+*-----------------------------------
+:ATTRNAME=g58 offset z
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=12034
+:ATTREND
+*-----------------------------------
+* Used by NT00104 to determine if user wants lead-in and outs as Y moves
+:ATTRNAME=leads as y
+:ATTRTYPE=SELECT
+:ATTRID=12035
+:ATTREND
+*-----------------------------------
+* Used by ROLAND post to determine chord length when doing arcs
+:ATTRNAME=arc length degrees
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=12036
+:ATTREND
+*-----------------------------------
+* 12037 and 12038 are used by RL00153 to determine offload position
+:ATTRNAME=x offload
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=12037
+:ATTREND
+*-----------------------------------
+:ATTRNAME=y offload
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=12038
+:ATTREND
+*-----------------------------------
+:ATTRNAME=drawing no
+:ATTRTYPE=VALUE
+:ATTRID=12039
+:ATTRVTYPE=CHARACTER
+:ATTREND
+*-----------------------------------
+*:ATTRNAME=die clearance
+*:ATTRTYPE=VALUE
+*:ATTRID=12040
+*:ATTRVTYPE=DECIMAL
+*:ATTREND
+*-----------------------------------
+:ATTRNAME=customer name
+:ATTRTYPE=VALUE
+:ATTRID=12041
+:ATTRVTYPE=CHARACTER
+:ATTREND
+*-----------------------------------
+* Used by RL00165 to determine number of turret indexes
+:ATTRNAME=tool index
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=12042
+:ATTREND
+*-----------------------------------
+* Used by RL00127 RL00165 CT00244 CT00245 CT00393
+:ATTRNAME=using opt stop
+:ATTRTYPE=SELECT
+:ATTRID=12043
+:ATTREND
+*-----------------------------------
+* Used by RL00150 and 154
+:ATTRNAME=tool changer
+:ATTRTYPE=SELECT
+:ATTRID=12044
+:ATTREND
+*-----------------------------------
+* Used by RL00210
+:ATTRNAME=shutoff routine
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=12045
+:ATTREND
+*-----------------------------------
+* Used by RL00210
+* SEE 9005
+*:ATTRNAME=eoj home
+*:ATTRTYPE=SELECT
+*:ATTRID=12046
+*:ATTREND
+*-----------------------------------
+* Used by RL00110
+:ATTRNAME=taper register
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=12047
+:ATTREND
+*-----------------------------------
+*Used by ct00223
+:ATTRNAME=pallet number
+:ATTRTYPE=SELECT
+:ATTRID=12048
+:ATTREND
+*-----------------------------------
+:ATTRNAME=tool weight
+:ATTRTYPE=SELECT
+:ATTRID=12049
+:ATTREND
+*-----------------------------------
+:ATTRNAME=adaptive feed
+:ATTRTYPE=SELECT
+:ATTRID=12050
+:ATTREND
+*-----------------------------------
+:ATTRNAME=adaptive feed application
+:ATTRTYPE=SELECT
+:ATTRID=12051
+:ATTREND
+*-----------------------------------
+* 12052 used to 'shift' the Z axis in Mills using new general.lib
+:ATTRNAME=z user offset
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=12052
+:ATTREND
+*-----------------------------------
+* Used by RL00212
+*:ATTRNAME=parts catcher in
+*:ATTRTYPE=DISPLAY
+*:ATTRID=12053
+*:ATTREND
+*-----------------------------------
+* Used by RL00212
+*:ATTRNAME=parts catcher out
+*:ATTRTYPE=DISPLAY
+*:ATTRID=12054
+*:ATTREND
+*-----------------------------------
+* Used by RL00213
+:ATTRNAME=threads per inch
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=12055
+:ATTREND
+*-----------------------------------
+* Used by Live-C
+:OPERID=Transfer Cutoff
+:ATTRID=12056
+:ATTREND
+*-----------------------------------
+* Used by Live-C
+:OPERID=Transfer
+:ATTRID=12057
+:ATTREND
+*-----------------------------------
+* Used by CT00241, ct00462 live C
+:ATTRNAME=transfer position
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=12058
+:ATTREND
+*-----------------------------------
+:ATTRNAME=x cutoff position
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=12059
+:ATTREND
+*-----------------------------------
+:ATTRNAME=z cutoff position
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=12060
+:ATTREND
+*-----------------------------------
+:ATTRNAME=x cutoff depth
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=12061
+:ATTREND
+*-----------------------------------
+:ATTRNAME=cutoff tool
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=12062
+:ATTREND
+*-----------------------------------
+:ATTRNAME=cutoff feed type
+:ATTRTYPE=SELECT
+:ATTRID=12063
+:ATTREND
+*-----------------------------------
+:ATTRNAME=cutoff feedrate
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=12064
+:ATTREND
+*-----------------------------------
+:ATTRNAME=cutoff spindle speed type
+:ATTRTYPE=SELECT
+:ATTRID=12065
+:ATTREND
+*-----------------------------------
+:ATTRNAME=cutoff spindle speed
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=12066
+:ATTREND
+*-----------------------------------
+:ATTRNAME=cutoff spindle direction
+:ATTRTYPE=SELECT
+:ATTRID=12067
+:ATTREND
+*-----------------------------------
+* Used by NT00104C,CT00880
+:ATTRNAME=leading direction
+:ATTRTYPE=SELECT
+:ATTRID=12068
+:ATTREND
+*-----------------------------------
+* Used by CT00258,347,635
+:ATTRNAME=program home
+:ATTRTYPE=DISPLAY
+:ATTRID=12069
+:ATTREND
+*-----------------------------------
+* Used by CT00249
+:ATTRNAME=init pulse spacing
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=12070
+:ATTREND
+*-----------------------------------
+* Used by NT00051 (Fanuc 0) for canned threading cycles
+:ATTRNAME=thread allowance
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=12071
+:ATTREND
+*-----------------------------------
+* Used by CT00256
+:ATTRNAME=grain direction
+:ATTRTYPE=VALUE
+:ATTRVTYPE=CHARACTER
+:ATTRID=12072
+:ATTREND
+*-----------------------------------
+* 12073-12101 Used by NT00022
+* 12073 used to call a subroutine with an attribute
+:ATTRNAME=g65 sub program
+:ATTRTYPE=DISPLAY
+:ATTRID=12073
+:ATTREND
+*-----------------------------------
+:ATTRNAME=pierce power setting
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=12074
+:ATTREND
+*-----------------------------------
+:ATTRNAME=pierce pulse type
+:ATTRTYPE=SELECT
+:ATTRID=12075
+:ATTREND
+*-----------------------------------
+*:ATTRNAME=pierce frequency
+*:ATTRTYPE=VALUE
+*:ATTRVTYPE=INTEGER
+*:ATTRID=12076
+*:ATTREND
+*-----------------------------------
+:ATTRNAME=pierce duty cycle
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=12077
+:ATTREND
+*-----------------------------------
+:ATTRNAME=pierce time
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=12078
+:ATTREND
+*-----------------------------------
+:ATTRNAME=cut pulse type
+:ATTRTYPE=SELECT
+:ATTRID=12079
+:ATTREND
+*-----------------------------------
+:ATTRNAME=cut pulse frequency
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=12080
+:ATTREND
+*-----------------------------------
+:ATTRNAME=cut duty cycle
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=12081
+:ATTREND
+*-----------------------------------
+*:ATTRNAME=purge time
+*:ATTRTYPE=VALUE
+*:ATTRVTYPE=DECIMAL
+*:ATTRID=12082
+*:ATTREND
+*-----------------------------------
+:ATTRNAME=square hole
+:ATTRTYPE=LIST
+:ATTRID=12083
+:ATTREND
+*-----------------------------------
+:ATTRNAME=round hole
+:ATTRTYPE=LIST
+:ATTRID=12084
+:ATTREND
+*-----------------------------------
+:ATTRNAME=d hole
+:ATTRTYPE=LIST
+:ATTRID=12085
+:ATTREND
+*-----------------------------------
+:ATTRNAME=polygon hole
+:ATTRTYPE=LIST
+:ATTRID=12086
+:ATTREND
+*-----------------------------------
+:ATTRNAME=arc slot hole
+:ATTRTYPE=LIST
+:ATTRID=12087
+:ATTREND
+*-----------------------------------
+:ATTRNAME=single multiple square
+:ATTRTYPE=SELECT
+:ATTRID=12088
+:ATTREND
+*-----------------------------------
+:ATTRNAME=single multiple round
+:ATTRTYPE=SELECT
+:ATTRID=12089
+:ATTREND
+*-----------------------------------
+:ATTRNAME=single multiple dhole
+:ATTRTYPE=SELECT
+:ATTRID=12090
+:ATTREND
+*-----------------------------------
+:ATTRNAME=single multiple polygon
+:ATTRTYPE=SELECT
+:ATTRID=12091
+:ATTREND
+*-----------------------------------
+:ATTRNAME=single multiple arc slot
+:ATTRTYPE=SELECT
+:ATTRID=12092
+:ATTREND
+*-----------------------------------
+:ATTRNAME=cancel user macro
+:ATTRTYPE=DISPLAY
+:ATTRID=12093
+:ATTREND
+*-----------------------------------
+:ATTRNAME=i diameter length
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=12094
+:ATTREND
+*-----------------------------------
+:ATTRNAME=i length
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=12095
+:ATTREND
+*-----------------------------------
+:ATTRNAME=j width
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=12096
+:ATTREND
+*-----------------------------------
+:ATTRNAME=k angle
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=12097
+:ATTREND
+*-----------------------------------
+:ATTRNAME=r corner rad
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=12098
+:ATTREND
+*-----------------------------------
+:ATTRNAME=c chamfer
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=12099
+:ATTREND
+*-----------------------------------
+:ATTRNAME=q entrance
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=12100
+:ATTREND
+*-----------------------------------
+:ATTRNAME=t tab
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=12101
+:ATTREND
+*-----------------------------------
+:ATTRNAME=end oper home
+:ATTRTYPE=SELECT
+:ATTRID=12102
+:ATTREND
+*-----------------------------------
+* Used by CT00264 to create the multiple-stage drilling cycles
+:ATTRNAME=multiple stages type
+:ATTRTYPE=SELECT
+:ATTRID=12103
+:ATTREND
+*-----------------------------------
+:ATTRNAME=second stage depth
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=12104
+:ATTREND
+*-----------------------------------
+:ATTRNAME=second stage feedrate
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=12105
+:ATTREND
+*-----------------------------------
+:ATTRNAME=second stage rpm
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=12106
+:ATTREND
+*-----------------------------------
+:ATTRNAME=third stage depth
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=12107
+:ATTREND
+*-----------------------------------
+:ATTRNAME=third stage feedrate
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=12108
+:ATTREND
+*-----------------------------------
+:ATTRNAME=third stage rpm
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=12109
+:ATTREND
+*-----------------------------------
+* Used by CT00301 to calculate max arc deviation when doing QUAD=COORD
+:ATTRNAME=max arc dev
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=12110
+:ATTREND
+*-----------------------------------
+* Used by FANUC wire to call a subroutine to cut wire
+:ATTRNAME=cut subprogram
+:ATTRTYPE=VALUE
+:ATTRID=12111
+:ATTRVTYPE=INTEGER
+:ATTREND
+*-----------------------------------
+* Used by FANUC wire to call a subroutine to thread the wire
+:ATTRNAME=thread subprogram
+:ATTRTYPE=VALUE
+:ATTRID=12112
+:ATTRVTYPE=INTEGER
+:ATTREND
+*-----------------------------------
+* 12113,12114 used by KOMO router CT00287
+:ATTRNAME=front air blast
+:ATTRTYPE=SELECT
+:ATTRID=12113
+:ATTREND
+*-----------------------------------
+:ATTRNAME=rear air blast
+:ATTRTYPE=SELECT
+:ATTRID=12114
+:ATTREND
+*-----------------------------------
+:ATTRNAME=press raise
+:ATTRTYPE=SELECT
+:ATTRID=12115
+:ATTREND
+*-----------------------------------
+* Used by CT00309 to get the subsequent thread cut
+:ATTRNAME=sub thread cut
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=12116
+:ATTREND
+*-----------------------------------
+:ATTRNAME=bar z rapid 1
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=12117
+:ATTREND
+*-----------------------------------
+:ATTRNAME=using rotary axis
+:ATTRTYPE=SELECT
+:ATTRID=12118
+:ATTREND
+*-----------------------------------
+*:ATTRNAME=directory
+*:ATTRTYPE=VALUE
+*:ATTRVTYPE=CHARACTER
+*:ATTRID=12119
+*:ATTREND
+*-----------------------------------
+* Used by CT00330 to locate the programmable tail stock
+* Used by CT00366 to create multiple G86 cycles
+:ATTRNAME=initial z position
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=12120
+:ATTREND
+*-----------------------------------
+:ATTRNAME=new z position
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=12121
+:ATTREND
+*-----------------------------------
+:OPERID=Programmable Tail
+:ATTRID=12122
+:ATTREND
+*-----------------------------------
+:ATTRNAME=init small arc
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=12123
+:ATTREND
+*-----------------------------------
+:ATTRNAME=init small arc feedrate
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=12124
+:ATTREND
+*-----------------------------------
+:ATTRNAME=init slowdown into arc
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=12125
+:ATTREND
+*-----------------------------------
+* Used by NT00017 and 18, d&E posts
+:ATTRNAME=workload x position
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=12126
+:ATTREND
+*-----------------------------------
+* Used by NT00017 and 18
+:ATTRNAME=workload y position
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=12127
+:ATTREND
+*-----------------------------------
+* Used by 344, 345, 347
+:ATTRNAME=optional skip
+:ATTRTYPE=DISPLAY
+:ATTRID=12128
+:ATTREND
+*-----------------------------------
+* Used by RL00145
+:ATTRNAME=precision stop
+:ATTRTYPE=DISPLAY
+:ATTRID=12129
+:ATTREND
+*-----------------------------------
+:ATTRNAME=precision stop cancel
+:ATTRTYPE=DISPLAY
+:ATTRID=12130
+:ATTREND
+*-----------------------------------
+* Used by CT00366
+:ATTRNAME=boring repeat
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=12131
+:ATTREND
+*-----------------------------------
+* Used by CT00363
+:ATTRNAME=precision contour mode
+:ATTRTYPE=SELECT
+:ATTRID=12132
+:ATTREND
+*-----------------------------------
+* Used by CT00371
+:ATTRNAME=slow lead in
+:ATTRTYPE=SELECT
+:ATTRID=12133
+:ATTREND
+*-----------------------------------
+* Used by CT00395
+*:ATTRNAME=x min
+*:ATTRTYPE=SELECT
+*:ATTRID=12134
+*:ATTREND
+*-----------------------------------
+* Used by CT00395
+*:ATTRNAME=y min
+*:ATTRTYPE=SELECT
+*:ATTRID=12135
+*:ATTREND
+*-----------------------------------
+* Used by CT00395
+*:ATTRNAME=z min
+*:ATTRTYPE=SELECT
+*:ATTRID=12136
+*:ATTREND
+*-----------------------------------
+* Used by CT00395
+*:ATTRNAME=x max
+*:ATTRTYPE=SELECT
+*:ATTRID=12137
+*:ATTREND
+*-----------------------------------
+* Used by CT00395
+*:ATTRNAME=y max
+*:ATTRTYPE=SELECT
+*:ATTRID=12138
+*:ATTREND
+*-----------------------------------
+* Used by CT00395
+*:ATTRNAME=z max
+*:ATTRTYPE=SELECT
+*:ATTRID=12139
+*:ATTREND
+*-----------------------------------
+* Used by ct00411
+:ATTRNAME=x tool offset
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=12140
+:ATTREND
+*-----------------------------------
+* Used by CT00223,CT00847
+:ATTRNAME=user tool
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=12141
+:ATTREND
+*-----------------------------------
+:ATTRNAME=parts per cycle
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=12142
+:ATTREND
+*-----------------------------------
+* Used by Adflex Glaser post NT00026
+:ATTRNAME=overlap
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=12143
+:ATTREND
+*-----------------------------------
+* Used by Adflex Glaser post NT00026
+:ATTRNAME=fixt
+:ATTRTYPE=VALUE
+:ATTRVTYPE=CHARACTER
+:ATTRID=12144
+:ATTREND
+*-----------------------------------
+* Used by Adflex Glaser post NT00026
+:ATTRNAME=rpn
+:ATTRTYPE=VALUE
+:ATTRVTYPE=CHARACTER
+:ATTRID=12145
+:ATTREND
+*-----------------------------------
+* Used by Adflex Glaser post NT00026
+:ATTRNAME=freq
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=12146
+:ATTREND
+*-----------------------------------
+* Used by Adflex Glaser post NT00026
+:ATTRNAME=pulse value
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=12147
+:ATTREND
+*-----------------------------------
+* Used by Adflex Glaser post NT00026
+:ATTRNAME=watts
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=12148
+:ATTREND
+*-----------------------------------
+:ATTRNAME=change letter
+:ATTRTYPE=VALUE
+:ATTRID=12149
+:ATTRVTYPE=CHARACTER
+:ATTREND
+*-----------------------------------
+:ATTRNAME=p min power
+:ATTRTYPE=VALUE
+:ATTRID=12150
+:ATTRVTYPE=CHARACTER
+:ATTREND
+*-----------------------------------
+:ATTRNAME=init cut pressure
+:ATTRTYPE=VALUE
+:ATTRID=12151
+:ATTRVTYPE=DECIMAL
+:ATTREND
+*-----------------------------------
+:ATTRNAME=init laser output
+:ATTRTYPE=VALUE
+:ATTRID=12152
+:ATTRVTYPE=SELECT
+:ATTREND
+*-----------------------------------
+:ATTRNAME=cut frequency
+:ATTRTYPE=VALUE
+:ATTRID=12153
+:ATTRVTYPE=INTEGER
+:ATTREND
+*-----------------------------------
+:ATTRNAME=init cut coolant
+:ATTRTYPE=VALUE
+:ATTRID=12154
+:ATTRVTYPE=SELECT
+:ATTREND
+*-----------------------------------
+:ATTRNAME=init peck power setting
+:ATTRTYPE=VALUE
+:ATTRID=12155
+:ATTRVTYPE=INTEGER
+:ATTREND
+*-----------------------------------
+:ATTRNAME=peck duty cycle
+:ATTRTYPE=VALUE
+:ATTRID=12156
+:ATTRVTYPE=INTEGER
+:ATTREND
+*-----------------------------------
+:ATTRNAME=peck frequency
+:ATTRTYPE=VALUE
+:ATTRID=12157
+:ATTRVTYPE=INTEGER
+:ATTREND
+*-----------------------------------
+:ATTRNAME=init peck laser output
+:ATTRTYPE=VALUE
+:ATTRID=12158
+:ATTRVTYPE=SELECT
+:ATTREND
+*-----------------------------------
+:ATTRNAME=init peck pressure
+:ATTRTYPE=VALUE
+:ATTRID=12159
+:ATTRVTYPE=INTEGER
+:ATTREND
+*-----------------------------------
+:ATTRNAME=init assist pk gas type
+:ATTRTYPE=VALUE
+:ATTRID=12160
+:ATTRVTYPE=SELECT
+:ATTREND
+*-----------------------------------
+* Used by CT00402
+:OPERID=Bar Stop
+:ATTRID=12161
+:ATTREND
+*-----------------------------------
+:OPERID=bar stop tool
+:ATTRTYPE=VALUE
+:ATTRID=12162
+:ATTRVTYPE=INTEGER
+:ATTREND
+*-----------------------------------
+:OPERID=bar stop wcoordinate
+:ATTRTYPE=VALUE
+:ATTRID=12163
+:ATTRVTYPE=INTEGER
+:ATTREND
+*-----------------------------------
+:OPERID=x bar stop
+:ATTRTYPE=VALUE
+:ATTRID=12164
+:ATTRVTYPE=DECIMAL
+:ATTREND
+*-----------------------------------
+:OPERID=z bar stop
+:ATTRTYPE=VALUE
+:ATTRID=12165
+:ATTRVTYPE=DECIMAL
+:ATTREND
+*-----------------------------------
+:OPERID=x bar stop depth
+:ATTRTYPE=VALUE
+:ATTRID=12166
+:ATTRVTYPE=DECIMAL
+:ATTREND
+*-----------------------------------
+:ATTRNAME=using subspindle
+:ATTRTYPE=SELECT
+:ATTRID=12167
+:ATTREND
+*-----------------------------------
+* Used by CT00445 and all LC amada lasers
+:ATTRNAME=a pierce routine
+:ATTRTYPE=VALUE
+:ATTRID=12168
+:ATTRVTYPE=INTEGER
+:ATTREND
+*-----------------------------------
+* Used by CT00448 and 449
+:ATTRNAME=coolant up
+:ATTRTYPE=DISPLAY
+:ATTRID=12169
+:ATTREND
+*-----------------------------------
+:ATTRNAME=coolant down
+:ATTRTYPE=DISPLAY
+:ATTRID=12170
+:ATTREND
+*-----------------------------------
+:ATTRNAME=center table
+:ATTRTYPE=SELECT
+:ATTRID=12171
+:ATTREND
+*-----------------------------------
+:ATTRNAME=chip fwd
+:ATTRTYPE=DISPLAY
+:ATTRID=12172
+:ATTREND
+*-----------------------------------
+:ATTRNAME=chip stop
+:ATTRTYPE=DISPLAY
+:ATTRID=12173
+:ATTREND
+*-----------------------------------
+* Used by CT00450 and CINCINNATI lasers
+:OPERID=material code
+:ATTRTYPE=VALUE
+:ATTRID=12174
+:ATTRVTYPE=CHARACTER
+:ATTREND
+*-----------------------------------
+* Used by CT00443, amada and MAZAK lasers
+:OPERID=cutting parameter
+:ATTRTYPE=VALUE
+:ATTRID=12175
+:ATTRVTYPE=INTEGER
+:ATTREND
+*-----------------------------------
+* Used by CT00445 and AMADA lasers
+:ATTRNAME=j sides
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=12176
+:ATTREND
+*-----------------------------------
+:ATTRNAME=i angle
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=12177
+:ATTREND
+*-----------------------------------
+:ATTRNAME=r arc slot
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=12178
+:ATTREND
+*-----------------------------------
+* Used by CT00453
+:OPERID=Rigid_Tap_Lathe
+:ATTRID=12179
+:ATTREND
+*-----------------------------------
+* Used by CT00453
+:ATTRNAME=tap spindle speed
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=12180
+:ATTREND
+*-----------------------------------
+* Used by CT00453
+:ATTRNAME=tap tool
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=12181
+:ATTREND
+*-----------------------------------
+* Used by CT00453
+:ATTRNAME=tap x rapid
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=12182
+:ATTREND
+*-----------------------------------
+* Used by CT00453
+:ATTRNAME=tap z rapid
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=12183
+:ATTREND
+*-----------------------------------
+* Used by CT00453
+:ATTRNAME=tap feed
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=12184
+:ATTREND
+*-----------------------------------
+* Used by CT00453
+:ATTRNAME=tap z depth
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=12185
+:ATTREND
+*-----------------------------------
+* Used by CT00460
+:ATTRNAME=tank fill
+:ATTRTYPE=SELECT
+:ATTRID=12186
+:ATTREND
+*-----------------------------------
+* Used by CT00462
+:ATTRNAME=cutoff feed length
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=12187
+:ATTREND
+*-----------------------------------
+* Used by CT00462
+:ATTRNAME=cutoff pulling feedrate
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=12188
+:ATTREND
+*-----------------------------------
+* Used by CT00462
+:ATTRNAME=cutoff tool width
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=12189
+:ATTREND
+*-----------------------------------
+:ATTRNAME=subspindle work
+:ATTRTYPE=SELECT
+:ATTRID=12190
+:ATTREND
+*-----------------------------------
+* Used by CT00465
+:ATTRNAME=tool 1 feedrate
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=12191
+:ATTREND
+*-----------------------------------
+:ATTRNAME=tool 2 feedrate
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=12192
+:ATTREND
+*-----------------------------------
+:ATTRNAME=tool 3 feedrate
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=12193
+:ATTREND
+*-----------------------------------
+* Used by CT00445
+:ATTRNAME=d compensation
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=12194
+:ATTREND
+*-----------------------------------
+* Used by CT00264, CT00493
+:ATTRNAME=tool offsets style
+:ATTRTYPE=SELECT
+:ATTRID=12195
+:ATTREND
+*-----------------------------------
+* Used by CT00462
+:ATTRNAME=part retrieval
+:ATTRTYPE=SELECT
+:ATTRID=12196
+:ATTREND
+*-----------------------------------
+:ATTRNAME=z offset position
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=12197
+:ATTREND
+*-----------------------------------
+* Used by CT00461
+:ATTRNAME=beam on off
+:ATTRTYPE=SELECT
+:ATTRID=12198
+:ATTREND
+*-----------------------------------
+* Used by CT00461
+:ATTRNAME=height stop on off
+:ATTRTYPE=SELECT
+:ATTRID=12199
+:ATTREND
+*-----------------------------------
+* Used by CT00479 and FADAL. Indicates return-from-clearance-into-peck distance
+:ATTRNAME=p distance
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=12200
+:ATTREND
+*-----------------------------------
+* Used by CT00531
+:ATTRNAME=approach z
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=12201
+:ATTREND
+*-----------------------------------
+* Used by CT00537
+:ATTRNAME=coolant off
+:ATTRTYPE=DISPLAY
+:ATTRID=12202
+:ATTREND
+*-----------------------------------
+:ATTRNAME=fixture offset home
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=12203
+:ATTREND
+*-----------------------------------
+:ATTRNAME=PULSE SPACING
+:ATTRTYPE=DESCRIPTOR
+:ATTRVTYPE=DECIMAL
+:ATTRID=12204
+:ATTREND
+*-----------------------------------
+:ATTRNAME=PULSE WIDTH
+:ATTRTYPE=DESCRIPTOR
+:ATTRVTYPE=DECIMAL
+:ATTRID=12205
+:ATTREND
+*-----------------------------------
+* Used by CT00517
+:ATTRNAME=b offset position
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=12206
+:ATTREND
+*-----------------------------------
+* Used by CT00589
+:ATTRNAME=radius slow down
+:ATTRTYPE=VALUE
+:ATTRVTYPE=SELECT
+:ATTRID=12207
+:ATTREND
+*-----------------------------------
+* Used by CT00589, CT00852
+:ATTRNAME=percent slowdown
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=12208
+:ATTREND
+*-----------------------------------
+* Used by CT00589
+:ATTRNAME=slowdown into arc
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=12209
+:ATTREND
+*-----------------------------------
+* Used by CT00589
+:ATTRNAME=stepdown type
+:ATTRTYPE=VALUE
+:ATTRVTYPE=SELECT
+:ATTRID=12210
+:ATTREND
+*-----------------------------------
+* Used by CT00589
+:ATTRNAME=b slowdown steps
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=12211
+:ATTREND
+*-----------------------------------
+* Used by CT00589
+:ATTRNAME=exponential factor
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=12212
+:ATTREND
+*-----------------------------------
+* Used by CT00589
+:ATTRNAME=percent b slowdown
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=12213
+:ATTREND
+*-----------------------------------
+* Used by CT00589
+:ATTRNAME=percent a slowdown
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=12214
+:ATTREND
+*-----------------------------------
+* Used by CT00598
+:ATTRNAME=secondary coolant
+:ATTRTYPE=SELECT
+:ATTRID=12215
+:ATTREND
+*-----------------------------------
+:ATTRNAME=leadout feedrate
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=12216
+:ATTREND
+*-----------------------------------
+:ATTRNAME=nibble mode
+:ATTRTYPE=SELECT
+:ATTRID=12217
+:ATTREND
+*-----------------------------------
+* Used by CT00644,CT00612,UCT00867
+:OPERID=Operation Stop
+:ATTRID=12218
+:ATTREND
+*-----------------------------------
+:OPERID=Operation Opt Stop
+:ATTRID=12219
+:ATTREND
+*-----------------------------------
+* Used by Trumpf laser ct00667
+:ATTRNAME=sprintlas
+:ATTRTYPE=SELECT
+:ATTRID=12220
+:ATTREND
+*-----------------------------------
+* Used by CT00670
+:ATTRNAME=edm machining type
+:ATTRTYPE=SELECT
+:ATTRID=12221
+:ATTREND
+*-----------------------------------
+:ATTRNAME=high pressure pump
+:ATTRTYPE=SELECT
+:ATTRID=12222
+:ATTREND
+*-----------------------------------
+:ATTRNAME=low pressure pump
+:ATTRTYPE=SELECT
+:ATTRID=12223
+:ATTREND
+*-----------------------------------
+:ATTRNAME=loader program
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=12224
+:ATTREND
+*-----------------------------------
+:ATTRNAME=sheets per job
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=12225
+:ATTREND
+*-----------------------------------
+:ATTRNAME=slave head 1
+:ATTRTYPE=SELECT
+:ATTRID=12226
+:ATTREND
+*-----------------------------------
+:ATTRNAME=slave head 2
+:ATTRTYPE=SELECT
+:ATTRID=12227
+:ATTREND
+*-----------------------------------
+:ATTRNAME=slave head 3
+:ATTRTYPE=SELECT
+:ATTRID=12228
+:ATTREND
+*-----------------------------------
+:ATTRNAME=slave head 4
+:ATTRTYPE=SELECT
+:ATTRID=12229
+:ATTREND
+*-----------------------------------
+:ATTRNAME=slave head 5
+:ATTRTYPE=SELECT
+:ATTRID=12230
+:ATTREND
+*-----------------------------------
+:ATTRNAME=slave head 6
+:ATTRTYPE=SELECT
+:ATTRID=12231
+:ATTREND
+*-----------------------------------
+:ATTRNAME=slave head 7
+:ATTRTYPE=SELECT
+:ATTRID=12232
+:ATTREND
+*-----------------------------------
+* Used by Hamilton Industries
+:ATTRNAME=z zero id
+:ATTRTYPE=VALUE
+:ATTRID=12233
+:ATTRVTYPE=CHARACTER
+:ATTREND
+*-----------------------------------
+* Used by Hamilton Industries
+:ATTRNAME=x zero id
+:ATTRTYPE=VALUE
+:ATTRID=12234
+:ATTRVTYPE=CHARACTER
+:ATTREND
+*-----------------------------------
+* Used by Hamilton Industries
+*:ATTRNAME=chuck pressure
+*:ATTRTYPE=VALUE
+*:ATTRVTYPE=CHARACTER
+*:ATTRID=12235
+*:ATTREND
+*-----------------------------------
+* Used by Hamilton Industries, CT00461
+:ATTRNAME=material id
+:ATTRTYPE=VALUE
+:ATTRVTYPE=CHARACTER
+:ATTRID=12236
+:ATTREND
+*-----------------------------------
+* Used by CT00758
+:ATTRNAME=trap door open
+:ATTRTYPE=DISPLAY
+:ATTRID=12237
+:ATTREND
+*-----------------------------------
+* Used by CT00758
+:ATTRNAME=trap door close
+:ATTRTYPE=DISPLAY
+:ATTRID=12238
+:ATTREND
+*-----------------------------------
+:ATTRNAME=material gauge
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=12239
+:ATTREND
+*-----------------------------------
+* Used by CT00461
+:ATTRNAME=using prepierce
+:ATTRTYPE=SELECT
+:ATTRID=12240
+:ATTREND
+*-----------------------------------
+* Used by CT00747
+:ATTRNAME=feedrate multiplier
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=12241
+:ATTREND
+*-----------------------------------
+:ATTRNAME=slave head 8
+:ATTRTYPE=SELECT
+:ATTRID=12242
+:ATTREND
+*-----------------------------------
+:ATTRNAME=slave head 9
+:ATTRTYPE=SELECT
+:ATTRID=12243
+:ATTREND
+*-----------------------------------
+:ATTRNAME=slave head 10
+:ATTRTYPE=SELECT
+:ATTRID=12244
+:ATTREND
+*-----------------------------------
+:ATTRNAME=slave head 11
+:ATTRTYPE=SELECT
+:ATTRID=12245
+:ATTREND
+*-----------------------------------
+:ATTRNAME=slave head 12
+:ATTRTYPE=SELECT
+:ATTRID=12246
+:ATTREND
+*---------------------------------
+:ATTRNAME=slave head 13
+:ATTRTYPE=SELECT
+:ATTRID=12247
+:ATTREND
+*-----------------------------------
+:ATTRNAME=slave head 14
+:ATTRTYPE=SELECT
+:ATTRID=12248
+:ATTREND
+*-----------------------------------
+:ATTRNAME=slave head 15
+:ATTRTYPE=SELECT
+:ATTRID=12249
+:ATTREND
+*-----------------------------------
+* Used by CT00804
+:ATTRNAME=init use m199
+:ATTRTYPE=SELECT
+:ATTRID=12250
+:ATTREND
+*-----------------------------------
+:ATTRNAME=use m199
+:ATTRTYPE=SELECT
+:ATTRID=12251
+:ATTREND
+*-----------------------------------
+* 12252-12255 Used by CT00860a
+:OPERID=Rotary w/Opt Pall. Unload
+:ATTRID=12252
+:ATTREND
+*-----------------------------------
+:OPERID=Rotary w/Req Pall. Unload
+:ATTRID=12253
+:ATTREND
+*-----------------------------------
+:OPERID=Optional Pallet Unload
+:ATTRID=12254
+:ATTREND
+*-----------------------------------
+:OPERID=Required Pallet Unload
+:ATTRID=12255
+:ATTREND
+*-----------------------------------
+* Used by CT00847
+:OPERID=Calibrate Tool
+:ATTRID=12256
+:ATTREND
+*-----------------------------------
+**************************************************************************
+*-----------------------------------
+*  Quality Quartz 12400-12450 
+*-----------------------------------
+* 9/25/95 djc
+:ATTRNAME=i arg
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=12400
+:ATTREND
+*-----------------------------------
+* 9/25/95 djc
+:ATTRNAME=k arg
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=12401
+:ATTREND
+*-----------------------------------
+* 9/25/95 djc
+:ATTRNAME=q arg
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=12402
+:ATTREND
+*-----------------------------------
+* 9/25/95 djc
+:ATTRNAME=z arg
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=12403
+:ATTREND
+*-----------------------------------
+* 9/25/95 djc
+:ATTRNAME=f arg
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=12404
+:ATTREND
+*-----------------------------------
+* 9/25/95 djc
+:ATTRNAME=r arg
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=12405
+:ATTREND
+*-----------------------------------
+* 9/25/95 djc
+:ATTRNAME=a arg
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=12406
+:ATTREND
+*-----------------------------------
+* 9/25/95 djc
+:ATTRNAME=s arg
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=12407
+:ATTREND
+*-----------------------------------
+* 9/25/95 djc
+:ATTRNAME=b arg
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=12408
+:ATTREND
+*-----------------------------------
+* 9/25/95 djc
+:ATTRNAME=d arg
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=12409
+:ATTREND
+*-----------------------------------
+* 9/25/95 djc
+:ATTRNAME=c arg
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=12410
+:ATTREND
+*-----------------------------------
+* 9/25/95 djc
+:ATTRNAME=e arg
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=12411
+:ATTREND
+*-----------------------------------
+*---------------------------------
+* APPRO 12426-12450
+*----------------------------------
+:ATTRNAME=e2 line limit
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=12426
+:ATTREND
+*-----------------------------------
+:ATTRNAME=e3 line limit
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=12427
+:ATTREND
+*-----------------------------------
+*  aero design 12451-12498 
+*-----------------------------------
+*  MIKRON 12499-12550 
+*-----------------------------------
+:ATTRNAME=machine id
+:ATTRTYPE=VALUE
+:ATTRVTYPE=CHARACTER
+:ATTRID=12499
+:ATTREND
+*-----------------------------------
+*     CAM SOLUTIONS   12500-12999  
+*-----------------------------------
+*     CNC ENGLAND   13000-13499  
+*-----------------------------------
+*-----------------------------------
+*     CAD CAM EUROPE   13500-13999  
+*-----------------------------------
+*     TEKNIKER   14000-14499  
+*-----------------------------------
+*-----------------------------------
+*     ROMANIA   14500-14999  
+*-----------------------------------
+*-----------------------------------
+*     KEN HERNANDEZ   15000-15499  
+*-----------------------------------
+*-----------------------------------
+*     NAVY   15500-15999  
+*-----------------------------------
+*-----------------------------------
+*     ARMY - RCC   16000-16499  
+*-----------------------------------
+*-----------------------------------
+*     EMCO MAIER   16500-16999  
+*-----------------------------------
+*-----------------------------------
+*     MCKENNA SERVICES 17000-17500 
+*-----------------------------------
+*-----------------------------------
+*     CAMSOFT 17500-17999 
+*-----------------------------------
+*     ASB SYSTEMS 18000-18499 
+*-----------------------------------
+*-----------------------------------
+*     MEGGATON 18500-18999 
+*-----------------------------------
+*-----------------------------------
+*     ACTION MACHINERY 19000-19499 
+*-----------------------------------
+:ATTRNAME=MACHINE NAME
+:ATTRTYPE=DESCRIPTOR
+:ATTRVTYPE=CHARACTER
+:ATTRID=501
+:ATTREND
+*-----------------------------------
+:ATTRNAME=CONTROLLER TYPE
+:ATTRTYPE=DESCRIPTOR
+:ATTRVTYPE=CHARACTER
+:ATTRID=502
+:ATTREND
+*-----------------------------------
+:ATTRNAME=TURRET TYPE
+:ATTRTYPE=DESCRIPTOR
+:ATTRVTYPE=CHARACTER
+:ATTRID=503
+:ATTREND
+*-----------------------------------
+:ATTRNAME=MACHINE X SIZE
+:ATTRTYPE=DESCRIPTOR
+:ATTRVTYPE=DECIMAL
+:ATTRID=504
+:ATTREND
+*-----------------------------------
+:ATTRNAME=MACHINE Y SIZE
+:ATTRTYPE=DESCRIPTOR
+:ATTRVTYPE=DECIMAL
+:ATTRID=505
+:ATTREND
+*-----------------------------------
+:ATTRNAME=CLAMP WIDTH X
+:ATTRTYPE=DESCRIPTOR
+:ATTRVTYPE=DECIMAL
+:ATTRID=506
+:ATTREND
+*-----------------------------------
+:ATTRNAME=CLAMP HEIGHT Y
+:ATTRTYPE=DESCRIPTOR
+:ATTRVTYPE=DECIMAL
+:ATTRID=507
+:ATTREND
+*-----------------------------------
+:ATTRNAME=WORK HOLDER DIAMETER
+:ATTRTYPE=DESCRIPTOR
+:ATTRVTYPE=DECIMAL
+:ATTRID=508
+:ATTREND
+*-----------------------------------
+:ATTRNAME=WORK HOLDER DISTANCE X
+:ATTRTYPE=DESCRIPTOR
+:ATTRVTYPE=DECIMAL
+:ATTRID=509
+:ATTREND
+*-----------------------------------
+:ATTRNAME=WORK HOLDER OFFSET X
+:ATTRTYPE=DESCRIPTOR
+:ATTRVTYPE=DECIMAL
+:ATTRID=1166
+:ATTREND
+*-----------------------------------
+:ATTRNAME=WORK HOLDER DISTANCE Y
+:ATTRTYPE=DESCRIPTOR
+:ATTRVTYPE=DECIMAL
+:ATTRID=510
+:ATTREND
+*-----------------------------------
+:ATTRNAME=NUMBER OF CLAMPS
+:ATTRTYPE=DESCRIPTOR
+:ATTRVTYPE=INTEGER
+:ATTRID=511
+:ATTREND
+*-----------------------------------
+:ATTRNAME=PUNCH DOOR X
+:ATTRTYPE=DESCRIPTOR
+:ATTRVTYPE=DECIMAL
+:ATTRID=527
+:ATTREND
+*-----------------------------------
+:ATTRNAME=PUNCH DOOR Y
+:ATTRTYPE=DESCRIPTOR
+:ATTRVTYPE=DECIMAL
+:ATTRID=528
+:ATTREND
+*-----------------------------------
+:ATTRNAME=PUNCH DOOR POS X
+:ATTRTYPE=DESCRIPTOR
+:ATTRVTYPE=DECIMAL
+:ATTRID=529
+:ATTREND
+*-----------------------------------
+:ATTRNAME=PUNCH DOOR POS Y
+:ATTRTYPE=DESCRIPTOR
+:ATTRVTYPE=DECIMAL
+:ATTRID=530
+:ATTREND
+*-----------------------------------
+:ATTRNAME=PLASMA DOOR X
+:ATTRTYPE=DESCRIPTOR
+:ATTRVTYPE=DECIMAL
+:ATTRID=535
+:ATTREND
+*-----------------------------------
+:ATTRNAME=PLASMA DOOR Y
+:ATTRTYPE=DESCRIPTOR
+:ATTRVTYPE=DECIMAL
+:ATTRID=536
+:ATTREND
+*-----------------------------------
+:ATTRNAME=PLASMA DOOR POS X
+:ATTRTYPE=DESCRIPTOR
+:ATTRVTYPE=DECIMAL
+:ATTRID=537
+:ATTREND
+*-----------------------------------
+:ATTRNAME=PLASMA DOOR POS Y
+:ATTRTYPE=DESCRIPTOR
+:ATTRVTYPE=DECIMAL
+:ATTRID=538
+:ATTREND
+*-----------------------------------
+:ATTRNAME=AUTO INDEX 1
+:ATTRTYPE=DESCRIPTOR
+:ATTRVTYPE=DECIMAL
+:ATTRID=531
+:ATTREND
+*-----------------------------------
+:ATTRNAME=AUTO INDEX 2
+:ATTRTYPE=DESCRIPTOR
+:ATTRVTYPE=DECIMAL
+:ATTRID=532
+:ATTREND
+*-----------------------------------
+:ATTRNAME=AUTO INDEX 3
+:ATTRTYPE=DESCRIPTOR
+:ATTRVTYPE=DECIMAL
+:ATTRID=1168
+:ATTREND
+*-----------------------------------
+:ATTRNAME=AUTO INDEX 4
+:ATTRTYPE=DESCRIPTOR
+:ATTRVTYPE=DECIMAL
+:ATTRID=1169
+:ATTREND
+*-----------------------------------
+:ATTRNAME=AUTO INDEX 5
+:ATTRTYPE=DESCRIPTOR
+:ATTRVTYPE=DECIMAL
+:ATTRID=1170
+:ATTREND
+*-----------------------------------
+:ATTRNAME=AUTO INDEX 6
+:ATTRTYPE=DESCRIPTOR
+:ATTRVTYPE=DECIMAL
+:ATTRID=1171
+:ATTREND
+*-----------------------------------
+:ATTRNAME=AUTO INDEX 7
+:ATTRTYPE=DESCRIPTOR
+:ATTRVTYPE=DECIMAL
+:ATTRID=1172
+:ATTREND
+*-----------------------------------
+:ATTRNAME=AUTO INDEX 8
+:ATTRTYPE=DESCRIPTOR
+:ATTRVTYPE=DECIMAL
+:ATTRID=1173
+:ATTREND
+*-----------------------------------
+:ATTRNAME=AUTO INDEX 9
+:ATTRTYPE=DESCRIPTOR
+:ATTRVTYPE=DECIMAL
+:ATTRID=1174
+:ATTREND
+*-----------------------------------
+:ATTRNAME=AUTO INDEX 10
+:ATTRTYPE=DESCRIPTOR
+:ATTRVTYPE=DECIMAL
+:ATTRID=1175
+:ATTREND
+*-----------------------------------
+:ATTRNAME=PLASMA ATTACHED
+:ATTRTYPE=DESCRIPTOR
+:ATTRVTYPE=CHARACTER
+:ATTRID=512
+:ATTREND
+*-----------------------------------
+:ATTRNAME=HIT RATE
+:ATTRTYPE=DESCRIPTOR
+:ATTRVTYPE=INTEGER
+:ATTRID=513
+:ATTREND
+*-----------------------------------
+:ATTRNAME=STROKE RATE
+:ATTRTYPE=DESCRIPTOR
+:ATTRVTYPE=INTEGER
+:ATTRID=595
+:ATTREND
+*-----------------------------------
+:ATTRNAME=STROKE RATE 1
+:ATTRTYPE=DESCRIPTOR
+:ATTRVTYPE=INTEGER
+:ATTRID=514
+:ATTREND
+*-----------------------------------
+:ATTRNAME=STROKE RATE 2
+:ATTRTYPE=DESCRIPTOR
+:ATTRVTYPE=INTEGER
+:ATTRID=515
+:ATTREND
+*-----------------------------------
+:ATTRNAME=MAX NIBBLE PITCH
+:ATTRTYPE=DESCRIPTOR
+:ATTRVTYPE=DECIMAL
+:ATTRID=517
+:ATTREND
+*-----------------------------------
+:ATTRNAME=MAX NIBBLE PITCH M81
+:ATTRTYPE=DESCRIPTOR
+:ATTRVTYPE=DECIMAL
+:ATTRID=533
+:ATTREND
+*-----------------------------------
+:ATTRNAME=MAX NIBBLE PITCH M80
+:ATTRTYPE=DESCRIPTOR
+:ATTRVTYPE=DECIMAL
+:ATTRID=534
+:ATTREND
+*-----------------------------------
+:ATTRNAME=MAX NIBBLE PITCH 1
+:ATTRTYPE=DESCRIPTOR
+:ATTRVTYPE=DECIMAL
+:ATTRID=600
+:ATTREND
+*-----------------------------------
+:ATTRNAME=MAX NIBBLE PITCH 2
+:ATTRTYPE=DESCRIPTOR
+:ATTRVTYPE=DECIMAL
+:ATTRID=601
+:ATTREND
+*-----------------------------------
+:ATTRNAME=MAX NIBBLE THICKNESS
+:ATTRTYPE=DESCRIPTOR
+:ATTRVTYPE=DECIMAL
+:ATTRID=596
+:ATTREND
+*-----------------------------------
+:ATTRNAME=MAX NIBBLE INDEX ANGLE
+:ATTRTYPE=DESCRIPTOR
+:ATTRVTYPE=DECIMAL
+:ATTRID=630
+:ATTREND
+*-----------------------------------
+:ATTRNAME=MAX NIBBLE ANGLE SLOW
+:ATTRTYPE=DESCRIPTOR
+:ATTRVTYPE=DECIMAL
+:ATTRID=634
+:ATTREND
+*-----------------------------------
+:ATTRNAME=MAX NIBBLE ANGLE FAST
+:ATTRTYPE=DESCRIPTOR
+:ATTRVTYPE=DECIMAL
+:ATTRID=635
+:ATTREND
+*-----------------------------------
+:ATTRNAME=TRAVERSE RATE
+:ATTRTYPE=DESCRIPTOR
+:ATTRVTYPE=INTEGER
+:ATTRID=516
+:ATTREND
+*-----------------------------------
+:ATTRNAME=x sheet width
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=519
+:ATTREND
+*-----------------------------------
+:ATTRNAME=y sheet height
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=520
+:ATTREND
+*-----------------------------------
+:ATTRNAME=thickness
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=521
+:ATTREND
+*-----------------------------------
+:ATTRNAME=material type
+:ATTRTYPE=SELECT
+:ATTRID=522
+:ATTREND
+*-----------------------------------
+:ATTRNAME=material
+:ATTRTYPE=VALUE
+:ATTRVTYPE=CHARACTER
+:ATTRID=638
+:ATTREND
+*-----------------------------------
+:ATTRNAME=parameter 435
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=639
+:ATTREND
+*-----------------------------------
+:ATTRNAME=clamp 1 x
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=523
+:ATTREND
+*-----------------------------------
+:ATTRNAME=clamp 2 x
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=524
+:ATTREND
+*-----------------------------------
+:ATTRNAME=clamp 3 x
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=525
+:ATTREND
+*------------------------------------
+:ATTRNAME=clamp 4 x
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=526
+:ATTREND
+*-----------------------------------
+:ATTRNAME=Sequence
+:ATTRTYPE=DISPLAY
+:ATTRID=560
+:ATTREND
+*-----------------------------------
+:ATTRNAME=optional stop
+:ATTRTYPE=DISPLAY
+:ATTRID=586
+:ATTREND
+*-----------------------------------
+:ATTRNAME=program stop
+:ATTRTYPE=DISPLAY
+:ATTRID=587
+:ATTREND
+*-----------------------------------
+:ATTRNAME=init abs inc
+:ATTRTYPE=SELECT
+:ATTRID=623
+:ATTREND
+*-----------------------------------
+:ATTRNAME=abs inc
+:ATTRTYPE=SELECT
+:ATTRID=588
+:ATTREND
+*-----------------------------------
+:ATTRNAME=end of line
+:ATTRTYPE=DISPLAY
+:ATTRID=590
+:ATTREND
+*-----------------------------------
+:ATTRNAME=setup
+:ATTRTYPE=LIST
+:ATTRID=591
+:ATTREND
+*-----------------------------------
+:ATTRNAME=Nxx
+:ATTRTYPE=DISPLAY
+:ATTRID=589
+:ATTREND
+*-----------------------------------
+:ATTRNAME=program number
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=539
+:ATTREND
+*-----------------------------------
+:ATTRNAME=long program number
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=644
+:ATTREND
+*-----------------------------------
+:ATTRNAME=message
+:ATTRTYPE=VALUE
+:ATTRVTYPE=CHARACTER
+:ATTRID=645
+:ATTREND
+*-----------------------------------
+:ATTRNAME=torch dwell
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=646
+:ATTREND
+*-----------------------------------
+:ATTRNAME=program id
+:ATTRTYPE=VALUE
+:ATTRVTYPE=CHARACTER
+:ATTRID=647
+:ATTREND
+*-----------------------------------
+:ATTRNAME=remark1
+:ATTRTYPE=VALUE
+:ATTRVTYPE=CHARACTER
+:ATTRID=648
+:ATTREND
+*-----------------------------------
+:ATTRNAME=remark2
+:ATTRTYPE=VALUE
+:ATTRVTYPE=CHARACTER
+:ATTRID=649
+:ATTREND
+*-----------------------------------
+:ATTRNAME=remark3
+:ATTRTYPE=VALUE
+:ATTRVTYPE=CHARACTER
+:ATTRID=650
+:ATTREND
+*-----------------------------------
+:ATTRNAME=remark4
+:ATTRTYPE=VALUE
+:ATTRVTYPE=CHARACTER
+:ATTRID=651
+:ATTREND
+*-----------------------------------
+:ATTRNAME=remark5
+:ATTRTYPE=VALUE
+:ATTRVTYPE=CHARACTER
+:ATTRID=652
+:ATTREND
+*-----------------------------------
+:ATTRNAME=m67 open chute
+:ATTRTYPE=DISPLAY
+:ATTRID=654
+:ATTREND
+*-----------------------------------
+:ATTRNAME=m68 open rigid chute
+:ATTRTYPE=DISPLAY
+:ATTRID=655
+:ATTREND
+*-----------------------------------
+:ATTRNAME=tape output
+:ATTRTYPE=SELECT
+:ATTRID=656
+:ATTREND
+*-----------------------------------
+:ATTRNAME=m67 sub program
+:ATTRTYPE=DISPLAY
+:ATTRID=657
+:ATTREND
+*-----------------------------------
+:ATTRNAME=tape type
+:ATTRTYPE=SELECT
+:ATTRID=658
+:ATTREND
+*-----------------------------------
+:ATTRNAME=x offset position
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=659
+:ATTREND
+*-----------------------------------
+:ATTRNAME=remark6
+:ATTRTYPE=VALUE
+:ATTRVTYPE=CHARACTER
+:ATTRID=758
+:ATTREND
+*-----------------------------------
+:ATTRNAME=remark7
+:ATTRTYPE=VALUE
+:ATTRVTYPE=CHARACTER
+:ATTRID=759
+:ATTREND
+*-----------------------------------
+:ATTRNAME=remark8
+:ATTRTYPE=VALUE
+:ATTRVTYPE=CHARACTER
+:ATTRID=760
+:ATTREND
+*-----------------------------------
+:ATTRNAME=remark9
+:ATTRTYPE=VALUE
+:ATTRVTYPE=CHARACTER
+:ATTRID=761
+:ATTREND
+*-----------------------------------
+:ATTRNAME=remark10
+:ATTRTYPE=VALUE
+:ATTRVTYPE=CHARACTER
+:ATTRID=762
+:ATTREND
+*-----------------------------------
+:ATTRNAME=remark11
+:ATTRTYPE=VALUE
+:ATTRVTYPE=CHARACTER
+:ATTRID=763
+:ATTREND
+*-----------------------------------
+:ATTRNAME=remark12
+:ATTRTYPE=VALUE
+:ATTRVTYPE=CHARACTER
+:ATTRID=764
+:ATTREND
+*-----------------------------------
+:ATTRNAME=remark13
+:ATTRTYPE=VALUE
+:ATTRVTYPE=CHARACTER
+:ATTRID=765
+:ATTREND
+*-----------------------------------
+:ATTRNAME=remark14
+:ATTRTYPE=VALUE
+:ATTRVTYPE=CHARACTER
+:ATTRID=766
+:ATTREND
+*-----------------------------------
+:ATTRNAME=remark15
+:ATTRTYPE=VALUE
+:ATTRVTYPE=CHARACTER
+:ATTRID=767
+:ATTREND
+*-----------------------------------
+:ATTRNAME=init remark
+:ATTRTYPE=VALUE
+:ATTRVTYPE=CHARACTER
+:ATTRID=770
+:ATTREND
+*-----------------------------------
+:ATTRNAME=x machine home
+:ATTRTYPE=DISPLAY
+:ATTRVTYPE=DECIMAL
+:ATTRID=540
+:ATTREND
+*-------------------------------
+:ATTRNAME=y machine home
+:ATTRTYPE=DISPLAY
+:ATTRVTYPE=DECIMAL
+:ATTRID=541
+:ATTREND
+*-------------------------------
+:ATTRNAME=machine comp
+:ATTRTYPE=SELECT
+:ATTRID=543
+:ATTREND
+*-----------------------------------
+:ATTRNAME=init machine comp
+:ATTRTYPE=SELECT
+:ATTRID=643
+:ATTREND
+*-----------------------------------
+:ATTRNAME=d offset reg
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=544
+:ATTREND
+*-----------------------------------
+:ATTRNAME=init d offset
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=754
+:ATTREND
+*-----------------------------------
+:ATTRNAME=d offset
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=771
+:ATTREND
+*-----------------------------------
+:ATTRNAME=feedrate
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=545
+:ATTREND
+*-----------------------------------
+:ATTRNAME=init feedrate
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=640
+:ATTREND
+*-----------------------------------
+:ATTRNAME=work thickness
+:ATTRTYPE=SELECT
+:ATTRID=547
+:ATTREND
+*-----------------------------------
+:ATTRNAME=s table
+:ATTRTYPE=DISPLAY
+:ATTRID=548
+:ATTREND
+*-----------------------------------
+:ATTRNAME=f table
+:ATTRTYPE=DISPLAY
+:ATTRID=549
+:ATTREND
+*-----------------------------------
+:ATTRNAME=comp on
+:ATTRTYPE=SELECT
+:ATTRID=556
+:ATTREND
+*-----------------------------------
+:ATTRNAME=pierce
+:ATTRTYPE=LIST
+:ATTRID=557
+:ATTREND
+*-----------------------------------
+:ATTRNAME=retract
+:ATTRTYPE=LIST
+:ATTRID=558
+:ATTREND
+*-----------------------------------
+:ATTRNAME=comp off
+:ATTRTYPE=LIST
+:ATTRID=559
+:ATTREND
+*-----------------------------------
+:ATTRNAME=job name
+:ATTRTYPE=VALUE
+:ATTRID=610
+:ATTRVTYPE=CHARACTER
+:ATTREND
+*-----------------------------------
+:ATTRNAME=revision
+:ATTRTYPE=VALUE
+:ATTRID=611
+:ATTRVTYPE=CHARACTER
+:ATTREND
+*-----------------------------------
+:ATTRNAME=date and time
+:ATTRTYPE=VALUE
+:ATTRID=612
+:ATTRVTYPE=CHARACTER
+:ATTREND
+*-----------------------------------
+:ATTRNAME=part width x
+:ATTRTYPE=VALUE
+:ATTRID=613
+:ATTRVTYPE=DECIMAL
+:ATTREND
+*------------------------------
+:ATTRNAME=part height y
+:ATTRTYPE=VALUE
+:ATTRID=614
+:ATTRVTYPE=DECIMAL
+:ATTREND
+*------------------------------
+:ATTRNAME=parts per blank
+:ATTRTYPE=VALUE
+:ATTRID=615
+:ATTRVTYPE=INTEGER
+:ATTREND
+*------------------------------
+:ATTRNAME=programmer
+:ATTRTYPE=VALUE
+:ATTRID=616
+:ATTRVTYPE=CHARACTER
+:ATTREND
+*-----------------------------------
+:ATTRNAME=comment 1
+:ATTRTYPE=VALUE
+:ATTRID=617
+:ATTRVTYPE=CHARACTER
+:ATTREND
+*-----------------------------------
+:ATTRNAME=comment 2
+:ATTRTYPE=VALUE
+:ATTRID=618
+:ATTRVTYPE=CHARACTER
+:ATTREND
+*-----------------------------------
+:ATTRNAME=comment 3
+:ATTRTYPE=VALUE
+:ATTRID=619
+:ATTRVTYPE=CHARACTER
+:ATTREND
+*-----------------------------------
+:ATTRNAME=comment 4
+:ATTRTYPE=VALUE
+:ATTRID=620
+:ATTRVTYPE=CHARACTER
+:ATTREND
+*-----------------------------------
+:ATTRNAME=comment 5
+:ATTRTYPE=VALUE
+:ATTRID=621
+:ATTRVTYPE=CHARACTER
+:ATTREND
+*-----------------------------------
+:ATTRNAME=dwell
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=552
+:ATTREND
+*-----------------------------------
+:ATTRNAME=english metric
+:ATTRTYPE=SELECT
+:ATTRID=597
+:ATTREND
+*-----------------------------------
+:ATTRNAME=absolute preset
+:ATTRTYPE=DISPLAY
+:ATTRID=598
+:ATTREND
+*----------------------------------
+*-----------------------------------
+:ATTRNAME=reset tool
+:ATTRTYPE=DISPLAY
+:ATTRID=585
+:ATTREND
+*-----------------------------------
+:ATTRNAME=work chute
+:ATTRTYPE=SELECT
+:ATTRID=592
+:ATTREND
+*-----------------------------------
+:ATTRNAME=punch delay
+:ATTRTYPE=SELECT
+:ATTRID=593
+:ATTREND
+*-----------------------------------
+:ATTRNAME=slow feed
+:ATTRTYPE=SELECT
+:ATTRID=622
+:ATTREND
+*-----------------------------------
+:ATTRNAME=press drive
+:ATTRTYPE=SELECT
+:ATTRID=602
+:ATTREND
+*-----------------------------------
+:ATTRNAME=init press drive
+:ATTRTYPE=SELECT
+:ATTRID=637
+:ATTREND
+*-----------------------------------
+:ATTRNAME=exact stop
+:ATTRTYPE=SELECT
+:ATTRID=603
+:ATTREND
+*-----------------------------------
+:ATTRNAME=vacuum
+:ATTRTYPE=SELECT
+:ATTRID=604
+:ATTREND
+*-----------------------------------
+:ATTRNAME=lbs per cubic ft
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=605
+:ATTREND
+*------------------------------
+:ATTRNAME=m22 max pitch m80
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=606
+:ATTREND
+*------------------------------
+:ATTRNAME=m24 max pitch m80
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=607
+:ATTREND
+*------------------------------
+:ATTRNAME=m22 max pitch m82
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=608
+:ATTREND
+*------------------------------
+:ATTRNAME=feed release
+:ATTRTYPE=SELECT
+:ATTRID=609
+:ATTREND
+*-----------------------------------
+:ATTRNAME=slug selector
+:ATTRTYPE=SELECT
+:ATTRID=594
+:ATTREND
+*-----------------------------------
+:ATTRNAME=f speed
+:ATTRTYPE=SELECT
+:ATTRID=624
+:ATTREND
+*-----------------------------------
+:ATTRNAME=init f speed
+:ATTRTYPE=SELECT
+:ATTRID=636
+:ATTREND
+*-----------------------------------
+:ATTRNAME=nibble
+:ATTRTYPE=SELECT
+:ATTRID=625
+:ATTREND
+*-----------------------------------
+:ATTRNAME=x load position
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=628
+:ATTREND
+*-------------------------------
+:ATTRNAME=y load position
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=629
+:ATTREND
+*-------------------------------
+:ATTRNAME=second load
+:ATTRTYPE=DISPLAY
+:ATTRID=631
+:ATTREND
+*----------------------------------
+:ATTRNAME=rewind
+:ATTRTYPE=DISPLAY
+:ATTRID=632
+:ATTREND
+*----------------------------------
+:ATTRNAME=reposition crowd
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=633
+:ATTREND
+*------------------------------
+:ATTRNAME=torch
+:ATTRTYPE=SELECT
+:ATTRID=542
+:ATTREND
+*-----------------------------------
+:ATTRNAME=trap door
+:ATTRTYPE=SELECT
+:ATTRID=550
+:ATTREND
+*-----------------------------------
+:ATTRNAME=feed and current
+:ATTRTYPE=LIST
+:ATTRID=554
+:ATTREND
+*-----------------------------------
+:ATTRNAME=amperes
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=642
+:ATTREND
+*-----------------------------------
+:ATTRNAME=pre pierce
+:ATTRTYPE=LIST
+:ATTRID=555
+:ATTREND
+*-----------------------------------
+:ATTRNAME=rapid type
+:ATTRTYPE=SELECT
+:ATTRID=700
+:ATTREND
+*-----------------------------------
+:ATTRNAME=stripper radius
+:ATTRTYPE=SELECT
+:ATTRVTYPE=INTEGER
+:ATTRID=769
+:ATTREND
+*-----------------------------------
+:ATTRNAME=dummy
+:ATTRTYPE=LIST
+:ATTRID=599
+:ATTREND
+*-----------------------------------
+:ATTRNAME=?
+:ATTRTYPE=VALUE
+:ATTRVTYPE=CHARACTER
+:ATTRID=627
+:ATTREND
+*-----------------------------------
+:ATTRNAME=.
+:ATTRTYPE=DISPLAY
+:ATTRID=626
+:ATTREND
+*-----------------------------------
+:ATTRMACHINE=PLASMA
+*-----------------------------------
+:ATTRNAME=arc current
+:ATTRTYPE=SELECT
+:ATTRID=546
+:ATTREND
+*-----------------------------------
+:ATTRNAME=init arc current
+:ATTRTYPE=SELECT
+:ATTRID=768
+:ATTREND
+*-----------------------------------
+:ATTRNAME=type flame
+:ATTRTYPE=SELECT
+:ATTRID=756
+:ATTREND
+*-----------------------------------
+:ATTRNAME=init type flame
+:ATTRTYPE=SELECT
+:ATTRID=757
+:ATTREND
+*-----------------------------------
+:ATTRNAME=water jet1
+:ATTRTYPE=SELECT
+:ATTRID=772
+:ATTREND
+*-----------------------------------
+:ATTRNAME=init water jet1
+:ATTRTYPE=SELECT
+:ATTRID=773
+:ATTREND
+*-----------------------------------
+:ATTRNAME=water jet2
+:ATTRTYPE=SELECT
+:ATTRID=774
+:ATTREND
+*-----------------------------------
+:ATTRNAME=init water jet2
+:ATTRTYPE=SELECT
+:ATTRID=775
+:ATTREND
+*-----------------------------------
+:ATTRNAME=water jet3
+:ATTRTYPE=SELECT
+:ATTRID=776
+:ATTREND
+*-----------------------------------
+:ATTRNAME=init water jet3
+:ATTRTYPE=SELECT
+:ATTRID=777
+:ATTREND
+*-----------------------------------
+:ATTRNAME=abrasive
+:ATTRTYPE=SELECT
+:ATTRID=778
+:ATTREND
+*-----------------------------------
+:ATTRNAME=init abrasive
+:ATTRTYPE=SELECT
+:ATTRID=779
+:ATTREND
+*-----------------------------------
+:ATTRNAME=init all jets on
+:ATTRTYPE=SELECT
+:ATTRID=780
+:ATTREND
+*-----------------------------------
+:ATTRNAME=all jets on
+:ATTRTYPE=SELECT
+:ATTRID=781
+:ATTREND
+*-----------------------------------
+:ATTRNAME=init dwell
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=782
+:ATTREND
+*-----------------------------------
+:ATTRNAME=jet dwell
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=783
+:ATTREND
+*-----------------------------------
+:ATTRNAME=init all jets off
+:ATTRTYPE=SELECT
+:ATTRID=784
+:ATTREND
+*-----------------------------------
+:ATTRNAME=all jets off
+:ATTRTYPE=SELECT
+:ATTRID=785
+:ATTREND
+*-----------------------------------
+:ATTRNAME=x preset
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=786
+:ATTREND
+*-----------------------------------
+:ATTRNAME=y preset
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=787
+:ATTREND
+*-----------------------------------
+:ATTRNAME=power setting
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=788
+:ATTREND
+*-----------------------------------
+:ATTRNAME=init power setting
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=789
+:ATTREND
+*-----------------------------------
+:ATTRNAME=assist gas type
+:ATTRTYPE=SELECT
+:ATTRID=790
+:ATTREND
+*-----------------------------------
+:ATTRNAME=init assist gas type
+:ATTRTYPE=SELECT
+:ATTRID=791
+:ATTREND
+*-----------------------------------
+:ATTRNAME=rotating head
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=792
+:ATTREND
+*-----------------------------------
+:ATTRNAME=init exact stop
+:ATTRTYPE=SELECT
+:ATTRID=793
+:ATTREND
+*-----------------------------------
+:ATTRNAME=z home
+:ATTRTYPE=DISPLAY
+:ATTRID=794
+:ATTREND
+*-----------------------------------
+:ATTRNAME=z partial up
+:ATTRTYPE=DISPLAY
+:ATTRID=795
+:ATTREND
+*-----------------------------------
+:ATTRNAME=pallet change
+:ATTRTYPE=DISPLAY
+:ATTRID=796
+:ATTREND
+*-----------------------------------
+:ATTRNAME=sequence off
+:ATTRTYPE=DISPLAY
+:ATTRID=797
+:ATTREND
+*-----------------------------------
+:ATTRNAME=init peck duration
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=798
+:ATTREND
+*-----------------------------------
+:ATTRNAME=peck duration
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=799
+:ATTREND
+*-----------------------------------
+:ATTRNAME=init coolant
+:ATTRTYPE=SELECT
+:ATTRID=800
+:ATTREND
+*-----------------------------------
+:ATTRNAME=coolant
+:ATTRTYPE=SELECT
+:ATTRID=801
+:ATTREND
+*-----------------------------------
+:ATTRNAME=z clearance
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=802
+:ATTREND
+*-----------------------------------
+:ATTRNAME=z retract
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=803
+:ATTREND
+*-----------------------------------
+:ATTRNAME=init fixture offset
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=804
+:ATTREND
+*-----------------------------------
+:ATTRNAME=fixture offset
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=805
+:ATTREND
+*-----------------------------------
+:ATTRNAME=plane selection
+:ATTRTYPE=SELECT
+:ATTRID=806
+:ATTREND
+*-----------------------------------
+:ATTRNAME=plane rotation a
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=807
+:ATTREND
+*-----------------------------------
+:ATTRNAME=plane rotation b
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=808
+:ATTREND
+*-----------------------------------
+:ATTRNAME=auto power
+:ATTRTYPE=SELECT
+:ATTRID=809
+:ATTREND
+*-----------------------------------
+:ATTRNAME=rotary axis dia
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=810
+:ATTREND
+*-----------------------------------
+:ATTRNAME=rot axis x
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=811
+:ATTREND
+*-----------------------------------
+:ATTRNAME=rot axis y
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=812
+:ATTREND
+*-----------------------------------
+:ATTRNAME=z preset
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=813
+:ATTREND
+*-----------------------------------
+:ATTRNAME=subroutine call
+:ATTRTYPE=VALUE
+:ATTRID=814
+:ATTRVTYPE=CHARACTER
+:ATTREND
+*-----------------------------------
+:ATTRNAME=x lead
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=815
+:ATTREND
+*-----------------------------------
+:ATTRNAME=y lead
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=816
+:ATTREND
+*-----------------------------------
+:ATTRNAME=z lead
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=817
+:ATTREND
+*-----------------------------------
+:ATTRNAME=lead comp number
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=818
+:ATTREND
+*-----------------------------------
+:ATTRNAME=stripper
+:ATTRTYPE=SELECT
+:ATTRVTYPE=INTEGER
+:ATTRID=819
+:ATTREND
+*-----------------------------------
+:ATTRNAME=gas sub. number
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=820
+:ATTREND
+*-----------------------------------
+:ATTRNAME=pulse sub. number
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=821
+:ATTREND
+*-----------------------------------
+:ATTRNAME=init gas sub. number
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=822
+:ATTREND
+*-----------------------------------
+:ATTRNAME=init pulse sub. number
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=823
+:ATTREND
+*-----------------------------------
+:ATTRNAME=auto nibble
+:ATTRTYPE=SELECT
+:ATTRID=824
+:ATTREND
+*-----------------------------------
+:ATTRNAME=marker1
+:ATTRTYPE=SELECT
+:ATTRID=825
+:ATTREND
+*-----------------------------------
+:ATTRNAME=marker2
+:ATTRTYPE=SELECT
+:ATTRID=826
+:ATTREND
+*-----------------------------------
+:ATTRNAME=init marker1
+:ATTRTYPE=SELECT
+:ATTRID=827
+:ATTREND
+*-----------------------------------
+:ATTRNAME=init marker2
+:ATTRTYPE=SELECT
+:ATTRID=828
+:ATTREND
+*-----------------------------------
+:ATTRNAME=maximum feed
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=829
+:ATTREND
+*-----------------------------------
+:ATTRNAME=ram motor speed
+:ATTRTYPE=SELECT
+:ATTRID=830
+:ATTREND
+*-----------------------------------
+:ATTRNAME=init plasma laser
+:ATTRTYPE=SELECT
+:ATTRID=831
+:ATTREND
+*-----------------------------------
+:ATTRNAME=plasma laser
+:ATTRTYPE=SELECT
+:ATTRID=832
+:ATTREND
+*-----------------------------------
+:ATTRNAME=lower setting
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=833
+:ATTREND
+*-----------------------------------
+:ATTRNAME=upper setting
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=834
+:ATTREND
+*-----------------------------------
+:ATTRNAME=pulse frequency
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=835
+:ATTREND
+*-----------------------------------
+:ATTRNAME=ramp cycle number
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=836
+:ATTREND
+*-----------------------------------
+:ATTRNAME=piercing time
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=837
+:ATTREND
+*-----------------------------------
+:ATTRNAME=nozzle height
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=838
+:ATTREND
+*-----------------------------------
+:ATTRNAME=cutting stage
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=839
+:ATTREND
+*-----------------------------------
+:ATTRNAME=cutting gas
+:ATTRTYPE=SELECT
+:ATTRID=840
+:ATTREND
+*-----------------------------------
+:ATTRNAME=shield gas
+:ATTRTYPE=SELECT
+:ATTRID=841
+:ATTREND
+*-----------------------------------
+:ATTRNAME=m671 open chute
+:ATTRTYPE=DISPLAY
+:ATTRID=842
+:ATTREND
+*-----------------------------------
+:ATTRNAME=m671 sub program
+:ATTRTYPE=DISPLAY
+:ATTRID=843
+:ATTREND
+*-----------------------------------
+:ATTRNAME=y tool change position
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=844
+:ATTREND
+*-----------------------------------
+:ATTRNAME=lubrication
+:ATTRTYPE=SELECT
+:ATTRID=845
+:ATTREND
+*-----------------------------------
+:ATTRNAME=presser foot
+:ATTRTYPE=SELECT
+:ATTRID=846
+:ATTREND
+*-----------------------------------
+:ATTRNAME=material condition
+:ATTRTYPE=SELECT
+:ATTRID=847
+:ATTREND
+*-----------------------------------
+:ATTRNAME=adjusted stroke
+:ATTRTYPE=SELECT
+:ATTRID=848
+:ATTREND
+*-----------------------------------
+:ATTRNAME=adjusted accel
+:ATTRTYPE=SELECT
+:ATTRID=849
+:ATTREND
+*-----------------------------------
+:ATTRNAME=init adjusted stroke
+:ATTRTYPE=SELECT
+:ATTRID=850
+:ATTREND
+*-----------------------------------
+:ATTRNAME=init adjusted accel
+:ATTRTYPE=SELECT
+:ATTRID=851
+:ATTREND
+*-----------------------------------
+:ATTRNAME=sheet offset
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=852
+:ATTREND
+*-----------------------------------
+:ATTRNAME=clamp number 1
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=853
+:ATTREND
+*-----------------------------------
+:ATTRNAME=clamp number 2
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=854
+:ATTREND
+*-----------------------------------
+:ATTRNAME=invert sheet
+:ATTRTYPE=SELECT
+:ATTRID=855
+:ATTREND
+*-----------------------------------
+:ATTRNAME=center sheet
+:ATTRTYPE=SELECT
+:ATTRID=856
+:ATTREND
+*-----------------------------------
+:ATTRNAME=programmable chute
+:ATTRTYPE=DISPLAY
+:ATTRID=857
+:ATTREND
+*-----------------------------------
+:ATTRNAME=init peck channel
+:ATTRTYPE=SELECT
+:ATTRID=858
+:ATTREND
+*-----------------------------------
+:ATTRNAME=peck channel
+:ATTRTYPE=SELECT
+:ATTRID=859
+:ATTREND
+*-----------------------------------
+:ATTRNAME=init cutting channel
+:ATTRTYPE=SELECT
+:ATTRID=860
+:ATTREND
+*-----------------------------------
+:ATTRNAME=cutting channel
+:ATTRTYPE=SELECT
+:ATTRID=861
+:ATTREND
+*-----------------------------------
+:ATTRNAME=laser on off
+:ATTRTYPE=SELECT
+:ATTRID=862
+:ATTREND
+*-----------------------------------
+:ATTRNAME=shutter on off
+:ATTRTYPE=SELECT
+:ATTRID=863
+:ATTREND
+*-----------------------------------
+:ATTRNAME=stripper down
+:ATTRTYPE=SELECT
+:ATTRVTYPE=INTEGER
+:ATTRID=864
+:ATTREND
+*-----------------------------------
+:ATTRNAME=stripper up
+:ATTRTYPE=SELECT
+:ATTRVTYPE=INTEGER
+:ATTRID=865
+:ATTREND
+*-----------------------------------
+:ATTRNAME=y offset position
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=866
+:ATTREND
+*-----------------------------------
+:ATTRNAME=parting tool station
+:ATTRTYPE=SELECT
+:ATTRVTYPE=INTEGER
+:ATTRID=867
+:ATTREND
+*-----------------------------------
+:ATTRNAME=lower pressure plate
+:ATTRTYPE=SELECT
+:ATTRID=868
+:ATTREND
+*-----------------------------------
+:ATTRNAME=drop door
+:ATTRTYPE=SELECT
+:ATTRID=869
+:ATTREND
+*-----------------------------------
+:ATTRNAME=parts feedrate
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=870
+:ATTREND
+*-----------------------------------
+:ATTRNAME=drop door dwell
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=871
+:ATTREND
+*-----------------------------------
+:ATTRNAME=parts removal
+:ATTRTYPE=LIST
+:ATTRID=872
+:ATTREND
+*-----------------------------------
+:ATTRNAME=auto loader
+:ATTRTYPE=SELECT
+:ATTRID=873
+:ATTREND
+*-----------------------------------
+:ATTRNAME=single hits
+:ATTRTYPE=SELECT
+:ATTRVTYPE=INTEGER
+:ATTRID=874
+:ATTREND
+*-----------------------------------
+:ATTRNAME=ramp rates
+:ATTRTYPE=SELECT
+:ATTRVTYPE=INTEGER
+:ATTRID=875
+:ATTREND
+*-----------------------------------
+* attrname=max nibble thickness #1 = attrid=876
+* attrname=max nibble thickness #2 = attrid=877
+*-----------------------------------
+:ATTRNAME=pulsing frequency
+:ATTRTYPE=SELECT
+:ATTRID=878
+:ATTREND
+*-----------------------------------
+:ATTRNAME=duty cycle
+:ATTRTYPE=SELECT
+:ATTRID=879
+:ATTREND
+*-----------------------------------
+:ATTRNAME=turn sheet
+:ATTRTYPE=DISPLAY
+:ATTRID=880
+:ATTREND
+*-----------------------------------
+:ATTRNAME=dust shield
+:ATTRTYPE=DISPLAY
+:ATTRID=881
+:ATTREND
+*-----------------------------------
+:ATTRNAME=tilt
+:ATTRTYPE=SELECT
+:ATTRID=882
+:ATTREND
+*-----------------------------------
+:ATTRNAME=init z clearance
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=883
+:ATTREND
+*-----------------------------------
+:ATTRNAME=rapid feedrate
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=884
+:ATTREND
+*-----------------------------------
+:ATTRNAME=init subroutine call
+:ATTRTYPE=VALUE
+:ATTRID=885
+:ATTRVTYPE=CHARACTER
+:ATTREND
+*-----------------------------------
+:ATTRNAME=g10
+:ATTRTYPE=DISPLAY
+:ATTRID=886
+:ATTREND
+*-----------------------------------
+:ATTRNAME=g12
+:ATTRTYPE=DISPLAY
+:ATTRID=887
+:ATTREND
+*-----------------------------------
+:ATTRNAME=sub number
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=888
+:ATTREND
+*-----------------------------------
+:ATTRNAME=laser mode
+:ATTRTYPE=SELECT
+:ATTRID=889
+:ATTREND
+*-----------------------------------
+:ATTRNAME=tape end output
+:ATTRTYPE=SELECT
+:ATTRID=890
+:ATTREND
+*-----------------------------------
+:ATTRNAME=init waste water
+:ATTRTYPE=SELECT
+:ATTRID=891
+:ATTREND
+*-----------------------------------
+:ATTRNAME=waste water
+:ATTRTYPE=SELECT
+:ATTRID=892
+:ATTREND
+*-----------------------------------
+:ATTRNAME=offset x
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=893
+:ATTREND
+*-----------------------------------
+:ATTRNAME=offset y
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=894
+:ATTREND
+*-----------------------------------
+:ATTRNAME=dwell time
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=895
+:ATTREND
+*-----------------------------------
+:ATTRNAME=semi colon
+:ATTRTYPE=DISPLAY
+:ATTRID=896
+:ATTREND
+*-----------------------------------
+:ATTRNAME=program letter
+:ATTRTYPE=VALUE
+:ATTRVTYPE=CHARACTER
+:ATTRID=897
+:ATTREND
+*-----------------------------------
+:ATTRNAME=line number
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=898
+:ATTREND
+*-----------------------------------
+:ATTRNAME=part number
+:ATTRTYPE=VALUE
+:ATTRVTYPE=CHARACTER
+:ATTRID=899
+:ATTREND
+*-----------------------------------
+:ATTRMACHINE=EDM
+*-----------------------------------
+:ATTRNAME=feed type
+:ATTRTYPE=SELECT
+:ATTRID=900
+:ATTREND
+*-----------------------------------
+:ATTRNAME=corner round
+:ATTRTYPE=SELECT
+:ATTRID=901
+:ATTREND
+*-----------------------------------
+:ATTRNAME=wire threader
+:ATTRTYPE=SELECT
+:ATTRID=902
+:ATTREND
+*-----------------------------------
+:ATTRNAME=w distance
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=903
+:ATTREND
+*-----------------------------------
+:ATTRNAME=init feed rate
+:ATTRTYPE=SELECT
+:ATTRID=904
+:ATTREND
+*-----------------------------------
+:ATTRNAME=feed rate
+:ATTRTYPE=SELECT
+:ATTRID=905
+:ATTREND
+*-----------------------------------
+:ATTRNAME=init e offset
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=906
+:ATTREND
+*-----------------------------------
+:ATTRNAME=e offset
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=907
+:ATTREND
+*-----------------------------------
+:ATTRNAME=upper arm position
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=908
+:ATTREND
+*-----------------------------------
+:ATTRNAME=add work table height
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=909
+:ATTREND
+*-----------------------------------
+:ATTRNAME=guide span
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=910
+:ATTREND
+*-----------------------------------
+:ATTRNAME=work table height
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=911
+:ATTREND
+*-----------------------------------
+:ATTRNAME=table stroke
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=912
+:ATTREND
+*-----------------------------------
+:ATTRNAME=thread wire
+:ATTRTYPE=DISPLAY
+:ATTRID=913
+:ATTREND
+*-----------------------------------
+:ATTRNAME=cut wire
+:ATTRTYPE=DISPLAY
+:ATTRID=914
+:ATTREND
+*-----------------------------------
+:ATTRNAME=corner control
+:ATTRTYPE=SELECT
+:ATTRID=915
+:ATTREND
+*-----------------------------------
+:ATTRNAME=four axis offset
+:ATTRTYPE=SELECT
+:ATTRID=916
+:ATTREND
+*-----------------------------------
+:ATTRNAME=init work coordinate
+:ATTRTYPE=SELECT
+:ATTRID=917
+:ATTREND
+*-----------------------------------
+:ATTRNAME=work coordinate
+:ATTRTYPE=SELECT
+:ATTRID=918
+:ATTREND
+*-----------------------------------
+:ATTRNAME=i machine compensation
+:ATTRTYPE=SELECT
+:ATTRID=919
+:ATTREND
+*-----------------------------------
+:ATTRNAME=machine compensation
+:ATTRTYPE=SELECT
+:ATTRID=920
+:ATTREND
+*-----------------------------------
+:ATTRNAME=auto feed
+:ATTRTYPE=SELECT
+:ATTRID=921
+:ATTREND
+*-----------------------------------
+:ATTRNAME=x shift
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=922
+:ATTREND
+*-----------------------------------
+:ATTRNAME=repeat step
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=923
+:ATTREND
+*-----------------------------------
+:ATTRNAME=init angle
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=924
+:ATTREND
+*-----------------------------------
+:ATTRNAME=d angle
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=925
+:ATTREND
+*-----------------------------------
+:ATTRNAME=glue stop
+:ATTRTYPE=DISPLAY
+:ATTRID=926
+:ATTREND
+*-----------------------------------
+:ATTRNAME=init arc duration
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=927
+:ATTREND
+*-----------------------------------
+:ATTRNAME=arc duration
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=928
+:ATTREND
+*-----------------------------------
+:ATTRNAME=init on time
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=929
+:ATTREND
+*-----------------------------------
+:ATTRNAME=on time
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=930
+:ATTREND
+*-----------------------------------
+:ATTRNAME=init current cut off
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=931
+:ATTREND
+*-----------------------------------
+:ATTRNAME=current cut off
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=932
+:ATTREND
+*-----------------------------------
+:ATTRNAME=init peak current
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=933
+:ATTREND
+*-----------------------------------
+:ATTRNAME=peak current
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=934
+:ATTREND
+*-----------------------------------
+:ATTRNAME=init gap space
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=935
+:ATTREND
+*-----------------------------------
+:ATTRNAME=gap space
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=936
+:ATTREND
+*-----------------------------------
+:ATTRNAME=init servo speed
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=937
+:ATTREND
+*-----------------------------------
+:ATTRNAME=servo speed
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=938
+:ATTREND
+*-----------------------------------
+:ATTRNAME=wire feedrate
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=939
+:ATTREND
+*-----------------------------------
+:ATTRNAME=wire speed
+:ATTRTYPE=SELECT
+:ATTRID=940
+:ATTREND
+*-----------------------------------
+:ATTRNAME=wire tension
+:ATTRTYPE=SELECT
+:ATTRID=941
+:ATTREND
+*-----------------------------------
+*-----------------------------------
+:ATTRNAME=MILL Z HOME
+:ATTRTYPE=DESCRIPTOR
+:ATTRVTYPE=INTEGER
+:ATTRID=997
+:ATTREND
+*-----------------------------------
+:ATTRNAME=MILL C HOME
+:ATTRTYPE=DESCRIPTOR
+:ATTRVTYPE=INTEGER
+:ATTRID=1177
+:ATTREND
+*-----------------------------------
+:ATTRNAME=LATHE VERTICAL HOME
+:ATTRTYPE=DESCRIPTOR
+:ATTRVTYPE=INTEGER
+:ATTRID=998
+:ATTREND
+*-----------------------------------
+:ATTRNAME=LATHE HORIZONTAL HOME
+:ATTRTYPE=DESCRIPTOR
+:ATTRVTYPE=INTEGER
+:ATTRID=999
+:ATTREND
+*-----------------------------------
+:ATTRNAME=init laser on off
+:ATTRTYPE=SELECT
+:ATTRID=1000
+:ATTREND
+*-----------------------------------
+:ATTRNAME=head escape
+:ATTRTYPE=SELECT
+:ATTRID=1001
+:ATTREND
+*-----------------------------------
+:ATTRNAME=sensor lock
+:ATTRTYPE=SELECT
+:ATTRID=1003
+:ATTREND
+*-----------------------------------
+:ATTRNAME=spindle range
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=1100
+:ATTREND
+*-----------------------------------
+:ATTRNAME=maximum rpm
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=1101
+:ATTREND
+*-----------------------------------
+:ATTRNAME=init laser mode
+:ATTRTYPE=SELECT
+:ATTRID=1102
+:ATTREND
+*-----------------------------------
+:ATTRNAME=flood mist
+:ATTRTYPE=SELECT
+:ATTRID=1103
+:ATTREND
+*-----------------------------------
+:ATTRNAME=init work coord
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=1104
+:ATTREND
+*-----------------------------------
+:ATTRNAME=work coord
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=1105
+:ATTREND
+*-----------------------------------
+:ATTRNAME=retract dwell
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1106
+:ATTREND
+*-----------------------------------
+:ATTRNAME=shift amount
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1107
+:ATTREND
+*-----------------------------------
+:ATTRNAME=high pressure tapping
+:ATTRTYPE=SELECT
+:ATTRID=1108
+:ATTREND
+*-----------------------------------
+:ATTRNAME=web clearance 2
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1109
+:ATTREND
+*-----------------------------------
+:ATTRNAME=web depth 2
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1110
+:ATTREND
+*-----------------------------------
+:ATTRNAME=boring cycle
+:ATTRTYPE=SELECT
+:ATTRID=1111
+:ATTREND
+*-----------------------------------
+:ATTRNAME=drilling cycle
+:ATTRTYPE=SELECT
+:ATTRID=1112
+:ATTREND
+*-----------------------------------
+:ATTRNAME=pecking cycle
+:ATTRTYPE=SELECT
+:ATTRID=1113
+:ATTREND
+*-----------------------------------
+:ATTRNAME=tapping cycle
+:ATTRTYPE=SELECT
+:ATTRID=1114
+:ATTREND
+*-----------------------------------
+:ATTRNAME=starting sync number
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=1115
+:ATTREND
+*-----------------------------------
+:ATTRNAME=top or bottom turret
+:ATTRTYPE=SELECT
+:ATTRID=1116
+:ATTREND
+*-----------------------------------
+:ATTRNAME=u preset
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1117
+:ATTREND
+*-----------------------------------
+:ATTRNAME=w preset
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1118
+:ATTREND
+*-----------------------------------
+:ATTRNAME=thread lead
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1119
+:ATTREND
+*-----------------------------------
+:ATTRNAME=bar z depth
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1120
+:ATTREND
+*-----------------------------------
+:ATTRNAME=bar x depth
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1178
+:ATTREND
+*-----------------------------------
+:ATTRNAME=bar z pullout
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1121
+:ATTREND
+*-----------------------------------
+:ATTRNAME=bar z rapid
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1122
+:ATTREND
+*-----------------------------------
+:ATTRNAME=bar x rapid
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1123
+:ATTREND
+*-----------------------------------
+:ATTRNAME=bar feed
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1124
+:ATTREND
+*-----------------------------------
+:ATTRNAME=bar speed
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1179
+:ATTREND
+*-----------------------------------
+:ATTRNAME=bar dwell
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1125
+:ATTREND
+*-----------------------------------
+:ATTRNAME=bar tool
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=1126
+:ATTREND
+*-----------------------------------
+:ATTRNAME=tail stock
+:ATTRTYPE=SELECT
+:ATTRID=1127
+:ATTREND
+*-----------------------------------
+:ATTRNAME=return relief
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1128
+:ATTREND
+*-----------------------------------
+:ATTRNAME=x end position
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1129
+:ATTREND
+*-----------------------------------
+:ATTRNAME=y end position
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1130
+:ATTREND
+*-----------------------------------
+:ATTRNAME=using work coord
+:ATTRTYPE=SELECT
+:ATTRID=1131
+:ATTREND
+*-----------------------------------
+:ATTRNAME=x offset clear
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1132
+:ATTREND
+*-----------------------------------
+:ATTRNAME=z offset clear
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1133
+:ATTREND
+*-----------------------------------
+:ATTRNAME=x tool change
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1134
+:ATTREND
+*-----------------------------------
+:ATTRNAME=z tool change
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1135
+:ATTREND
+*-----------------------------------
+:ATTRNAME=arm position
+:ATTRTYPE=SELECT
+:ATTRID=1136
+:ATTREND
+*-----------------------------------
+:ATTRNAME=xy guide dist
+:ATTRTYPE=VALUE
+:ATTRID=1137
+:ATTREND
+*-----------------------------------
+:ATTRNAME=uv guide dist
+:ATTRTYPE=VALUE
+:ATTRID=1138
+:ATTREND
+*-----------------------------------
+:ATTRNAME=spindle code
+:ATTRTYPE=VALUE
+:ATTRID=1139
+:ATTREND
+*-----------------------------------
+:ATTRNAME=x tool change position
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1140
+:ATTREND
+*-----------------------------------
+:ATTRNAME=x probe position
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1141
+:ATTREND
+*-----------------------------------
+:ATTRNAME=y probe position
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1142
+:ATTREND
+*-----------------------------------
+:ATTRNAME=y tool change
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1143
+:ATTREND
+*-----------------------------------
+:ATTRNAME=z tool offset
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1144
+:ATTREND
+*-----------------------------------
+:ATTRNAME=measure condition
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=1145
+:ATTREND
+*-----------------------------------
+:ATTRNAME=pre measure
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1146
+:ATTREND
+*-----------------------------------
+:ATTRNAME=tool tip center
+:ATTRTYPE=SELECT
+:ATTRID=1147
+:ATTREND
+*-----------------------------------
+:ATTRNAME=x work offset
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=1148
+:ATTREND
+*-----------------------------------
+:ATTRNAME=y work offset
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=1149
+:ATTREND
+*-----------------------------------
+:ATTRNAME=direct rpm
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=1150
+:ATTREND
+*-----------------------------------
+:ATTRNAME=tool offset
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=1151
+:ATTREND
+*-----------------------------------
+:ATTRNAME=air drill
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=1152
+:ATTREND
+*-----------------------------------
+:ATTRNAME=w axis
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1153
+:ATTREND
+*-----------------------------------
+:ATTRNAME=feed to trap
+:ATTRTYPE=SELECT
+:ATTRID=1154
+:ATTREND
+*-----------------------------------
+:ATTRNAME=reduction factor
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1155
+:ATTREND
+*-----------------------------------
+:ATTRNAME=retract distance
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1156
+:ATTREND
+*-----------------------------------
+:ATTRNAME=minimum increment
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1157
+:ATTREND
+*-----------------------------------
+:ATTRNAME=seq on off
+:ATTRTYPE=SELECT
+:ATTRID=1158
+:ATTREND
+*-----------------------------------
+:ATTRNAME=a axis
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1159
+:ATTREND
+*-----------------------------------
+:ATTRNAME=b axis
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1160
+:ATTREND
+*-----------------------------------
+:ATTRNAME=sub program
+:ATTRTYPE=DISPLAY
+:ATTRID=1161
+:ATTREND
+*-----------------------------------
+:ATTRNAME=pulse width
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1162
+:ATTREND
+*-----------------------------------
+:ATTRNAME=shot seconds
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1163
+:ATTREND
+*-----------------------------------
+:ATTRNAME=init pulse width
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1164
+:ATTREND
+*-----------------------------------
+:ATTRNAME=init shot seconds
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1165
+:ATTREND
+*-----------------------------------
+:ATTRNAME=parts catcher
+:ATTRTYPE=SELECT
+:ATTRID=1167
+:ATTREND
+*-----------------------------------
+*
+*  ID 1166 is used above
+*
+*:ATTRNAME=WORK HOLDER OFFSET X
+*:ATTRTYPE=DESCRIPTOR
+*:ATTRVTYPE=DECIMAL
+*:ATTRID=1166
+*:ATTREND
+*-----------------------------------
+*
+*  IDs 1168 - 1175 is used above
+*  For autoindex stations
+*
+*-----------------------------------
+:ATTRNAME=load pin
+:ATTRTYPE=SELECT
+:ATTRID=1176
+:ATTREND
+*-----------------------------------
+:ATTRNAME=spindle
+:ATTRTYPE=SELECT
+:ATTRID=1180
+:ATTREND
+*-----------------------------------
+:ATTRNAME=move clamp 1
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1181
+:ATTREND
+*-----------------------------------
+:ATTRNAME=move clamp 2
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1182
+:ATTREND
+*-----------------------------------
+:ATTRNAME=move clamp 3
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1183
+:ATTREND
+*-----------------------------------
+:ATTRNAME=move clamp 4
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1184
+:ATTREND
+*-----------------------------------
+:ATTRNAME=tool retract
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=1185
+:ATTREND
+*-----------------------------------
+:ATTRNAME=strike height
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1186
+:ATTREND
+*-----------------------------------
+:ATTRNAME=z end position
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1187
+:ATTREND
+*-----------------------------------
+:ATTRNAME=tool program number
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=1188
+:ATTREND
+*-----------------------------------
+:ATTRNAME=helical threading
+:ATTRTYPE=SELECT
+:ATTRID=1189
+:ATTREND
+*-----------------------------------
+:ATTRNAME=number of turns
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=1190
+:ATTREND
+*-----------------------------------
+:ATTRNAME=y shift
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1191
+:ATTREND
+*-----------------------------------
+:ATTRNAME=sub work coord
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=1192
+:ATTREND
+*-----------------------------------
+:ATTRNAME=steady rest
+:ATTRTYPE=SELECT
+:ATTRID=1193
+:ATTREND
+*-----------------------------------
+:ATTRNAME=stroke depth
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1194
+:ATTREND
+*-----------------------------------
+:ATTRNAME=stroke reset
+:ATTRTYPE=DISPLAY
+:ATTRID=1195
+:ATTREND
+*-----------------------------------
+*:ATTRNAME=stock diameter
+*:ATTRTYPE=VALUE
+*:ATTRVTYPE=DECIMAL
+*:ATTRID=1196
+*:ATTREND
+*-----------------------------------
+:ATTRNAME=chuck to stock
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1197
+:ATTREND
+*-----------------------------------
+:ATTRNAME=ram cycle edm
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=1198
+:ATTREND
+*-----------------------------------
+:ATTRNAME=ram cycle retract
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=1199
+:ATTREND
+*-----------------------------------
+:ATTRNAME=chord length
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1200
+:ATTREND
+*-----------------------------------
+:ATTRNAME=retraction distance
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=1201
+:ATTREND
+*-----------------------------------
+:ATTRNAME=sensitivity
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=1202
+:ATTREND
+*-----------------------------------
+:ATTRNAME=capacitor mode
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=1203
+:ATTREND
+*-----------------------------------
+:ATTRNAME=polarity
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=1204
+:ATTREND
+*-----------------------------------
+:ATTRNAME=generator type
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=1205
+:ATTREND
+*-----------------------------------
+:ATTRNAME=start angle
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1206
+:ATTREND
+*-----------------------------------
+:ATTRNAME=end angle
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1207
+:ATTREND
+*-----------------------------------
+:ATTRNAME=start increment
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1208
+:ATTREND
+*-----------------------------------
+:ATTRNAME=move increment
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1209
+:ATTREND
+*-----------------------------------
+:ATTRNAME=z increment
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1210
+:ATTREND
+*-----------------------------------
+:ATTRNAME=end radius
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1211
+:ATTREND
+*-----------------------------------
+:ATTRNAME=cycle type
+:ATTRTYPE=SELECT
+:ATTRID=1212
+:ATTREND
+*-----------------------------------
+:ATTRNAME=seq inc
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=1213
+:ATTREND
+*-----------------------------------
+:ATTRNAME=TOOL ZERO
+:ATTRTYPE=DESCRIPTOR
+:ATTRVTYPE=CHARACTER
+:ATTRID=1214
+:ATTREND
+*-----------------------------------
+:ATTRNAME=leadout amount
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1215
+:ATTREND
+*-----------------------------------
+:ATTRNAME=tool sync number
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=1216
+:ATTREND
+*-----------------------------------
+:ATTRNAME=end sync number
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=1217
+:ATTREND
+*-----------------------------------
+:ATTRNAME=touch probe function
+:ATTRTYPE=SELECT
+:ATTRID=1218
+:ATTREND
+*-----------------------------------
+:ATTRNAME=traverse axis
+:ATTRTYPE=SELECT
+:ATTRID=1219
+:ATTREND
+*-----------------------------------
+:ATTRNAME=axis position
+:ATTRTYPE=SELECT
+:ATTRID=1220
+:ATTREND
+*-----------------------------------
+:ATTRNAME=x y retract axis
+:ATTRTYPE=SELECT
+:ATTRID=1221
+:ATTREND
+*-----------------------------------
+:ATTRNAME=z w retract axis
+:ATTRTYPE=SELECT
+:ATTRID=1222
+:ATTREND
+*-----------------------------------
+:ATTRNAME=pocket number
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=1223
+:ATTREND
+*-----------------------------------
+:ATTRNAME=number of surfaces
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=1224
+:ATTREND
+*-----------------------------------
+:ATTRNAME=x position
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1225
+:ATTREND
+*-----------------------------------
+:ATTRNAME=y position
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1226
+:ATTREND
+*-----------------------------------
+:ATTRNAME=z position
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1227
+:ATTREND
+*-----------------------------------
+:ATTRNAME=w position
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1228
+:ATTREND
+*-----------------------------------
+:ATTRNAME=probe surface position
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1229
+:ATTREND
+*-----------------------------------
+:ATTRNAME=new ref coord
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1230
+:ATTREND
+*-----------------------------------
+:ATTRNAME=new surf coord
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1231
+:ATTREND
+*-----------------------------------
+:ATTRNAME=dtolerance
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1232
+:ATTREND
+*-----------------------------------
+:ATTRNAME=first probe surf dim
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1233
+:ATTREND
+*-----------------------------------
+:ATTRNAME=first rapid dim
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1234
+:ATTREND
+*-----------------------------------
+:ATTRNAME=second rapid dim
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1235
+:ATTREND
+*-----------------------------------
+:ATTRNAME=third rapid dim
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1236
+:ATTREND
+*-----------------------------------
+:ATTRNAME=second probe surf dim
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1237
+:ATTREND
+*-----------------------------------
+:ATTRNAME=midpoint coord
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1238
+:ATTREND
+*-----------------------------------
+:ATTRNAME=bore dia x axis
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1239
+:ATTREND
+*-----------------------------------
+:ATTRNAME=pocket dia y axis
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1240
+:ATTREND
+*-----------------------------------
+:ATTRNAME=rapid distance
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1241
+:ATTREND
+*-----------------------------------
+:ATTRNAME=z w depth
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1242
+:ATTREND
+*-----------------------------------
+:ATTRNAME=new x ref coord
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1243
+:ATTREND
+*-----------------------------------
+:ATTRNAME=new y ref coord
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1244
+:ATTREND
+*-----------------------------------
+:ATTRNAME=new x surf coord
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1245
+:ATTREND
+*-----------------------------------
+:ATTRNAME=center tolerance
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1246
+:ATTREND
+*-----------------------------------
+:ATTRNAME=target dim
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1247
+:ATTREND
+*-----------------------------------
+:ATTRNAME=target midpoint dim
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1248
+:ATTREND
+*-----------------------------------
+:ATTRNAME=retract dim
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1249
+:ATTREND
+*-----------------------------------
+:ATTRNAME=using z or w
+:ATTRTYPE=SELECT
+:ATTRID=1250
+:ATTREND
+*-----------------------------------
+:ATTRNAME=z w g98
+:ATTRTYPE=SELECT
+:ATTRID=1251
+:ATTREND
+*-----------------------------------
+:ATTRNAME=abs coord pos
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1252
+:ATTREND
+*-----------------------------------
+:ATTRNAME=w retract
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1253
+:ATTREND
+*-----------------------------------
+:ATTRNAME=touch probe cycle
+:ATTRTYPE=SELECT
+:ATTRID=1254
+:ATTREND
+*-----------------------------------
+:ATTRNAME=turret rotation
+:ATTRTYPE=SELECT
+:ATTRID=1255
+:ATTREND
+*-----------------------------------
+:ATTRNAME=p dwell
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=1256
+:ATTREND
+*-----------------------------------
+:ATTRNAME=rigid tap
+:ATTRTYPE=SELECT
+:ATTRID=1257
+:ATTREND
+*-----------------------------------
+:ATTRNAME=start spindle down
+:ATTRTYPE=SELECT
+:ATTRID=1258
+:ATTREND
+*-----------------------------------
+:ATTRNAME=end spindle up
+:ATTRTYPE=SELECT
+:ATTRID=1259
+:ATTREND
+*-----------------------------------
+:ATTRNAME=start vacuum on
+:ATTRTYPE=SELECT
+:ATTRID=1260
+:ATTREND
+*-----------------------------------
+:ATTRNAME=end vacuum off
+:ATTRTYPE=SELECT
+:ATTRID=1261
+:ATTREND
+*-----------------------------------
+:ATTRNAME=end spindle off
+:ATTRTYPE=SELECT
+:ATTRID=1262
+:ATTREND
+*-----------------------------------
+:ATTRNAME=drill head
+:ATTRTYPE=SELECT
+:ATTRID=1263
+:ATTREND
+*-----------------------------------
+:ATTRNAME=arc feedrate
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1264
+:ATTREND
+*-----------------------------------
+:ATTRNAME=pierce sub
+:ATTRTYPE=SELECT
+:ATTRID=1265
+:ATTREND
+*-----------------------------------
+:ATTRNAME=init pierce sub
+:ATTRTYPE=SELECT
+:ATTRID=1266
+:ATTREND
+*-----------------------------------
+:ATTRNAME=init long sub number
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1267
+:ATTREND
+*-----------------------------------
+:ATTRNAME=long sub number
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1268
+:ATTREND
+*-----------------------------------
+:ATTRNAME=sub spindle rpm
+:ATTRTYPE=SELECT
+:ATTRID=1269
+:ATTREND
+*-----------------------------------
+:ATTRNAME=rotary tool rpm
+:ATTRTYPE=SELECT
+:ATTRID=1270
+:ATTREND
+*-----------------------------------
+:ATTRNAME=gear range
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=1271
+:ATTREND
+*-----------------------------------
+:ATTRNAME=turret side
+:ATTRTYPE=SELECT
+:ATTRID=1272
+:ATTREND
+*-----------------------------------
+:ATTRNAME=turret number
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=1273
+:ATTREND
+*-----------------------------------
+:ATTRNAME=wait command
+:ATTRTYPE=SELECT
+:ATTRID=1274
+:ATTREND
+*-----------------------------------
+:ATTRNAME=bar type
+:ATTRTYPE=SELECT
+:ATTRID=1275
+:ATTREND
+*-----------------------------------
+:ATTRNAME=peck amount
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1276
+:ATTREND
+*-----------------------------------
+:ATTRNAME=using b axis
+:ATTRTYPE=SELECT
+:ATTRID=1277
+:ATTREND
+*-----------------------------------
+:ATTRNAME=comp or dan
+:ATTRTYPE=SELECT
+:ATTRID=1278
+:ATTREND
+*-----------------------------------
+:ATTRNAME=approach
+:ATTRTYPE=SELECT
+:ATTRID=1279
+:ATTREND
+*-----------------------------------
+:ATTRNAME=inside outside
+:ATTRTYPE=SELECT
+:ATTRID=1280
+:ATTREND
+*-----------------------------------
+:ATTRNAME=boundary dir
+:ATTRTYPE=SELECT
+:ATTRID=1281
+:ATTREND
+*------------------------------------
+:ATTRNAME=clamp 5 x
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1282
+:ATTREND
+*------------------------------------
+:ATTRNAME=clamp 6 x
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1283
+:ATTREND
+*-----------------------------------
+:ATTRNAME=init position move
+:ATTRTYPE=SELECT
+:ATTRID=1284
+:ATTREND
+*-----------------------------------
+:ATTRNAME=wire position move
+:ATTRTYPE=SELECT
+:ATTRID=1285
+:ATTREND
+*-----------------------------------
+:ATTRNAME=TOOL ONE
+:ATTRTYPE=DESCRIPTOR
+:ATTRVTYPE=CHARACTER
+:ATTRID=1286
+:ATTREND
+*-----------------------------------
+:ATTRNAME=TOOL TWO
+:ATTRTYPE=DESCRIPTOR
+:ATTRVTYPE=CHARACTER
+:ATTRID=1287
+:ATTREND
+*-----------------------------------
+:ATTRNAME=TOOL THREE
+:ATTRTYPE=DESCRIPTOR
+:ATTRVTYPE=CHARACTER
+:ATTRID=1288
+:ATTREND
+*-----------------------------------
+:ATTRNAME=TOOL FOUR
+:ATTRTYPE=DESCRIPTOR
+:ATTRVTYPE=CHARACTER
+:ATTRID=1289
+:ATTREND
+*-----------------------------------
+:ATTRNAME=z return
+:ATTRTYPE=SELECT
+:ATTRID=1290
+:ATTREND
+*-----------------------------------
+:ATTRNAME=end operation
+:ATTRTYPE=SELECT
+:ATTRID=1291
+:ATTREND
+*-----------------------------------
+:ATTRNAME=using taper
+:ATTRTYPE=SELECT
+:ATTRID=1292
+:ATTREND
+*-----------------------------------
+:ATTRNAME=working height
+:ATTRTYPE=SELECT
+:ATTRID=1293
+:ATTREND
+*-----------------------------------
+:ATTRNAME=m168 small parts
+:ATTRTYPE=DISPLAY
+:ATTRID=1294
+:ATTREND
+*-----------------------------------
+:ATTRNAME=cancel light barrier
+:ATTRTYPE=SELECT
+:ATTRID=1295
+:ATTREND
+*-----------------------------------
+:ATTRNAME=light barrier check
+:ATTRTYPE=SELECT
+:ATTRID=1296
+:ATTREND
+*-----------------------------------
+:ATTRNAME=first sub number
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=1297
+:ATTREND
+*-----------------------------------
+:ATTRNAME=second sub number
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=1298
+:ATTREND
+*-----------------------------------
+:ATTRNAME=z 1st cut
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1299
+:ATTREND
+*-----------------------------------
+:ATTRNAME=z sub cut
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1300
+:ATTREND
+*-----------------------------------
+:ATTRNAME=using auto c
+:ATTRTYPE=SELECT
+:ATTRID=1301
+:ATTREND
+*-----------------------------------
+:ATTRNAME=using m15 m16
+:ATTRTYPE=SELECT
+:ATTRID=1302
+:ATTREND
+*-----------------------------------
+:ATTRNAME=number of pecks
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=1303
+:ATTREND
+*-----------------------------------
+:ATTRNAME=s program start
+:ATTRTYPE=DISPLAY
+:ATTRID=1304
+:ATTREND
+*-----------------------------------
+:ATTRNAME=s program end
+:ATTRTYPE=DISPLAY
+:ATTRID=1305
+:ATTREND
+*-----------------------------------
+:ATTRNAME=taper off
+:ATTRTYPE=DISPLAY
+:ATTRID=1306
+:ATTREND
+*-----------------------------------
+:ATTRNAME=cut time display
+:ATTRTYPE=DISPLAY
+:ATTRID=1307
+:ATTREND
+*-----------------------------------
+:ATTRNAME=retrace start
+:ATTRTYPE=DISPLAY
+:ATTRID=1308
+:ATTREND
+*-----------------------------------
+:ATTRNAME=change pallet
+:ATTRTYPE=SELECT
+:ATTRID=1309
+:ATTREND
+*-----------------------------------
+:ATTRNAME=date
+:ATTRTYPE=VALUE
+:ATTRVTYPE=CHARACTER
+:ATTRID=1310
+:ATTREND
+*-----------------------------------
+:ATTRNAME=program status
+:ATTRTYPE=SELECT
+:ATTRID=1311
+:ATTREND
+*-----------------------------------
+:ATTRNAME=part description
+:ATTRTYPE=VALUE
+:ATTRVTYPE=CHARACTER
+:ATTRID=1312
+:ATTREND
+*-----------------------------------
+:ATTRNAME=oper description
+:ATTRTYPE=VALUE
+:ATTRVTYPE=CHARACTER
+:ATTRID=1313
+:ATTREND
+*-----------------------------------
+:ATTRNAME=init pulse
+:ATTRTYPE=SELECT
+:ATTRID=1314
+:ATTREND
+*-----------------------------------
+:ATTRNAME=pulse
+:ATTRTYPE=SELECT
+:ATTRID=1315
+:ATTREND
+*-----------------------------------
+:ATTRNAME=init pulsed
+:ATTRTYPE=SELECT
+:ATTRID=1316
+:ATTREND
+*-----------------------------------
+:ATTRNAME=pulsed
+:ATTRTYPE=SELECT
+:ATTRID=1317
+:ATTREND
+*-----------------------------------
+:ATTRNAME=init engraving
+:ATTRTYPE=SELECT
+:ATTRID=1318
+:ATTREND
+*-----------------------------------
+:ATTRNAME=engraving
+:ATTRTYPE=SELECT
+:ATTRID=1319
+:ATTREND
+*-----------------------------------
+:ATTRNAME=interrupt
+:ATTRTYPE=SELECT
+:ATTRID=1320
+:ATTREND
+*-----------------------------------
+:ATTRNAME=init head
+:ATTRTYPE=SELECT
+:ATTRID=1321
+:ATTREND
+*-----------------------------------
+:ATTRNAME=head
+:ATTRTYPE=SELECT
+:ATTRID=1322
+:ATTREND
+*-----------------------------------
+:ATTRNAME=machine percentage
+:ATTRTYPE=VALUE
+:ATTRVTYPE=CHARACTER
+:ATTRID=1323
+:ATTREND
+*-----------------------------------
+:ATTRNAME=duty
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=1324
+:ATTREND
+*-----------------------------------
+:ATTRNAME=init duty
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=1325
+:ATTREND
+*-----------------------------------
+:ATTRNAME=init gas pressure
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=1326
+:ATTREND
+*-----------------------------------
+:ATTRNAME=gas pressure
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=1327
+:ATTREND
+*-----------------------------------
+:ATTRNAME=init focal point
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=1328
+:ATTREND
+*-----------------------------------
+:ATTRNAME=focal point
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=1329
+:ATTREND
+*-----------------------------------
+:ATTRNAME=init program gas
+:ATTRTYPE=SELECT
+:ATTRID=1330
+:ATTREND
+*-----------------------------------
+:ATTRNAME=program gas
+:ATTRTYPE=SELECT
+:ATTRID=1331
+:ATTREND
+*-----------------------------------
+:ATTRNAME=p frequency
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1332
+:ATTREND
+*-----------------------------------
+:ATTRNAME=ramp time
+:ATTRTYPE=SELECT
+:ATTRVTYPE=DECIMAL
+:ATTRID=1333
+:ATTREND
+*-----------------------------------
+:ATTRNAME=image
+:ATTRTYPE=SELECT
+:ATTRID=1334
+:ATTREND
+*-----------------------------------
+:ATTRNAME=simultaneous
+:ATTRTYPE=SELECT
+:ATTRID=1335
+:ATTREND
+*-----------------------------------
+:ATTRNAME=r feedrate
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1336
+:ATTREND
+*-----------------------------------
+:ATTRNAME=oscillation
+:ATTRTYPE=SELECT
+:ATTRID=1337
+:ATTREND
+*-----------------------------------
+:ATTRNAME=MAX NIBBLE THICKNESS 1
+:ATTRTYPE=DESCRIPTOR
+:ATTRVTYPE=DECIMAL
+:ATTRID=1338
+:ATTREND
+*-----------------------------------
+:ATTRNAME=MAX NIBBLE THICKNESS 2
+:ATTRTYPE=DESCRIPTOR
+:ATTRVTYPE=DECIMAL
+:ATTRID=1339
+:ATTREND
+*-----------------------------------
+:ATTRNAME=clearance
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1340
+:ATTREND
+*-----------------------------------
+:ATTRNAME=m69 close chute
+:ATTRTYPE=DISPLAY
+:ATTRID=1341
+:ATTREND
+*-----------------------------------
+:ATTRNAME=blueprint number
+:ATTRTYPE=VALUE
+:ATTRVTYPE=CHARACTER
+:ATTRID=1342
+:ATTREND
+*-----------------------------------
+:ATTRNAME=program date
+:ATTRTYPE=VALUE
+:ATTRVTYPE=CHARACTER
+:ATTRID=1343
+:ATTREND
+*-----------------------------------
+:ATTRNAME=programer initials
+:ATTRTYPE=VALUE
+:ATTRVTYPE=CHARACTER
+:ATTRID=1344
+:ATTREND
+*-----------------------------------
+:ATTRNAME=init tangential control
+:ATTRTYPE=SELECT
+:ATTRID=1345
+:ATTREND
+*-----------------------------------
+:ATTRNAME=tangential control
+:ATTRTYPE=SELECT
+:ATTRID=1346
+:ATTREND
+*-----------------------------------
+:ATTRNAME=axis lock
+:ATTRTYPE=SELECT
+:ATTRID=1347
+:ATTREND
+*-----------------------------------
+:ATTRNAME=flush type
+:ATTRTYPE=SELECT
+:ATTRID=1348
+:ATTREND
+*-----------------------------------
+:ATTRNAME=grind type
+:ATTRTYPE=SELECT
+:ATTRID=1349
+:ATTREND
+*-----------------------------------
+:ATTRNAME=MATERIAL TYPE 1
+:ATTRTYPE=DESCRIPTOR
+:ATTRVTYPE=CHARACTER
+:ATTRID=1350
+:ATTREND
+*-----------------------------------
+:ATTRNAME=MATERIAL TYPE 2
+:ATTRTYPE=DESCRIPTOR
+:ATTRVTYPE=CHARACTER
+:ATTRID=1351
+:ATTREND
+*-----------------------------------
+:ATTRNAME=MATERIAL TYPE 3
+:ATTRTYPE=DESCRIPTOR
+:ATTRVTYPE=CHARACTER
+:ATTRID=1352
+:ATTREND
+*-----------------------------------
+:ATTRNAME=MATERIAL TYPE 4
+:ATTRTYPE=DESCRIPTOR
+:ATTRVTYPE=CHARACTER
+:ATTRID=1353
+:ATTREND
+*-----------------------------------
+:ATTRNAME=MATERIAL TYPE 5
+:ATTRTYPE=DESCRIPTOR
+:ATTRVTYPE=CHARACTER
+:ATTRID=1354
+:ATTREND
+*-----------------------------------
+:ATTRNAME=init pulse frequency
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=1355
+:ATTREND
+*-----------------------------------
+:ATTRNAME=init focus
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1356
+:ATTREND
+*-----------------------------------
+:ATTRNAME=focus
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1357
+:ATTREND
+*-----------------------------------
+:ATTRNAME=init reposition type
+:ATTRTYPE=SELECT
+:ATTRID=1358
+:ATTREND
+*-----------------------------------
+:ATTRNAME=reposition type
+:ATTRTYPE=SELECT
+:ATTRID=1359
+:ATTREND
+*-----------------------------------
+:ATTRNAME=s range
+:ATTRTYPE=SELECT
+:ATTRID=1360
+:ATTREND
+*-----------------------------------
+:ATTRNAME=z gauge length
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1361
+:ATTREND
+*-----------------------------------
+:ATTRNAME=x gauge length
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1362
+:ATTREND
+*-----------------------------------
+:ATTRNAME=b delete
+:ATTRTYPE=SELECT
+:ATTRID=1363
+:ATTREND
+*-----------------------------------
+:ATTRNAME=air blow
+:ATTRTYPE=SELECT
+:ATTRID=1364
+:ATTREND
+*-----------------------------------
+:ATTRNAME=punch pressure
+:ATTRTYPE=SELECT
+:ATTRID=1365
+:ATTREND
+*-----------------------------------
+:ATTRNAME=init marking
+:ATTRTYPE=SELECT
+:ATTRID=1366
+:ATTREND
+*-----------------------------------
+:ATTRNAME=init slitting
+:ATTRTYPE=SELECT
+:ATTRID=1367
+:ATTREND
+*-----------------------------------
+:ATTRNAME=init forming
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=1368
+:ATTREND
+*-----------------------------------
+:ATTRNAME=init knockout
+:ATTRTYPE=SELECT
+:ATTRID=1369
+:ATTREND
+*-----------------------------------
+:ATTRNAME=marking
+:ATTRTYPE=SELECT
+:ATTRID=1370
+:ATTREND
+*-----------------------------------
+:ATTRNAME=slitting
+:ATTRTYPE=SELECT
+:ATTRID=1371
+:ATTREND
+*-----------------------------------
+:ATTRNAME=forming
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=1372
+:ATTREND
+*-----------------------------------
+:ATTRNAME=knockout
+:ATTRTYPE=SELECT
+:ATTRID=1373
+:ATTREND
+*-----------------------------------
+:ATTRNAME=cutting flow rate
+:ATTRTYPE=SELECT
+:ATTRID=1374
+:ATTREND
+*-----------------------------------
+:ATTRNAME=init duty setting
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=1375
+:ATTREND
+*-----------------------------------
+:ATTRNAME=duty setting
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=1376
+:ATTREND
+*-----------------------------------
+:ATTRNAME=init frequency setting
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=1377
+:ATTREND
+*-----------------------------------
+:ATTRNAME=frequency setting
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=1378
+:ATTREND
+*-----------------------------------
+:ATTRNAME=pierce gas
+:ATTRTYPE=SELECT
+:ATTRID=1379
+:ATTREND
+*-----------------------------------
+:ATTRNAME=pierce flow rate
+:ATTRTYPE=SELECT
+:ATTRID=1380
+:ATTREND
+*-----------------------------------
+:ATTRNAME=main or sub
+:ATTRTYPE=SELECT
+:ATTRID=1381
+:ATTREND
+*-----------------------------------
+:ATTRNAME=using pullaway
+:ATTRTYPE=SELECT
+:ATTRID=1382
+:ATTREND
+*-----------------------------------
+:ATTRNAME=sub rapid
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1383
+:ATTREND
+*-----------------------------------
+:ATTRNAME=sub feed
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1384
+:ATTREND
+*-----------------------------------
+:ATTRNAME=sub retract
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1385
+:ATTREND
+*-----------------------------------
+:ATTRNAME=lathe-part-dimensions
+:ATTRTYPE=LIST
+:ATTRID=1386
+:ATTREND
+*-----------------------------------
+:ATTRNAME=part length
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1387
+:ATTREND
+*-----------------------------------
+:ATTRNAME=part size
+:ATTRTYPE=VALUE
+:ATTRVTYPE=CHARACTER
+:ATTRID=1388
+:ATTREND
+*-----------------------------------
+:ATTRNAME=x max
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1389
+:ATTREND
+*-----------------------------------
+:ATTRNAME=x min
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1390
+:ATTREND
+*-----------------------------------
+:ATTRNAME=y max
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1391
+:ATTREND
+*-----------------------------------
+:ATTRNAME=y min
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1392
+:ATTREND
+*-----------------------------------
+:ATTRNAME=z max
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1393
+:ATTREND
+*-----------------------------------
+:ATTRNAME=z min
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1394
+:ATTREND
+*-----------------------------------
+:ATTRNAME=head length
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1395
+:ATTREND
+*-----------------------------------
+:ATTRNAME=init pierce gas
+:ATTRTYPE=SELECT
+:ATTRID=1396
+:ATTREND
+*-----------------------------------
+:ATTRNAME=init cutting gas
+:ATTRTYPE=SELECT
+:ATTRID=1397
+:ATTREND
+*-----------------------------------
+:ATTRNAME=init piercing time
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1398
+:ATTREND
+*-----------------------------------
+:ATTRNAME=init purge time
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1399
+:ATTREND
+*-----------------------------------
+:ATTRNAME=purge time
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1400
+:ATTREND
+*-----------------------------------
+:ATTRNAME=init pierce power
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=1401
+:ATTREND
+*-----------------------------------
+:ATTRNAME=pierce power
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=1402
+:ATTREND
+*-----------------------------------
+:ATTRNAME=init z retract
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1403
+:ATTREND
+*-----------------------------------
+:ATTRNAME=init cutting flow rate
+:ATTRTYPE=SELECT
+:ATTRID=1404
+:ATTREND
+*-----------------------------------
+:ATTRNAME=init pierce flow rate
+:ATTRTYPE=SELECT
+:ATTRID=1405
+:ATTREND
+*-----------------------------------
+:ATTRNAME=init pierce frequency
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=1406
+:ATTREND
+*-----------------------------------
+:ATTRNAME=pierce frequency
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=1407
+:ATTREND
+*-----------------------------------
+* id number 1408 is not in use
+*-----------------------------------
+:ATTRNAME=NIBBLE STATION 1
+:ATTRTYPE=DESCRIPTOR
+:ATTRVTYPE=DECIMAL
+:ATTRID=1409
+:ATTREND
+*-----------------------------------
+:ATTRNAME=NIBBLE STATION 2
+:ATTRTYPE=DESCRIPTOR
+:ATTRVTYPE=DECIMAL
+:ATTRID=1410
+:ATTREND
+*-----------------------------------
+:ATTRNAME=tail stock drag
+:ATTRTYPE=SELECT
+:ATTRID=1411
+:ATTREND
+*-----------------------------------
+:ATTRNAME=tail z drag
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1412
+:ATTREND
+*-----------------------------------
+:ATTRNAME=tail tool
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=1413
+:ATTREND
+*-----------------------------------
+:ATTRNAME=u tool change
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1414
+:ATTREND
+*-----------------------------------
+:ATTRNAME=w tool change
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1415
+:ATTREND
+*-----------------------------------
+:ATTRNAME=z tracking
+:ATTRTYPE=SELECT
+:ATTRID=1416
+:ATTREND
+*-----------------------------------
+:ATTRNAME=directory
+:ATTRTYPE=VALUE
+:ATTRVTYPE=CHARACTER
+:ATTRID=1417
+:ATTREND
+*-----------------------------------
+:ATTRNAME=r direction
+:ATTRTYPE=VALUE
+:ATTRVTYPE=CHARACTER
+:ATTRID=1418
+:ATTREND
+*-----------------------------------
+:ATTRNAME=details
+:ATTRTYPE=VALUE
+:ATTRVTYPE=CHARACTER
+:ATTRID=1419
+:ATTREND
+*-----------------------------------
+:ATTRNAME=sync number
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=1420
+:ATTREND
+*-----------------------------------
+:ATTRNAME=init end condition
+:ATTRTYPE=SELECT
+:ATTRID=1421
+:ATTREND
+*-----------------------------------
+:ATTRNAME=end condition
+:ATTRTYPE=SELECT
+:ATTRID=1422
+:ATTREND
+*-----------------------------------
+:ATTRNAME=init first sub number
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=1423
+:ATTREND
+*-----------------------------------
+:ATTRNAME=init second sub number
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=1424
+:ATTREND
+*-----------------------------------
+:ATTRNAME=quill channel
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=1425
+:ATTREND
+*-----------------------------------
+:ATTRNAME=infeed channel
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=1426
+:ATTREND
+*------------------------------
+:ATTRNAME=blank size
+:ATTRTYPE=VALUE
+:ATTRID=1427
+:ATTRVTYPE=CHARACTER
+:ATTREND
+*------------------------------
+:ATTRNAME=parts per sheet
+:ATTRTYPE=VALUE
+:ATTRID=1428
+:ATTRVTYPE=CHARACTER
+:ATTREND
+*-----------------------------------
+:ATTRNAME=tool library
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=1429
+:ATTREND
+*-----------------------------------
+:ATTRNAME=wire taper
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1430
+:ATTREND
+*-----------------------------------
+:ATTRNAME=MATERIAL TYPE 6
+:ATTRTYPE=DESCRIPTOR
+:ATTRVTYPE=CHARACTER
+:ATTRID=1431
+:ATTREND
+*-----------------------------------
+:ATTRNAME=pre punch
+:ATTRTYPE=DISPLAY
+:ATTRID=1432
+:ATTREND
+*-----------------------------------
+:ATTRNAME=w gauge length
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1433
+:ATTREND
+*-----------------------------------
+:ATTRNAME=u gauge length
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1434
+:ATTREND
+*-----------------------------------
+:ATTRNAME=init peck gas pressure
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=1435
+:ATTREND
+*-----------------------------------
+:ATTRNAME=peck gas pressure
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=1436
+:ATTREND
+*-----------------------------------
+:ATTRNAME=init peck coolant
+:ATTRTYPE=SELECT
+:ATTRID=1437
+:ATTREND
+*-----------------------------------
+:ATTRNAME=peck coolant
+:ATTRTYPE=SELECT
+:ATTRID=1438
+:ATTREND
+*-----------------------------------
+:ATTRNAME=max feedrate
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1439
+:ATTREND
+*-----------------------------------
+:ATTRNAME=init max feedrate
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1440
+:ATTREND
+*-----------------------------------
+:ATTRNAME=init min dynamic power
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=1441
+:ATTREND
+*-----------------------------------
+:ATTRNAME=min dynamic power
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=1442
+:ATTREND
+*-----------------------------------
+:ATTRNAME=init leadin feedrate
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1443
+:ATTREND
+*-----------------------------------
+:ATTRNAME=leadin feedrate
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1444
+:ATTREND
+*-----------------------------------
+:ATTRNAME=init working height
+:ATTRTYPE=SELECT
+:ATTRID=1445
+:ATTREND
+*-----------------------------------
+:ATTRNAME=init rapid type
+:ATTRTYPE=SELECT
+:ATTRID=1446
+:ATTREND
+*-----------------------------------
+:ATTRNAME=precision mode
+:ATTRTYPE=SELECT
+:ATTRID=1447
+:ATTREND
+*-----------------------------------
+:ATTRNAME=chuck pressure
+:ATTRTYPE=SELECT
+:ATTRID=1448
+:ATTREND
+*-----------------------------------
+:ATTRNAME=t change
+:ATTRTYPE=SELECT
+:ATTRID=1449
+:ATTREND
+*-----------------------------------
+:ATTRNAME=TOOL FIVE
+:ATTRTYPE=DESCRIPTOR
+:ATTRVTYPE=CHARACTER
+:ATTRID=1450
+:ATTREND
+*-----------------------------------
+:ATTRNAME=TOOL SIX
+:ATTRTYPE=DESCRIPTOR
+:ATTRVTYPE=CHARACTER
+:ATTRID=1451
+:ATTREND
+*-----------------------------------
+:ATTRNAME=TOOL SEVEN
+:ATTRTYPE=DESCRIPTOR
+:ATTRVTYPE=CHARACTER
+:ATTRID=1452
+:ATTREND
+*-----------------------------------
+:ATTRNAME=TOOL EIGHT
+:ATTRTYPE=DESCRIPTOR
+:ATTRVTYPE=CHARACTER
+:ATTRID=1453
+:ATTREND
+*------------------------------
+:ATTRNAME=init torch
+:ATTRTYPE=SELECT
+:ATTRID=1454
+:ATTREND
+*------------------------------
+:ATTRNAME=vertical infeed
+:ATTRTYPE=SELECT
+:ATTRID=1455
+:ATTREND
+*------------------------------
+:ATTRNAME=horizontal infeed
+:ATTRTYPE=SELECT
+:ATTRID=1456
+:ATTREND
+*------------------------------
+:ATTRNAME=display tool offset
+:ATTRTYPE=SELECT
+:ATTRID=1457
+:ATTREND
+*-----------------------------------
+:ATTRNAME=open chute
+:ATTRTYPE=DISPLAY
+:ATTRID=1458
+:ATTREND
+*-----------------------------------
+:ATTRNAME=close chute
+:ATTRTYPE=DISPLAY
+:ATTRID=1459
+:ATTREND
+*-----------------------------------
+:ATTRNAME=open close chute
+:ATTRTYPE=DISPLAY
+:ATTRID=1460
+:ATTREND
+*-----------------------------------
+:ATTRNAME=TOOL NINE
+:ATTRTYPE=DESCRIPTOR
+:ATTRVTYPE=CHARACTER
+:ATTRID=1461
+:ATTREND
+*-----------------------------------
+:ATTRNAME=TOOL TEN
+:ATTRTYPE=DESCRIPTOR
+:ATTRVTYPE=CHARACTER
+:ATTRID=1462
+:ATTREND
+*-----------------------------------
+:ATTRNAME=break distance
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1463
+:ATTREND
+*-----------------------------------
+:ATTRNAME=break angle
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1464
+:ATTREND
+*-----------------------------------
+*   5 axis special "A" and "B" angle limit settings
+*-----------------------------------
+:ATTRNAME=limit axis
+:ATTRTYPE=SELECT
+:ATTRID=1465
+:ATTREND
+*-----------------------------------
+:ATTRNAME=x included angle
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1466
+:ATTREND
+*-----------------------------------
+:ATTRNAME=y included angle
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1467
+:ATTREND
+*-----------------------------------
+:ATTRNAME=b angle
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1468
+:ATTREND
+*-----------------------------------
+:ATTRNAME=init slow feed
+:ATTRTYPE=SELECT
+:ATTRID=1469
+:ATTREND
+*-----------------------------------
+:ATTRNAME=diameter stock
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1470
+:ATTREND
+*-----------------------------------
+:ATTRNAME=TOOL ELEVEN
+:ATTRTYPE=DESCRIPTOR
+:ATTRVTYPE=CHARACTER
+:ATTRID=1471
+:ATTREND
+*-----------------------------------
+:ATTRNAME=TOOL TWELVE
+:ATTRTYPE=DESCRIPTOR
+:ATTRVTYPE=CHARACTER
+:ATTRID=1472
+:ATTREND
+*-----------------------------------
+:ATTRNAME=TOOL THIRTEEN
+:ATTRTYPE=DESCRIPTOR
+:ATTRVTYPE=CHARACTER
+:ATTRID=1473
+:ATTREND
+*-----------------------------------
+:ATTRNAME=TOOL FOURTEEN
+:ATTRTYPE=DESCRIPTOR
+:ATTRVTYPE=CHARACTER
+:ATTRID=1474
+:ATTREND
+*-----------------------------------
+:ATTRNAME=TOOL FIFTEEN
+:ATTRTYPE=DESCRIPTOR
+:ATTRVTYPE=CHARACTER
+:ATTRID=1475
+:ATTREND
+*-----------------------------------
+:ATTRNAME=slowed feed
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1476
+:ATTREND
+*-----------------------------------
+:ATTRNAME=p pressure
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1477
+:ATTREND
+*-----------------------------------
+:ATTRNAME=c pressure
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1478
+:ATTREND
+*-----------------------------------
+:ATTRNAME=high speed ram
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1479
+:ATTREND
+*-----------------------------------
+:ATTRNAME=mid speed ram
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1480
+:ATTREND
+*-----------------------------------
+:ATTRNAME=low speed ram
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1481
+:ATTREND
+*-----------------------------------
+:ATTRNAME=ram stop time
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1482
+:ATTREND
+*-----------------------------------
+:ATTRNAME=cancel ram stop time
+:ATTRTYPE=DISPLAY
+:ATTRID=1483
+:ATTREND
+*-----------------------------------
+:ATTRNAME=wrap x
+:ATTRTYPE=SELECT
+:ATTRID=1484
+:ATTREND
+*-----------------------------------
+:ATTRNAME=wrap y
+:ATTRTYPE=SELECT
+:ATTRID=1485
+:ATTREND
+*-----------------------------------
+:ATTRNAME=quiet punch
+:ATTRTYPE=LIST
+:ATTRID=1486
+:ATTREND
+*-----------------------------------
+:ATTRNAME=init ram speed
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=1487
+:ATTREND
+*-----------------------------------
+:ATTRNAME=ram speed
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=1488
+:ATTREND
+*-----------------------------------
+:ATTRNAME=init slow break
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=1489
+:ATTREND
+*-----------------------------------
+:ATTRNAME=slow break
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=1490
+:ATTREND
+*-----------------------------------
+:ATTRNAME=init ram speed change
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1491
+:ATTREND
+*-----------------------------------
+:ATTRNAME=ram speed change
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1492
+:ATTREND
+*-----------------------------------
+:ATTRNAME=tool change type
+:ATTRTYPE=SELECT
+:ATTRID=1493
+:ATTREND
+*-----------------------------------
+:ATTRNAME=x axis lock
+:ATTRTYPE=SELECT
+:ATTRID=1494
+:ATTREND
+*-----------------------------------
+:ATTRNAME=y axis lock
+:ATTRTYPE=SELECT
+:ATTRID=1495
+:ATTREND
+*-----------------------------------
+:ATTRNAME=z axis lock
+:ATTRTYPE=SELECT
+:ATTRID=1496
+:ATTREND
+*-----------------------------------
+:ATTRNAME=w axis lock
+:ATTRTYPE=SELECT
+:ATTRID=1497
+:ATTREND
+*-----------------------------------
+:ATTRNAME=v axis lock
+:ATTRTYPE=SELECT
+:ATTRID=1498
+:ATTREND
+*-----------------------------------
+:ATTRNAME=u axis lock
+:ATTRTYPE=SELECT
+:ATTRID=1499
+:ATTREND
+*-----------------------------------
+:ATTRNAME=b axis lock
+:ATTRTYPE=SELECT
+:ATTRID=1500
+:ATTREND
+*-----------------------------------
+:ATTRNAME=restart
+:ATTRTYPE=SELECT
+:ATTRID=1501
+:ATTREND
+*-----------------------------------
+:ATTRNAME=retract home
+:ATTRTYPE=SELECT
+:ATTRID=1502
+:ATTREND
+*-----------------------------------
+:ATTRNAME=init material condition
+:ATTRTYPE=SELECT
+:ATTRID=1503
+:ATTREND
+*-----------------------------------
+:ATTRNAME=init condition channel
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=1504
+:ATTREND
+*-----------------------------------
+:ATTRNAME=condition channel
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=1505
+:ATTREND
+*-----------------------------------
+:ATTRNAME=arc stop
+:ATTRTYPE=DISPLAY
+:ATTRID=1506
+:ATTREND
+*-----------------------------------
+:ATTRNAME=tab stop
+:ATTRTYPE=DISPLAY
+:ATTRID=1507
+:ATTREND
+*-----------------------------------
+:ATTRNAME=no punch
+:ATTRTYPE=DISPLAY
+:ATTRID=1508
+:ATTREND
+*-----------------------------------
+:ATTRNAME=m11
+:ATTRTYPE=DISPLAY
+:ATTRID=1509
+:ATTREND
+*-----------------------------------
+:ATTRNAME=iso name
+:ATTRTYPE=VALUE
+:ATTRVTYPE=CHARACTER
+:ATTRID=1510
+:ATTREND
+*-----------------------------------
+:ATTRNAME=sbl name
+:ATTRTYPE=VALUE
+:ATTRVTYPE=CHARACTER
+:ATTRID=1511
+:ATTREND
+*-----------------------------------
+:ATTRNAME=wire type
+:ATTRTYPE=SELECT
+:ATTRID=1512
+:ATTREND
+*-----------------------------------
+:ATTRNAME=entry mode
+:ATTRTYPE=SELECT
+:ATTRID=1513
+:ATTREND
+*-----------------------------------
+:ATTRNAME=exit mode
+:ATTRTYPE=SELECT
+:ATTRID=1514
+:ATTREND
+*-----------------------------------
+:ATTRNAME=open or closed
+:ATTRTYPE=SELECT
+:ATTRID=1515
+:ATTREND
+*-----------------------------------
+:ATTRNAME=ra
+:ATTRTYPE=SELECT
+:ATTRID=1516
+:ATTREND
+*-----------------------------------
+:ATTRNAME=te
+:ATTRTYPE=SELECT
+:ATTRID=1517
+:ATTREND
+*-----------------------------------
+:ATTRNAME=tkm
+:ATTRTYPE=SELECT
+:ATTRID=1518
+:ATTREND
+*-----------------------------------
+:ATTRNAME=quality name
+:ATTRTYPE=VALUE
+:ATTRID=1519
+:ATTRVTYPE=CHARACTER
+:ATTREND
+*-----------------------------------
+:ATTRNAME=die clearance
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1520
+:ATTREND
+*-----------------------------------
+:ATTRNAME=rotate piece
+:ATTRTYPE=DISPLAY
+:ATTRID=1521
+:ATTREND
+*-----------------------------------
+:ATTRNAME=intern or extern
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=1522
+:ATTREND
+*-----------------------------------
+:ATTRNAME=lift laser head
+:ATTRTYPE=DISPLAY
+:ATTRID=1523
+:ATTREND
+*-----------------------------------
+:ATTRNAME=twist
+:ATTRTYPE=DISPLAY
+:ATTRID=1524
+:ATTREND
+*-----------------------------------
+:ATTRNAME=amada ram speed
+:ATTRTYPE=SELECT
+:ATTRID=1525
+:ATTREND
+*-----------------------------------
+:ATTRNAME=c adjust
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1526
+:ATTREND
+*-----------------------------------
+:ATTRNAME=steady type coolant
+:ATTRTYPE=SELECT
+:ATTRID=1527
+:ATTREND
+*-----------------------------------
+:ATTRNAME=Niagra type coolant
+:ATTRTYPE=SELECT
+:ATTRID=1528
+:ATTREND
+*-----------------------------------
+:ATTRNAME=thru hole type coolant
+:ATTRTYPE=SELECT
+:ATTRID=1529
+:ATTREND
+*-----------------------------------
+:ATTRNAME=init leadin sub number
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1530
+:ATTREND
+*-----------------------------------
+:ATTRNAME=leadin sub number
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1531
+:ATTREND
+*-----------------------------------
+:ATTRNAME=clamp number 3
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=1532
+:ATTREND
+*-----------------------------------
+:ATTRNAME=clamp number 4
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=1533
+:ATTREND
+*-----------------------------------
+:ATTRNAME=start laser off method
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=1534
+:ATTREND
+*-----------------------------------
+:ATTRNAME=program laser off method
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=1535
+:ATTREND
+*-----------------------------------
+:ATTRNAME=program runs
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=1536
+:ATTREND
+*-----------------------------------
+:ATTRNAME=init laser techtable
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=1537
+:ATTREND
+*-----------------------------------
+:ATTRNAME=laser techtable
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=1538
+:ATTREND
+*-----------------------------------
+:ATTRNAME=sheet techtable
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=1539
+:ATTREND
+*-----------------------------------
+:ATTRNAME=sheet load techtable
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=1540
+:ATTREND
+*-----------------------------------
+:ATTRNAME=point marking techtable
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=1541
+:ATTREND
+*-----------------------------------
+:ATTRNAME=vapor laser techtable
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=1542
+:ATTREND
+*-----------------------------------
+:ATTRNAME=marking techtable
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=1543
+:ATTREND
+*-----------------------------------
+:ATTRNAME=loading device
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=1544
+:ATTREND
+*-----------------------------------
+:ATTRNAME=sheet stop
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=1545
+:ATTREND
+*-----------------------------------
+:ATTRNAME=measure sheet position
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=1546
+:ATTREND
+*-----------------------------------
+:ATTRNAME=calibration
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=1547
+:ATTREND
+*-----------------------------------
+:ATTRNAME=type pallet change
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=1548
+:ATTREND
+*-----------------------------------
+:ATTRNAME=tool breakage
+:ATTRTYPE=SELECT
+:ATTRID=1549
+:ATTREND
+*-----------------------------------
+:ATTRNAME=tough control
+:ATTRTYPE=SELECT
+:ATTRID=1550
+:ATTREND
+*-----------------------------------
+:ATTRNAME=unload pallet
+:ATTRTYPE=SELECT
+:ATTRID=1551
+:ATTREND
+*-----------------------------------
+:ATTRNAME=number parameters
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=1552
+:ATTREND
+*-----------------------------------
+:ATTRNAME=using mach ref
+:ATTRTYPE=SELECT
+:ATTRID=1553
+:ATTREND
+*-----------------------------------
+:ATTRNAME=using fixture zero
+:ATTRTYPE=SELECT
+:ATTRID=1554
+:ATTREND
+*-----------------------------------
+:ATTRNAME=test cut
+:ATTRTYPE=SELECT
+:ATTRID=1555
+:ATTREND
+*-----------------------------------
+:ATTRNAME=probe type
+:ATTRTYPE=SELECT
+:ATTRID=1556
+:ATTREND
+*-----------------------------------
+:ATTRNAME=spindle torque
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=1557
+:ATTREND
+*-----------------------------------
+:ATTRNAME=z axis torque
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=1558
+:ATTREND
+*-----------------------------------
+:ATTRNAME=conveyor
+:ATTRTYPE=SELECT
+:ATTRID=1559
+:ATTREND
+*-----------------------------------
+:ATTRNAME=clean table
+:ATTRTYPE=SELECT
+:ATTRID=1560
+:ATTREND
+*-----------------------------------
+:ATTRNAME=load register
+:ATTRTYPE=SELECT
+:ATTRID=1561
+:ATTREND
+*-----------------------------------
+:ATTRNAME=wrap axis
+:ATTRTYPE=SELECT
+:ATTRID=1562
+:ATTREND
+*-----------------------------------
+:ATTRNAME=wrap diameter
+:ATTRTYPE=SELECT
+:ATTRID=1563
+:ATTREND
+*-----------------------------------
+:ATTRNAME=wc54 x
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1564
+:ATTREND
+*-----------------------------------
+:ATTRNAME=wc54 y
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1565
+:ATTREND
+*-----------------------------------
+:ATTRNAME=wc54 z
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1566
+:ATTREND
+*-----------------------------------
+:ATTRNAME=wc55 x
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1567
+:ATTREND
+*-----------------------------------
+:ATTRNAME=wc55 y
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1568
+:ATTREND
+*-----------------------------------
+:ATTRNAME=wc55 z
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1569
+:ATTREND
+*-----------------------------------
+:ATTRNAME=wc56 x
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1570
+:ATTREND
+*-----------------------------------
+:ATTRNAME=wc56 y
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1571
+:ATTREND
+*-----------------------------------
+:ATTRNAME=wc56 z
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1572
+:ATTREND
+*-----------------------------------
+:ATTRNAME=wc57 x
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1573
+:ATTREND
+*-----------------------------------
+:ATTRNAME=wc57 y
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1574
+:ATTREND
+*-----------------------------------
+:ATTRNAME=wc57 z
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1575
+:ATTREND
+*-----------------------------------
+:ATTRNAME=clamps number 3
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=1576
+:ATTREND
+*-----------------------------------
+:ATTRNAME=wheel offset #1
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1577
+:ATTREND
+*-----------------------------------
+:ATTRNAME=wheel offset #2
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1578
+:ATTREND
+*-----------------------------------
+:ATTRNAME=wheel offset #3
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1579
+:ATTREND
+*-----------------------------------
+:ATTRNAME=wheel offset #4
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1580
+:ATTREND
+*-----------------------------------
+:ATTRNAME=wheel position
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1581
+:ATTREND
+*-----------------------------------
+:ATTRNAME=wheel punch height
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1582
+:ATTREND
+*-----------------------------------
+:ATTRNAME=sorter arm pickup
+:ATTRTYPE=DISPLAY
+:ATTRID=1583
+:ATTREND
+*-----------------------------------
+:ATTRNAME=sorter arm release
+:ATTRTYPE=DISPLAY
+:ATTRID=1584
+:ATTREND
+*-----------------------------------
+:ATTRNAME=vector comp
+:ATTRTYPE=SELECT
+:ATTRID=1585
+:ATTREND
+*-----------------------------------
+:ATTRNAME=wc58 x
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1586
+:ATTREND
+*-----------------------------------
+:ATTRNAME=wc58 y
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1587
+:ATTREND
+*-----------------------------------
+:ATTRNAME=wc58 z
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1588
+:ATTREND
+*-----------------------------------
+:ATTRNAME=wc59 x
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1589
+:ATTREND
+*-----------------------------------
+:ATTRNAME=wc59 y
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1590
+:ATTREND
+*-----------------------------------
+:ATTRNAME=wc59 z
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1591
+:ATTREND
+*-----------------------------------
+:ATTRNAME=wc54 b
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1592
+:ATTREND
+*-----------------------------------
+:ATTRNAME=wc55 b
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1593
+:ATTREND
+*-----------------------------------
+:ATTRNAME=wc56 b
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1594
+:ATTREND
+*-----------------------------------
+:ATTRNAME=wc57 b
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1595
+:ATTREND
+*-----------------------------------
+:ATTRNAME=wc58 b
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1596
+:ATTREND
+*-----------------------------------
+:ATTRNAME=wc59 b
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1597
+:ATTREND
+*-----------------------------------
+:ATTRNAME=autoset clamps
+:ATTRTYPE=LIST
+:ATTRID=1598
+:ATTREND
+*-----------------------------------
+:ATTRNAME=punch hit releases part
+:ATTRTYPE=DISPLAY
+:ATTRID=1599
+:ATTREND
+*-----------------------------------
+:ATTRNAME=maxl1
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1600
+:ATTREND
+*-----------------------------------
+:ATTRNAME=maxl2
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1601
+:ATTREND
+*-----------------------------------
+:ATTRNAME=maxl3
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1602
+:ATTREND
+*-----------------------------------
+:ATTRNAME=maxl4
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1603
+:ATTREND
+*-----------------------------------
+:ATTRNAME=maxl5
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1604
+:ATTREND
+*-----------------------------------
+:ATTRNAME=maxr1
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1605
+:ATTREND
+*-----------------------------------
+:ATTRNAME=maxr2
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1606
+:ATTREND
+*-----------------------------------
+:ATTRNAME=maxr3
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1607
+:ATTREND
+*-----------------------------------
+:ATTRNAME=maxr4
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1608
+:ATTREND
+*-----------------------------------
+:ATTRNAME=maxr5
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1609
+:ATTREND
+*-----------------------------------
+:ATTRNAME=chuck dim 1
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1610
+:ATTREND
+*-----------------------------------
+:ATTRNAME=chuck dim 2
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1611
+:ATTREND
+*-----------------------------------
+:ATTRNAME=chuck pos 1
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1612
+:ATTREND
+*-----------------------------------
+:ATTRNAME=chuck pos 2
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1613
+:ATTREND
+*-----------------------------------
+:ATTRNAME=move clamps
+:ATTRTYPE=LIST
+:ATTRID=1614
+:ATTREND
+*-----------------------------------
+:ATTRNAME=punch speed
+:ATTRTYPE=LIST
+:ATTRID=1615
+:ATTREND
+*-----------------------------------
+:ATTRNAME=MULTITOOL SET 1
+:ATTRTYPE=DESCRIPTOR
+:ATTRVTYPE=CHARACTER
+:ATTRID=1616
+:ATTREND
+*-----------------------------------
+:ATTRNAME=MULTITOOL SET 2
+:ATTRTYPE=DESCRIPTOR
+:ATTRVTYPE=CHARACTER
+:ATTRID=1617
+:ATTREND
+*-----------------------------------
+:ATTRNAME=MULTITOOL SET 3
+:ATTRTYPE=DESCRIPTOR
+:ATTRVTYPE=CHARACTER
+:ATTRID=1618
+:ATTREND
+*-----------------------------------
+:ATTRNAME=MULTITOOL SET 4
+:ATTRTYPE=DESCRIPTOR
+:ATTRVTYPE=CHARACTER
+:ATTRID=1619
+:ATTREND
+*-----------------------------------
+:ATTRNAME=multitool station 1
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=1620
+:ATTREND
+*-----------------------------------
+:ATTRNAME=multitool station 2
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=1621
+:ATTREND
+*-----------------------------------
+:ATTRNAME=multitool station 3
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=1622
+:ATTREND
+*-----------------------------------
+:ATTRNAME=multitool station 4
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=1623
+:ATTREND
+*-----------------------------------
+**************************************************
+* 1624-1632 are for the new multiaxis operations
+*-----------------------------------
+:ATTRNAME=angle change limit
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1624
+:ATTREND
+*-----------------------------------
+:ATTRNAME=interpolation angle step
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1625
+:ATTREND
+*-----------------------------------
+:ATTRNAME=interpolation distance
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1626
+:ATTREND
+*-----------------------------------
+:ATTRNAME=tool retract distance
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1627
+:ATTREND
+*-----------------------------------
+:ATTRNAME=pole angle tolerance
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1628
+:ATTREND
+*-----------------------------------
+:ATTRNAME=auto angle pair
+:ATTRTYPE=SELECT
+:ATTRID=1629
+:ATTREND
+*-----------------------------------
+:ATTRNAME=other angle pair
+:ATTRTYPE=SELECT
+:ATTRID=1630
+:ATTREND
+*-----------------------------------
+:ATTRNAME=using int distance
+:ATTRTYPE=SELECT
+:ATTRID=1631
+:ATTREND
+*-----------------------------------
+:ATTRNAME=use machine limits
+:ATTRTYPE=SELECT
+:ATTRID=1632
+:ATTREND
+*-----------------------------------
+:ATTRNAME=multiaxis best solution
+:ATTRTYPE=SELECT
+:ATTRID=1633
+:ATTREND
+*-----------------------------------
+:ATTRNAME=multiaxis rotary angle
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1634
+:ATTREND
+**************************************************
+*-----------------------------------
+:ATTRNAME=nozzle direction
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1635
+:ATTREND
+*-----------------------------------
+:ATTRNAME=clean mach
+:ATTRTYPE=SELECT
+:ATTRID=1636
+:ATTREND
+*-----------------------------------
+:ATTRNAME=world coordinate
+:ATTRTYPE=SELECT
+:ATTRID=1637
+:ATTREND
+*-----------------------------------
+:ATTRNAME=carrage start y
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1638
+:ATTREND
+*-----------------------------------
+* "length tool" this was 1561
+*-----------------------------------
+:ATTRNAME=length tool
+:ATTRTYPE=SELECT
+:ATTRID=1639
+:ATTREND
+*-----------------------------------
+* "probe correction" this was 1562
+*-----------------------------------
+:ATTRNAME=probe correction
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=1640
+:ATTREND
+*-----------------------------------
+:ATTRNAME=x axis offset
+:ATTRTYPE=SELECT
+:ATTRID=1641
+:ATTREND
+*-----------------------------------
+:ATTRNAME=y axis offset
+:ATTRTYPE=SELECT
+:ATTRID=1642
+:ATTREND
+*-----------------------------------
+:ATTRNAME=z axis offset
+:ATTRTYPE=SELECT
+:ATTRID=1643
+:ATTREND
+*-----------------------------------
+:ATTRNAME=cutoff transfer type
+:ATTRTYPE=SELECT
+:ATTRID=1644
+:ATTREND
+*-----------------------------------
+:ATTRNAME=catcher approach position
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1645
+:ATTREND
+*-----------------------------------
+:ATTRNAME=catcher retract distance
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1646
+:ATTREND
+*-----------------------------------
+:ATTRNAME=catcher clamp position
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1647
+:ATTREND
+*-----------------------------------
+:ATTRNAME=catcher pullout
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1648
+:ATTREND
+*-----------------------------------
+:ATTRNAME=sub x preset
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1649
+:ATTREND
+*-----------------------------------
+:ATTRNAME=sub z preset
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1650
+:ATTREND
+*-----------------------------------
+:ATTRNAME=sub u preset
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1651
+:ATTREND
+*-----------------------------------
+:ATTRNAME=sub w preset
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1652
+:ATTREND
+*-----------------------------------
+:ATTRNAME=rem1
+:ATTRTYPE=VALUE
+:ATTRVTYPE=CHARACTER
+:ATTRID=1653
+:ATTREND
+*-----------------------------------
+:ATTRNAME=rem2
+:ATTRTYPE=VALUE
+:ATTRVTYPE=CHARACTER
+:ATTRID=1654
+:ATTREND
+*-----------------------------------
+:ATTRNAME=rem3
+:ATTRTYPE=VALUE
+:ATTRVTYPE=CHARACTER
+:ATTRID=1655
+:ATTREND
+*-----------------------------------
+:ATTRNAME=rem4
+:ATTRTYPE=VALUE
+:ATTRVTYPE=CHARACTER
+:ATTRID=1656
+:ATTREND
+*-----------------------------------
+:ATTRNAME=rem5
+:ATTRTYPE=VALUE
+:ATTRVTYPE=CHARACTER
+:ATTRID=1657
+:ATTREND
+*-----------------------------------
+:ATTRNAME=rem6
+:ATTRTYPE=VALUE
+:ATTRVTYPE=CHARACTER
+:ATTRID=1658
+:ATTREND
+*-----------------------------------
+:ATTRNAME=rem7
+:ATTRTYPE=VALUE
+:ATTRVTYPE=CHARACTER
+:ATTRID=1659
+:ATTREND
+*-----------------------------------
+:ATTRNAME=rem8
+:ATTRTYPE=VALUE
+:ATTRVTYPE=CHARACTER
+:ATTRID=1660
+:ATTREND
+*-----------------------------------
+:ATTRNAME=rem9
+:ATTRTYPE=VALUE
+:ATTRVTYPE=CHARACTER
+:ATTRID=1661
+:ATTREND
+*-----------------------------------
+:ATTRNAME=rem10
+:ATTRTYPE=VALUE
+:ATTRVTYPE=CHARACTER
+:ATTRID=1662
+:ATTREND
+*-----------------------------------
+:ATTRNAME=rem11
+:ATTRTYPE=VALUE
+:ATTRVTYPE=CHARACTER
+:ATTRID=1663
+:ATTREND
+*-----------------------------------
+:ATTRNAME=rem12
+:ATTRTYPE=VALUE
+:ATTRVTYPE=CHARACTER
+:ATTRID=1664
+:ATTREND
+*-----------------------------------
+:ATTRNAME=rem13
+:ATTRTYPE=VALUE
+:ATTRVTYPE=CHARACTER
+:ATTRID=1665
+:ATTREND
+*-----------------------------------
+:ATTRNAME=rem14
+:ATTRTYPE=VALUE
+:ATTRVTYPE=CHARACTER
+:ATTRID=1666
+:ATTREND
+*-----------------------------------
+:ATTRNAME=rem15
+:ATTRTYPE=VALUE
+:ATTRVTYPE=CHARACTER
+:ATTRID=1667
+:ATTREND
+*-----------------------------------
+:ATTRNAME=rem16
+:ATTRTYPE=VALUE
+:ATTRVTYPE=CHARACTER
+:ATTRID=1668
+:ATTREND
+*-----------------------------------
+:ATTRNAME=rem17
+:ATTRTYPE=VALUE
+:ATTRVTYPE=CHARACTER
+:ATTRID=1669
+:ATTREND
+*-----------------------------------
+:ATTRNAME=rem18
+:ATTRTYPE=VALUE
+:ATTRVTYPE=CHARACTER
+:ATTRID=1670
+:ATTREND
+*-----------------------------------
+:ATTRNAME=rem19
+:ATTRTYPE=VALUE
+:ATTRVTYPE=CHARACTER
+:ATTRID=1671
+:ATTREND
+*-----------------------------------
+:ATTRNAME=rem20
+:ATTRTYPE=VALUE
+:ATTRVTYPE=CHARACTER
+:ATTRID=1672
+:ATTREND
+*-----------------------------------
+:ATTRNAME=rem21
+:ATTRTYPE=VALUE
+:ATTRVTYPE=CHARACTER
+:ATTRID=1673
+:ATTREND
+*-----------------------------------
+:ATTRNAME=rem22
+:ATTRTYPE=VALUE
+:ATTRVTYPE=CHARACTER
+:ATTRID=1674
+:ATTREND
+*-----------------------------------
+:ATTRNAME=rem23
+:ATTRTYPE=VALUE
+:ATTRVTYPE=CHARACTER
+:ATTRID=1675
+:ATTREND
+*-----------------------------------
+:ATTRNAME=rem24
+:ATTRTYPE=VALUE
+:ATTRVTYPE=CHARACTER
+:ATTRID=1676
+:ATTREND
+*-----------------------------------
+:ATTRNAME=rem25
+:ATTRTYPE=VALUE
+:ATTRVTYPE=CHARACTER
+:ATTRID=1677
+:ATTREND
+*-----------------------------------
+:ATTRNAME=preposition best solution
+:ATTRTYPE=SELECT
+:ATTRID=1678
+:ATTREND
+*-----------------------------------
+:ATTRNAME=auto rotate type
+:ATTRTYPE=SELECT
+:ATTRID=1679
+:ATTREND
+*-----------------------------------
+:ATTRNAME=CAMWORKS VERSION
+:ATTRTYPE=DESCRIPTOR
+:ATTRVTYPE=CHARACTER
+:ATTRID=1680
+:ATTREND
+*-----------------------------------
+:ATTRNAME=VERSION DATE
+:ATTRTYPE=DESCRIPTOR
+:ATTRVTYPE=CHARACTER
+:ATTRID=1681
+:ATTREND
+************************************
+* This attribute cannot be used because we have a system variable named this.
+*-----------------------------------
+*:ATTRNAME=dist between chucks
+*:ATTRTYPE=VALUE
+*:ATTRVTYPE=DECIMAL
+*:ATTRID=1682
+*:ATTREND
+*-----------------------------------
+:ATTRNAME=dec var 9
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1683
+:ATTREND
+*-----------------------------------
+:ATTRNAME=dec var 10
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1684
+:ATTREND
+*-----------------------------------
+:ATTRNAME=dec var 11
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1685
+:ATTREND
+*-----------------------------------
+:ATTRNAME=dec var 12
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1686
+:ATTREND
+*-----------------------------------
+:ATTRNAME=dec var 13
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1687
+:ATTREND
+*-----------------------------------
+:ATTRNAME=dec var 14
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1688
+:ATTREND
+*-----------------------------------
+:ATTRNAME=dec var 15
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1689
+:ATTREND
+*-----------------------------------
+:ATTRNAME=dec var 16
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1690
+:ATTREND
+*-----------------------------------
+:ATTRNAME=dec var 17
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1691
+:ATTREND
+*-----------------------------------
+:ATTRNAME=dec var 18
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1692
+:ATTREND
+*-----------------------------------
+:ATTRNAME=dec var 19
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1693
+:ATTREND
+*-----------------------------------
+:ATTRNAME=dec var 20
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1694
+:ATTREND
+*-----------------------------------
+:ATTRNAME=dec var 21
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1695
+:ATTREND
+*-----------------------------------
+:ATTRNAME=dec var 22
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1696
+:ATTREND
+*-----------------------------------
+:ATTRNAME=dec var 23
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1697
+:ATTREND
+*-----------------------------------
+:ATTRNAME=dec var 24
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1698
+:ATTREND
+*-----------------------------------
+:ATTRNAME=dec var 25
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1699
+:ATTREND
+*-----------------------------------
+:ATTRNAME=dec var 26
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1700
+:ATTREND
+*-----------------------------------
+:ATTRNAME=pole handling
+:ATTRTYPE=SELECT
+:ATTRID=1701
+:ATTREND
+*-----------------------------------
+:ATTRNAME=auto pole angle
+:ATTRTYPE=SELECT
+:ATTRID=1702
+:ATTREND
+*-----------------------------------
+:ATTRNAME=interpolation type
+:ATTRTYPE=SELECT
+:ATTRID=1703
+:ATTREND
+*-----------------------------------
+:ATTRNAME=retract and rewind
+:ATTRTYPE=SELECT
+:ATTRID=1704
+:ATTREND
+*-----------------------------------
+:ATTRNAME=rewind angle
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1705
+:ATTREND
+*-----------------------------------
+:ATTRNAME=sign angle a
+:ATTRTYPE=SELECT
+:ATTRID=1706
+:ATTREND
+*-----------------------------------
+:ATTRNAME=holder length
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1707
+:ATTREND
+*-----------------------------------
+:ATTRNAME=LIBRARY VERSION
+:ATTRTYPE=DESCRIPTOR
+:ATTRVTYPE=CHARACTER
+:ATTRID=1708
+:ATTREND
+*-----------------------------------
+:ATTRNAME=LIBRARY SUBVERSION
+:ATTRTYPE=DESCRIPTOR
+:ATTRVTYPE=CHARACTER
+:ATTRID=1709
+:ATTREND
+*-----------------------------------
+:ATTRNAME=SYS LICENSE
+:ATTRTYPE=DESCRIPTOR
+:ATTRVTYPE=CHARACTER
+:ATTRID=1710
+:ATTREND
+*-----------------------------------
+:ATTRNAME=SYS EXPIRATION DATE
+:ATTRTYPE=DESCRIPTOR
+:ATTRVTYPE=CHARACTER
+:ATTRID=1711
+:ATTREND
+*-----------------------------------
+:ATTRNAME=fpr
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1712
+:ATTREND
+*-----------------------------------
+:ATTRNAME=mdep
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1713
+:ATTREND
+*-----------------------------------
+:ATTRNAME=dis1
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1714
+:ATTREND
+*-----------------------------------
+:ATTRNAME=sdac
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1715
+:ATTREND
+*-----------------------------------
+:ATTRNAME=sdir
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1716
+:ATTREND
+*-----------------------------------
+:ATTRNAME=rpa
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1717
+:ATTREND
+*-----------------------------------
+:ATTRNAME=rear2 x preset
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1718
+:ATTREND
+*-----------------------------------
+:ATTRNAME=rear2 z preset
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1719
+:ATTREND
+*-----------------------------------
+:ATTRNAME=front2 u preset
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1720
+:ATTREND
+*-----------------------------------
+:ATTRNAME=front2 w preset
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1721
+:ATTREND
+*-----------------------------------
+:ATTRNAME=rear2 sub x preset
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1722
+:ATTREND
+*-----------------------------------
+:ATTRNAME=rear2 sub z preset
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1723
+:ATTREND
+*-----------------------------------
+:ATTRNAME=front2 sub u preset
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1724
+:ATTREND
+*-----------------------------------
+:ATTRNAME=front2 sub w preset
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=1725
+:ATTREND
+*-----------------------------------
+:ATTRNAME=machining type
+:ATTRTYPE=SELECT
+:ATTRID=1726
+:ATTREND
+*-----------------------------------
+:ATTRNAME=ORIGINAL POST NAME
+:ATTRTYPE=DESCRIPTOR
+:ATTRVTYPE=CHARACTER
+:ATTRID=1727
+:ATTREND
+*-----------------------------------
+:OPERID=Bar Puller
+:ATTRID=3000
+:ATTREND
+*-----------------------------------
+:OPERID=Tailstock
+:ATTRID=3001
+:ATTREND
+*-----------------------------------
+:OPERID=Bar Feeder
+:ATTRID=3002
+:ATTREND
+*-----------------------------------
+:OPERID=Single Probe
+:ATTRID=3003
+:ATTREND
+*-----------------------------------
+:OPERID=Double Probe
+:ATTRID=3004
+:ATTREND
+*-----------------------------------
+:OPERID=Probe Pocket
+:ATTRID=3005
+:ATTREND
+*-----------------------------------
+:OPERID=Probe Inside Outside
+:ATTRID=3006
+:ATTREND
+*-----------------------------------
+:OPERID=Bar Cutoff
+:ATTRID=3007
+:ATTREND
+*-----------------------------------
+:OPERID=Pull Away
+:ATTRID=3008
+:ATTREND
+*-----------------------------------
+:OPERID=Main To Sub
+:ATTRID=3009
+:ATTREND
+*-----------------------------------
+:OPERID=Bar Workshift
+:ATTRID=3010
+:ATTREND
+*-----------------------------------
+:ATTRNAME=machine path type
+:ATTRTYPE=SELECT
+:ATTRID=3011
+:ATTREND
+*-----------------------------------
+:OPERID=End Working Turret
+:ATTRID=3012
+:ATTREND
+*-----------------------------------
+:OPERID=Call End Working Turret
+:ATTRID=3013
+:ATTREND
+*-----------------------------------
+:OPERID=Part Catcher
+:ATTRID=3014
+:ATTREND
+*-----------------------------------
+:OPERID=Call Subroutine
+:ATTRID=3015
+:ATTREND
+*-----------------------------------
+:OPERID=SteadyRest
+:ATTRID=3016
+:ATTREND
+*-----------------------------------
+:OPERID=Coolant Output Type
+:ATTRID=3017
+:ATTREND
+*-----------------------------------
+:OPERID=Load Offsets
+:ATTRID=3018
+:ATTREND
+*-----------------------------------
+:OPERID=Probe Bore Center
+:ATTRID=3019
+:ATTREND
+*-----------------------------------
+:OPERID=Probe Bore Diameter
+:ATTRID=3020
+:ATTREND
+*-----------------------------------
+:OPERID=Probe Peg Center
+:ATTRID=3021
+:ATTREND
+*-----------------------------------
+:OPERID=Probe Peg Diameter
+:ATTRID=3022
+:ATTREND
+*-----------------------------------
+:OPERID=Probe Approach
+:ATTRID=3023
+:ATTREND
+*-----------------------------------
+:OPERID=Three Way Probe
+:ATTRID=3024
+:ATTREND
+*-----------------------------------
+:OPERID=Four Way Probe
+:ATTRID=3025
+:ATTREND
+*-----------------------------------
+:OPERID=Calibrate Probe
+:ATTRID=3026
+:ATTREND
+*-----------------------------------
+:OPERID=Length Comp Probe
+:ATTRID=3027
+:ATTREND
+*-----------------------------------
+:OPERID=Post Program Stop
+:ATTRID=3028
+:ATTREND
+*-----------------------------------
+:OPERID=Start Head1 Head2
+:ATTRID=3029
+:ATTREND
+*-----------------------------------
+:OPERID=Force Toolchange
+:ATTRID=3030
+:ATTREND
+*-----------------------------------
+:OPERID=Output Strings
+:ATTRID=3031
+:ATTREND
+*-----------------------------------
+:OPERID=Output Tolerance
+:ATTRID=3032
+:ATTREND
+*-----------------------------------
+:OPERID=No Toolchange
+:ATTRID=3033
+:ATTREND
+*-----------------------------------
+:OPERID=Comment
+:ATTRID=3034
+:ATTREND
+*-----------------------------------
+:OPERID=Cancel Offsets
+:ATTRID=3035
+:ATTREND
+*-----------------------------------
+:OPERID=Load Spindle
+:ATTRID=3036
+:ATTREND
+*-----------------------------------
+:OPERID=Load Tail Stock
+:ATTRID=3037
+:ATTREND
+*-----------------------------------
+:OPERID=Start Program
+:ATTRID=3038
+:ATTREND
+*-----------------------------------
+:OPERID=Last Operation
+:ATTRID=3039
+:ATTREND
+*-----------------------------------
+:OPERID=Chuck Clamp
+:ATTRID=3040
+:ATTREND
+*-----------------------------------
+:OPERID=Chk Pressure
+:ATTRID=3041
+:ATTREND
+*-----------------------------------
+:OPERID=Machine Door
+:ATTRID=3042
+:ATTREND
+*-----------------------------------
+:OPERID=Bar Grip
+:ATTRID=3043
+:ATTREND
+*-----------------------------------
+:OPERID=Surface Measurement
+:ATTRID=3044
+:ATTREND
+*-----------------------------------
+:OPERID=Web Pocket Measurement
+:ATTRID=3045
+:ATTREND
+*-----------------------------------
+:OPERID=A axis Measurement
+:ATTRID=3046
+:ATTREND
+*-----------------------------------
+:OPERID=Bore Boss PCD Measurement
+:ATTRID=3047
+:ATTREND
+*-----------------------------------
+:OPERID=Stock Allowance
+:ATTRID=3048
+:ATTREND
+*-----------------------------------
+:OPERID=Channel 1 Loading
+:ATTRID=3049
+:ATTREND
+*-----------------------------------
+:OPERID=Channel 2 Loading
+:ATTRID=3050
+:ATTREND
+*-----------------------------------
+:OPERID=Channel 1 Unloading
+:ATTRID=3051
+:ATTREND
+*-----------------------------------
+:OPERID=Channel 2 Unloading
+:ATTRID=3052
+:ATTREND
+*-----------------------------------
+:OPERID=Quill
+:ATTRID=3053
+:ATTREND
+*-----------------------------------
+:OPERID=Probe Suction
+:ATTRID=3054
+:ATTREND
+*-----------------------------------
+:OPERID=Probe Discharge
+:ATTRID=3055
+:ATTREND
+*-----------------------------------
+:OPERID=Probe Drain Pipe
+:ATTRID=3056
+:ATTREND
+*-----------------------------------
+:OPERID=Boring Head Location
+:ATTRID=3057
+:ATTREND
+*-----------------------------------
+:OPERID=Large Boring Bar Call
+:ATTRID=3058
+:ATTREND
+*-----------------------------------
+:OPERID=Large Boring Bar Away
+:ATTRID=3059
+:ATTREND
+*------------------------------------------------------------
+:OPERID=Work Loader
+:ATTRID=3060
+:ATTREND
+*-----------------------------------
+:ATTRNAME=degression value
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=7600
+:ATTREND
+*-----------------------------------
+:ATTRNAME=retract amount
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=7601
+:ATTREND
+*-----------------------------------
+:OPERID=Rotary Table
+:ATTRID=7602
+:ATTREND
+*-----------------------------------
+:ATTRNAME=rotary axis
+:ATTRTYPE=SELECT
+:ATTRID=7603
+:ATTREND
+*-----------------------------------
+:ATTRNAME=rotary angle
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=7604
+:ATTREND
+*-----------------------------------
+:ATTRNAME=thread num cycles
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=7605
+:ATTREND
+*-----------------------------------
+:ATTRNAME=thread cycle type
+:ATTRTYPE=SELECT
+:ATTRID=7606
+:ATTREND
+*-----------------------------------
+:ATTRNAME=l program number
+:ATTRTYPE=VALUE
+:ATTRVTYPE=CHARACTER
+:ATTRID=7607
+:ATTREND
+*-----------------------------------
+:ATTRNAME=init change pallet
+:ATTRTYPE=SELECT
+:ATTRID=8000
+:ATTREND
+*-----------------------------------
+*-----------------------------------
+:ATTRNAME=new pierce routine
+:ATTRTYPE=VALUE
+:ATTRID=9001
+:ATTRVTYPE=CHARACTER
+:ATTREND
+*-----------------------------------RAL
+:ATTRNAME=g54 59 value
+:ATTRTYPE=SELECT
+:ATTRID=9004
+:ATTREND
+*-----------------------------------
+:ATTRNAME=high accuracy
+:ATTRTYPE=SELECT
+:ATTRID=9395
+:ATTREND
+*-----------------------------------
+:ATTRNAME=polar coords
+:ATTRTYPE=SELECT
+:ATTRID=9396
+:ATTREND
+*-----------------------------------
+:ATTRNAME=cr
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=10501
+:ATTREND
+*-----------------------------------
+:ATTRNAME=parts catcher in
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=10502
+:ATTREND
+*-----------------------------------
+:ATTRNAME=parts catcher out
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=10503
+:ATTREND
+*-----------------------------------
+:ATTRNAME=percentage reduction
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=10513
+:ATTREND
+*-----------------------------------
+:ATTRNAME=pecks per break
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=10514
+:ATTREND
+*-----------------------------------
+*-----------------------------------
+*:ATTRNAME=ntpn
+*:ATTRTYPE=VALUE
+*:ATTRVTYPE=CHARACTER
+*:ATTRID=12000
+*:ATTREND
+* Used by CT00919
+:ATTRNAME=slave head 16
+:ATTRTYPE=SELECT
+:ATTRID=12257
+:ATTREND
+*-----------------------------------
+* Used by CT00919
+:ATTRNAME=table control
+:ATTRTYPE=SELECT
+:ATTRID=12258
+:ATTREND
+*-----------------------------------
+:ATTRNAME=macro start seq
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=12259
+:ATTREND
+*-----------------------------------
+* Used by CT00960
+:ATTRNAME=init resonator size
+:ATTRTYPE=SELECT
+:ATTRID=12260
+:ATTREND
+*-----------------------------------
+* Used by CT00960
+:ATTRNAME=resonator size
+:ATTRTYPE=SELECT
+:ATTRID=12261
+:ATTREND
+*-----------------------------------
+* Used by CT00960
+*:ATTRNAME=sheet load techtable
+*:ATTRTYPE=VALUE
+*:ATTRVTYPE=INTEGER
+*:ATTRID=12261
+*:ATTREND
+*-----------------------------------
+* Used by CT00960
+*:ATTRNAME=sheet techtable
+*:ATTRTYPE=VALUE
+*:ATTRVTYPE=INTEGER
+*:ATTRID=12262
+*:ATTREND
+*-----------------------------------
+* Used by CT00960
+*:ATTRNAME=loading device
+*:ATTRTYPE=VALUE
+*:ATTRVTYPE=INTEGER
+*:ATTRID=12263
+*:ATTREND
+*-----------------------------------
+* Used by CT00960
+*:ATTRNAME=sheet stop
+*:ATTRTYPE=VALUE
+*:ATTRVTYPE=INTEGER
+*:ATTRID=12264
+*:ATTREND
+*-----------------------------------
+* Used by CT00960
+*:ATTRNAME=measure sheet position
+*:ATTRTYPE=VALUE
+*:ATTRVTYPE=INTEGER
+*:ATTRID=12265
+*:ATTREND
+*-----------------------------------
+* Used by CT00960
+*:ATTRNAME=calibration
+*:ATTRTYPE=VALUE
+*:ATTRVTYPE=INTEGER
+*:ATTRID=12266
+*:ATTREND
+*-----------------------------------
+* Used by CT00960
+*:ATTRNAME=type pallet change
+*:ATTRTYPE=VALUE
+*:ATTRVTYPE=INTEGER
+*:ATTRID=12267
+*:ATTREND
+*-----------------------------------
+* Used by ModernEngineering, rhombus, GrandValley posts
+:OPERID=Safe Indexing Retract
+:ATTRID=12268
+:ATTREND
+*-----------------------------------
+* Used by CT00983
+:ATTRNAME=laser tech table
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=12269
+:ATTREND
+*-----------------------------------
+* Used by NT00017/Colmac posts
+:ATTRNAME=setup info
+:ATTRTYPE=VALUE
+:ATTRVTYPE=CHARACTER
+:ATTRID=12270
+:ATTREND
+*-----------------------------------
+* Used by CT01091 to position indexer in a liveC machine
+:OPERID=Position Indexer
+:ATTRID=12271
+:ATTREND
+*-----------------------------------
+* Used by CT1065 Rainier Fulcrum punch
+:ATTRNAME=trap door control
+:ATTRTYPE=LIST
+:ATTRID=12272
+:ATTREND
+*-----------------------------------
+* Used by CT1065 Rainier Fulcrum punch
+:ATTRNAME=unload pos current part
+:ATTRTYPE=SELECT
+:ATTRID=12273
+:ATTREND
+*-----------------------------------
+* Used by CT1065 Rainier Fulcrum punch
+:ATTRNAME=unload pos next part
+:ATTRTYPE=SELECT
+:ATTRID=12274
+:ATTREND
+*-----------------------------------
+* Used by CT1065 Rainier Fulcrum punch
+:ATTRNAME=check hole
+:ATTRTYPE=SELECT
+:ATTRID=12275
+:ATTREND
+*-----------------------------------
+* Used by CT01150
+:OPERID=Chip Conveyor
+:ATTRID=12276
+:ATTREND
+*-----------------------------------
+:ATTRNAME=conveyor control
+:ATTRTYPE=SELECT
+:ATTRID=12277
+:ATTREND
+*-----------------------------------
+* Used by uct1201 to indicate a head change within the program
+:OPERID=Head Change
+:ATTRID=12278
+:ATTREND
+*-----------------------------------
+* Used by CT01205
+*-----------------------------------
+:OPERID=coolant flush
+:ATTRID=12279
+:ATTREND
+*-----------------------------------
+:ATTRNAME=flush dwell
+:ATTRTYPE=SELECT
+:ATTRID=12280
+:ATTREND
+*-----------------------------------
+:ATTRNAME=sub air blast
+:ATTRTYPE=SELECT
+:ATTRID=12281
+:ATTREND
+*-----------------------------------
+:ATTRNAME=sub clamping mode
+:ATTRTYPE=SELECT
+:ATTRID=12282
+:ATTREND
+*-----------------------------------
+*:ATTRNAME=part position locator
+*:ATTRTYPE=SELECT
+*:ATTRID=12283
+*:ATTREND
+*-----------------------------------
+* Used by CT01242, uct1325 to indicate a machine move to front
+:OPERID=Machine Move
+:ATTRID=12284
+:ATTREND
+*-----------------------------------
+* Used by CT01242 to indicate a manual tool change
+:OPERID=Manual Tool Change
+:ATTRID=12285
+:ATTREND
+*-----------------------------------
+* Used by UCT1281
+:OPERID=Tool Breakage Macro
+:ATTRID=12286
+:ATTREND
+*-----------------------------------
+* Used by UCT1267
+:OPERID=Part Position Locator
+:ATTRID=12287
+:ATTREND
+*-----------------------------------
+* Used by UCT1267
+:OPERID=Park Tailstock
+:ATTRID=12288
+:ATTREND
+*-----------------------------------
+* Used by UCT1267
+:OPERID=Pickup Tailstock
+:ATTRID=12289
+:ATTREND
+*-----------------------------------
+:OPERID=Post Pallet Verify
+:ATTRID=12290
+:ATTREND
+*-----------------------------------
+:OPERID=Setup Information
+:ATTRID=12291
+:ATTREND
+*-----------------------------------
+* Used by CT01217
+:OPERID=Chip Auger
+:ATTRID=12292
+:ATTREND
+*-----------------------------------
+* Used by CT01217
+:OPERID=Machine Forward
+:ATTRID=12293
+:ATTREND
+*-----------------------------------
+* Used by uct0952 to load en empty station
+:OPERID=blank station
+:ATTRID=12294
+:ATTREND
+*-----------------------------------
+* Used by CT01320
+:ATTRNAME=use touch probe
+:ATTRTYPE=SELECT
+:ATTRID=12295
+:ATTREND
+*-----------------------------------
+:ATTRNAME=use z position
+:ATTRTYPE=SELECT
+:ATTRID=12296
+:ATTREND
+*-----------------------------------
+:ATTRNAME=tool change with moo
+:ATTRTYPE=SELECT
+:ATTRID=12297
+:ATTREND
+*-----------------------------------
+:ATTRNAME=poss
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=12298
+:ATTREND
+*-----------------------------------
+* Used by uct1325 to move xy
+:OPERID=XY Motion
+:ATTRID=12299
+:ATTREND
+*-----------------------------------
+* Used by uct1325 to delay G43
+:OPERID=Delay G43
+:ATTRID=12300
+:ATTREND
+*-----------------------------------
+:OPERID=Coolant On Off
+:ATTRID=12301
+:ATTREND
+*-----------------------------------
+* Used by CT01266 for ProbeBoreDiameter operation
+:ATTRNAME=probe tool
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=12302
+:ATTREND
+*-----------------------------------
+* Used by CT01266 for ProbeBoreDiameter operation
+:ATTRNAME=z probe position
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=12303
+:ATTREND
+*-----------------------------------
+:OPERID=Probe Diameter
+:ATTRID=12304
+:ATTREND
+*-----------------------------------
+* 12205, 12306 are used by uct1370 for cycle90
+:ATTRNAME=inner diameter
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=12305
+:ATTREND
+*-----------------------------------
+:ATTRNAME=outer diameter
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=12306
+:ATTREND
+*-----------------------------------
+:OPERID=Suspend Program
+:ATTRID=12307
+:ATTREND
+*-----------------------------------
+* Used by CT01267 to set a new work coordinate offset number
+:OPERID=New Work Coord
+:ATTRID=12308
+:ATTREND
+*-----------------------------------
+* Used by UCT1385
+:ATTRNAME=override max rpm
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=12309
+:ATTREND
+*-----------------------------------
+:ATTRNAME=override speed
+:ATTRTYPE=SELECT
+:ATTRID=12310
+:ATTREND
+*-----------------------------------
+:OPERID=Chuck Pressure Change
+:ATTRID=12311
+:ATTREND
+*-----------------------------------
+:ATTRNAME=init chuck pressure
+:ATTRTYPE=SELECT
+:ATTRID=12312
+:ATTREND
+*-----------------------------------
+:ATTRNAME=dwelltop
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=12313
+:ATTREND
+*-------------------------------
+:ATTRNAME=spot drl cycle
+:ATTRTYPE=SELECT
+:ATTRID=12314
+:ATTREND
+*-----------------------------------
+:OPERID=Change Channel
+:ATTRID=12315
+:ATTREND
+*-----------------------------------
+:OPERID=One TPI Tool Touch Off
+:ATTRID=12316
+:ATTREND
+*-----------------------------------
+:OPERID=Two TPI Tool Touch Off
+:ATTRID=12317
+:ATTREND
+*-----------------------------------
+:OPERID=Hob Operation
+:ATTRID=12318
+:ATTREND
+*-----------------------------------
+:ATTRNAME=Turret Selection
+:ATTRID=12319
+:ATTREND
+*-----------------------------------
+* Used to Select Canned Thread Lead/ Chamfer (09-12-11)
+:ATTRNAME=thread lead chamfer
+:ATTRTYPE=SELECT
+:ATTRID=12320
+:ATTREND
+*-----------------------------------
+* Used to specify thread insert tip angle (included angle) (09-12-11)
+:ATTRNAME=thread tip angle
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=12321
+:ATTREND
+*-----------------------------------
+:ATTRNAME=part number2
+:ATTRTYPE=VALUE
+:ATTRVTYPE=CHARACTER
+:ATTRID=12322
+:ATTREND
+*-----------------------------------
+:ATTRNAME=part number3
+:ATTRTYPE=VALUE
+:ATTRVTYPE=CHARACTER
+:ATTRID=12323
+:ATTREND
+*-----------------------------------
+:ATTRNAME=part number4
+:ATTRTYPE=VALUE
+:ATTRVTYPE=CHARACTER
+:ATTRID=12324
+:ATTREND
+*-----------------------------------
+:ATTRNAME=part number5
+:ATTRTYPE=VALUE
+:ATTRVTYPE=CHARACTER
+:ATTRID=12325
+:ATTREND
+*-----------------------------------
+:ATTRNAME=part number6
+:ATTRTYPE=VALUE
+:ATTRVTYPE=CHARACTER
+:ATTRID=12326
+:ATTREND
+*-----------------------------------
+:ATTRNAME=part number7
+:ATTRTYPE=VALUE
+:ATTRVTYPE=CHARACTER
+:ATTRID=12327
+:ATTREND
+*-----------------------------------
+:ATTRNAME=part number8
+:ATTRTYPE=VALUE
+:ATTRVTYPE=CHARACTER
+:ATTRID=12328
+:ATTREND
+*-----------------------------------
+:ATTRNAME=part number9
+:ATTRTYPE=VALUE
+:ATTRVTYPE=CHARACTER
+:ATTRID=12329
+:ATTREND
+*-----------------------------------
+:ATTRNAME=part number10
+:ATTRTYPE=VALUE
+:ATTRVTYPE=CHARACTER
+:ATTRID=12330
+:ATTREND
+*-----------------------------------
+:ATTRNAME=part number11
+:ATTRTYPE=VALUE
+:ATTRVTYPE=CHARACTER
+:ATTRID=12331
+:ATTREND
+*-----------------------------------
+:ATTRNAME=part number12
+:ATTRTYPE=VALUE
+:ATTRVTYPE=CHARACTER
+:ATTRID=12332
+:ATTREND
+*-----------------------------------
+:ATTRNAME=part number13
+:ATTRTYPE=VALUE
+:ATTRVTYPE=CHARACTER
+:ATTRID=12333
+:ATTREND
+*-----------------------------------
+:ATTRNAME=part number14
+:ATTRTYPE=VALUE
+:ATTRVTYPE=CHARACTER
+:ATTRID=12334
+:ATTREND
+*-----------------------------------
+:ATTRNAME=part number15
+:ATTRTYPE=VALUE
+:ATTRVTYPE=CHARACTER
+:ATTRID=12335
+:ATTREND
+*-----------------------------------
+:ATTRNAME=ipm ipr
+:ATTRTYPE=SELECT
+:ATTRID=12336
+:ATTREND
+*-----------------------------------
+:OPERID=Include External File
+:ATTRID=12337
+:ATTREND
+*-----------------------------------
+* Sub spindle transfer options 1 (06-15-12)
+:ATTRNAME=sub trans option1
+:ATTRTYPE=SELECT
+:ATTRID=12338
+:ATTREND
+*-----------------------------------
+* Sub spindle transfer options 2 (06-15-12)
+:ATTRNAME=sub trans option2
+:ATTRTYPE=SELECT
+:ATTRID=12339
+:ATTREND
+*-----------------------------------
+* Part Numbers for setup sheet of CT01450
+:ATTRNAME=part number1
+:ATTRTYPE=VALUE
+:ATTRVTYPE=CHARACTER
+:ATTRID=12340
+:ATTREND
+*-----------------------------------
+:ATTRNAME=pull feed
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=12341
+:ATTREND
+*-----------------------------------
+:ATTRNAME=pull to value
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=12342
+:ATTREND
+*-----------------------------------
+:ATTRNAME=using mainspindle
+:ATTRTYPE=SELECT
+:ATTRID=12343
+:ATTREND
+*-----------------------------------
+* Used by CT00960, CMS1237 this was 12261 in some procam laser posts.
+*:ATTRNAME=sheet load techtable
+*:ATTRTYPE=VALUE
+*:ATTRVTYPE=INTEGER
+*:ATTRID=12344
+*:ATTREND
+*-----------------------------------
+* Used by Siemens post for peck tapping
+:ATTRNAME=peck tapping
+:ATTRTYPE=SELECT
+:ATTRID=12345
+:ATTREND
+*------------------------------------------------------------
+* Used by Siemens post for peck tapping Chip type
+:ATTRNAME=peck tapping chip
+:ATTRTYPE=SELECT
+:ATTRID=12346
+:ATTREND
+*------------------------------------------------------------
+* Used by Siemens post for peck tapping peck depth
+:ATTRNAME=peck tap amount
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=12347
+:ATTREND
+*------------------------------------------------------------
+* Used by Siemens post for peck tapping per peck retract amount
+:ATTRNAME=peck tap retract
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=12348
+:ATTREND
+*------------------------------------------------------------
+* Used by Cp01678 to set the G52 line
+:OPERID=Work Shift
+:ATTRID=12349
+:ATTREND
+*-----------------------------------
+* Used by Cp01631 Grove Gear--
+:OPERID=Pickup Dead Center
+:ATTRID=12350
+:ATTREND
+*-----------------------------------
+* Used by Cp01631 Grove Gear--
+:OPERID=Park Dead Center
+:ATTRID=12351
+:ATTREND
+*-----------------------------------
+* Used by Cp01672 Joy Global--
+:OPERID=Calibrate Tool Probe
+:ATTRID=12352
+:ATTREND
+*-----------------------------------
+:ATTRNAME=init wave setting
+:ATTRTYPE=SELECT
+:ATTRID=12500
+:ATTREND
+*-----------------------------------
+:ATTRNAME=wave setting
+:ATTRTYPE=SELECT
+:ATTRID=12501
+:ATTREND
+*-----------------------------------
+:ATTRNAME=structure height
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=12502
+:ATTREND
+*-----------------------------------
+:ATTRNAME=webb thickness
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=12503
+:ATTREND
+*-----------------------------------
+:ATTRNAME=company name
+:ATTRTYPE=VALUE
+:ATTRVTYPE=CHARACTER
+:ATTRID=12504
+:ATTREND
+*-----------------------------------
+:ATTRNAME=operation number
+:ATTRTYPE=VALUE
+:ATTRVTYPE=CHARACTER
+:ATTRID=12505
+:ATTREND
+*-----------------------------------
+:ATTRNAME=programer name
+:ATTRTYPE=VALUE
+:ATTRVTYPE=CHARACTER
+:ATTRID=12506
+:ATTREND
+*-----------------------------------
+:ATTRNAME=special tools
+:ATTRTYPE=SELECT
+:ATTRID=12507
+:ATTREND
+*-----------------------------------
+:ATTRNAME=fixture number
+:ATTRTYPE=VALUE
+:ATTRVTYPE=CHARACTER
+:ATTRID=12508
+:ATTREND
+*-----------------------------------
+:ATTRNAME=init d offset reg
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=12509
+:ATTREND
+*-----------------------------------
+:ATTRNAME=sheet thickness
+:ATTRTYPE=SELECT
+:ATTRID=12510
+:ATTREND
+*-----------------------------------
+:ATTRNAME=first mill tool change
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=12511
+:ATTREND
+*-----------------------------------
+:ATTRNAME=sub name
+:ATTRTYPE=VALUE
+:ATTRVTYPE=CHARACTER
+:ATTRID=12512
+:ATTREND
+*-----------------------------------
+:ATTRNAME=a scribe
+:ATTRTYPE=SELECT
+:ATTRID=12513
+:ATTREND
+:ATTRNAME=radius slowdown
+:ATTRTYPE=SELECT
+:ATTRID=12514
+:ATTREND
+*-----------------------------------
+:ATTRNAME=small arc
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=12515
+:ATTREND
+*-----------------------------------
+:ATTRNAME=small arc feedrate
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=12516
+:ATTREND
+*-----------------------------------
+*:ATTRNAME=slowdown into arc
+*:ATTRTYPE=VALUE
+*:ATTRVTYPE=DECIMAL
+*:ATTRID=12517
+*:ATTREND
+*--------------------------
+:ATTRNAME=fourth axis position
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=12518
+:ATTREND
+*--------------------------
+:ATTRNAME=tpi
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=12519
+:ATTREND
+*-----------------------------------
+:ATTRNAME=tapping lathe
+:ATTRTYPE=SELECT
+:ATTRID=12520
+:ATTREND
+*-----------------------------------
+:ATTRNAME=t code
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=12521
+:ATTREND
+*-----------------------------------
+:ATTRNAME=part num
+:ATTRTYPE=VALUE
+:ATTRVTYPE=CHARACTER
+:ATTRID=12522
+:ATTREND
+*-----------------------------------
+:ATTRNAME=head space
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=12523
+:ATTREND
+*-----------------------------------
+:ATTRNAME=tool file
+:ATTRTYPE=VALUE
+:ATTRVTYPE=CHARACTER
+:ATTRID=12524
+:ATTREND
+*-----------------------------------
+:ATTRNAME=use head
+:ATTRTYPE=SELECT
+:ATTRID=12525
+:ATTREND
+*-----------------------------------
+:ATTRNAME=oscillate z
+:ATTRTYPE=SELECT
+:ATTRID=12526
+:ATTREND
+*-----------------------------------
+:ATTRNAME=oscillate amount
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=12527
+:ATTREND
+*-----------------------------------
+:ATTRNAME=spindle number
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=12528
+:ATTREND
+*-----------------------------------
+:ATTRNAME=shutter operation
+:ATTRTYPE=SELECT
+:ATTRID=12529
+:ATTREND
+*-----------------------------------
+:ATTRNAME=sensor distance
+:ATTRTYPE=SELECT
+:ATTRID=12530
+:ATTREND
+*-----------------------------------
+:ATTRNAME=focus height
+:ATTRTYPE=SELECT
+:ATTRID=12531
+:ATTREND
+*-----------------------------------
+:ATTRNAME=program stop torch
+:ATTRTYPE=DISPLAY
+:ATTRID=12532
+:ATTREND
+*-----------------------------------
+:ATTRNAME=use table
+:ATTRTYPE=SELECT
+:ATTRID=12533
+:ATTREND
+*--------------------------
+:ATTRNAME=table position
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=12534
+:ATTREND
+*--------------------------
+:ATTRNAME=rotate position
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=12535
+:ATTREND
+*-----------------------------------
+:ATTRNAME=kevin
+:ATTRTYPE=VALUE
+:ATTRVTYPE=CHARACTER
+:ATTRID=12536
+:ATTREND
+*-----------------------------------
+*:ATTRNAME=operation description
+*:ATTRTYPE=VALUE
+*:ATTRVTYPE=CHARACTER
+*:ATTRID=12537
+*:ATTREND
+*-----------------------------------
+*-----------------------------------
+:ATTRNAME=DUMP BYTE COUNT
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=12538
+:ATTREND
+*-----------------------------------
+:ATTRNAME=INC BYTE COUNT
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=12539
+:ATTREND
+*-----------------------------------
+:ATTRNAME=position 4th axis
+:ATTRTYPE=SELECT
+:ATTRID=12540
+:ATTREND
+*-----------------------------------
+:ATTRNAME=extention diameter
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=12541
+:ATTREND
+*-----------------------------------
+:ATTRNAME=extention set length
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=12542
+:ATTREND
+*-----------------------------------
+:ATTRNAME=tool set length
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=12543
+:ATTREND
+*-----------------------------------
+:ATTRNAME=tool remark
+:ATTRTYPE=VALUE
+:ATTRVTYPE=CHARACTER
+:ATTRID=12544
+:ATTREND
+*-----------------------------------
+:ATTRNAME=vision on off
+:ATTRTYPE=SELECT
+:ATTRID=12545
+:ATTREND
+*-----------------------------------
+* NTPN is the Part number (Post ID) used to Identify the post
+:ATTRNAME=CSIPN
+:ATTRTYPE=DESCRIPTOR
+:ATTRVTYPE=CHARACTER
+:ATTRID=12546
+:ATTREND
+*-----------------------------------
+:ATTRNAME=circumference
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=12547
+:ATTREND
+*-----------------------------------
+* This has been asterisked out because it is a system variable.
+*-----------------------------------
+*:ATTRNAME=stock length
+*:ATTRTYPE=VALUE
+*:ATTRVTYPE=DECIMAL
+*:ATTRID=12548
+*:ATTREND
+*-----------------------------------
+:ATTRNAME=stock dimension
+:ATTRTYPE=VALUE
+:ATTRVTYPE=CHARACTER
+:ATTRID=12549
+:ATTREND
+*-----------------------------------
+:ATTRNAME=canned finish profile
+:ATTRTYPE=SELECT
+:ATTRID=12550
+:ATTREND
+*--------------------------
+:ATTRNAME=finish feed
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=12551
+:ATTREND
+*-----------------------------------
+:ATTRNAME=multiple parts
+:ATTRTYPE=SELECT
+:ATTRID=12552
+:ATTREND
+*-----------------------------------
+:OPERID=Vision On
+:ATTRID=12953
+:ATTREND
+*-----------------------------------
+:ATTRNAME=contour optimization
+:ATTRTYPE=SELECT
+:ATTRID=12554
+:ATTREND
+*--------------------------
+:ATTRNAME=optimization tolerance
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=12555
+:ATTREND
+*-----------------------------------
+:ATTRNAME=contour gain
+:ATTRTYPE=SELECT
+:ATTRID=12556
+:ATTREND
+*-----------------------------------
+:ATTRNAME=csi programmer
+:ATTRTYPE=SELECT
+:ATTRID=12557
+:ATTREND
+*-----------------------------------
+:ATTRNAME=pass count
+:ATTRTYPE=SELECT
+:ATTRID=12558
+:ATTREND
+*-----------------------------------
+:ATTRNAME=multi tooth threading
+:ATTRTYPE=SELECT
+:ATTRID=12559
+:ATTREND
+*-----------------------------------
+:ATTRNAME=adv feed
+:ATTRTYPE=SELECT
+:ATTRID=12560
+:ATTREND
+*-----------------------------------
+:ATTRNAME=canned cycle
+:ATTRTYPE=SELECT
+:ATTRID=12561
+:ATTREND
+*----------------------------------
+:ATTRNAME=webb drilling
+:ATTRTYPE=SELECT
+:ATTRID=12562
+:ATTREND
+*-----------------------------------
+:ATTRNAME=init axis delay
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=12563
+:ATTREND
+*-----------------------------------
+:ATTRNAME=axis delay
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=12564
+:ATTREND
+*-----------------------------------
+:ATTRNAME=axis delay off
+:ATTRTYPE=DISPLAY
+:ATTRID=12565
+:ATTREND
+*-----------------------------------
+:ATTRNAME=init pun delay
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=12566
+:ATTREND
+*-----------------------------------
+:ATTRNAME=pun delay
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=12567
+:ATTREND
+*-----------------------------------
+:ATTRNAME=pun delay off
+:ATTRTYPE=DISPLAY
+:ATTRID=12568
+:ATTREND
+*-----------------------------------
+:ATTRNAME=slow nibble
+:ATTRTYPE=SELECT
+:ATTRID=12569
+:ATTREND
+*-----------------------------------
+:ATTRNAME=home
+:ATTRTYPE=DISPLAY
+:ATTRID=12570
+:ATTREND
+*-----------------------------------
+* Used by CS00970
+:ATTRNAME=torque monitor
+:ATTRTYPE=SELECT
+:ATTRID=12571
+:ATTREND
+*-----------------------------------
+* Used by CS00970
+:ATTRNAME=torque value
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=12572
+:ATTREND
+*-----------------------------------
+* Used by CS00970
+:ATTRNAME=torque limit
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=12573
+:ATTREND
+*-----------------------------------
+* Used by CS00970
+:ATTRNAME=tool check
+:ATTRTYPE=SELECT
+:ATTRID=12574
+:ATTREND
+*-----------------------------------
+:ATTRNAME=set-up info
+:ATTRTYPE=VALUE
+:ATTRVTYPE=CHARACTER
+:ATTRID=12575
+:ATTREND
+*-----------------------------------
+*-----------------------------------
+*:ATTRNAME=Start Sync Group 1
+*:ATTRTYPE=VALUE
+*:ATTRVTYPE=CHARACTER
+*:ATTRID=12576
+*:ATTREND
+*-----------------------------------
+*:ATTRNAME=End Sync Group 1
+*:ATTRTYPE=VALUE
+*:ATTRVTYPE=CHARACTER
+*:ATTRID=12577
+*:ATTREND
+*-----------------------------------
+*----Added by Craig S for-----------
+*-------P&H Mining 03/24/08---------
+*-----------------------------------
+:ATTRNAME=var 1
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=12581
+:ATTREND
+*-----------------------------------
+:ATTRNAME=var 2
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=12582
+:ATTREND
+*-----------------------------------
+:ATTRNAME=var 3
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=12583
+:ATTREND
+*-----------------------------------
+:ATTRNAME=var 4
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=12584
+:ATTREND
+*-----------------------------------
+:ATTRNAME=var 5
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=12585
+:ATTREND
+*-----------------------------------
+:ATTRNAME=var 6
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=12586
+:ATTREND
+*-----------------------------------
+:ATTRNAME=var 7
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=12587
+:ATTREND
+*-----------------------------------
+:ATTRNAME=var 8
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=12588
+:ATTREND
+*-----------------------------------
+:ATTRNAME=var 9
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=12589
+:ATTREND
+*-----------------------------------
+:ATTRNAME=var 10
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=12590
+:ATTREND
+*-----------------------------------
+:ATTRNAME=var 11
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=12591
+:ATTREND
+*-----------------------------------
+:ATTRNAME=var 12
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=12592
+:ATTREND
+*-----------------------------------
+:ATTRNAME=first X probe start dist
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=12593
+:ATTREND
+*-----------------------------------
+:ATTRNAME=first Y probe start dist
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=12594
+:ATTREND
+*-----------------------------------
+:ATTRNAME=second X probe start dist
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=12595
+:ATTREND
+*-----------------------------------
+:ATTRNAME=second Y probe start dist
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=12596
+:ATTREND
+*-----------------------------------
+*---------Post Operation------------
+*-----------------------------------
+:ATTRNAME=Insert Code
+:ATTRID=12597
+:ATTREND
+*-----------------------------------
+:OPERID=Sweep X Zero
+:ATTRID=12598
+:ATTREND
+*-----------------------------------
+:OPERID=Z Axis Adjust
+:ATTRID=12599
+:ATTREND
+*-----------------------------------
+:OPERID=Spindle Attachment
+:ATTRID=12600
+:ATTREND
+*-----------------------------------
+:OPERID=Adjust Ram
+:ATTRID=12601
+:ATTREND
+*-----------------------------------
+:OPERID=Rotate V
+:ATTRID=12602
+:ATTREND
+*-----------------------------------
+:OPERID=Rotate C ABS
+:ATTRID=12603
+:ATTREND
+*-----------------------------------
+:OPERID=Rotate C INC
+:ATTRID=12604
+:ATTREND
+*-----------------------------------
+:OPERID=Rotate A ABS
+:ATTRID=12605
+:ATTREND
+*-----------------------------------
+:OPERID=Rotate A INC
+:ATTRID=12606
+:ATTREND
+*-----------------------------------
+:OPERID=Chuck In
+:ATTRID=12607
+:ATTREND
+*-----------------------------------
+:OPERID=Chuck Out
+:ATTRID=12608
+:ATTREND
+*-----------------------------------
+:OPERID=GO Home
+:ATTRID=12609
+:ATTREND
+*-----------------------------------
+:OPERID=Block Skip
+:ATTRID=12612
+:ATTREND
+*-----------------------------------
+:OPERID=Pallet Change
+:ATTRID=12613
+:ATTREND
+*-----------------------------------
+:OPERID=Rail Position
+:ATTRID=12610
+:ATTREND
+*-----------------------------------
+:OPERID=Load Tool
+:ATTRID=12611
+:ATTREND
+*-----------------------------------
+:OPERID=Tool to Ready Pos
+:ATTRID=12614
+:ATTREND
+*-----------------------------------
+:ATTRNAME=max subspindle rpm
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=12615
+:ATTREND
+*-----------------------------------
+:OPERID=Polish Threads
+:ATTRID=12616
+:ATTREND
+*-----------------------------------
+:OPERID=Spin Table
+:ATTRID=12617
+:ATTREND
+*-----------------------------------
+:ATTRNAME=machine filetage e
+:ATTRTYPE=SELECT
+:ATTRID=13500
+:ATTREND
+*-------
+:ATTRNAME=machine filetage i
+:ATTRTYPE=SELECT
+:ATTRID=13501
+:ATTREND
+*-------
+:ATTRNAME=machine filetage m
+:ATTRTYPE=VALUE
+:ATTRVTYPE=CHARACTER
+:ATTRID=13502
+:ATTREND
+*-------
+:ATTRNAME=nb filet
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=13503
+:ATTREND
+*-----------------------------------
+*-----------------------------------
+:ATTRNAME=shots to be fired
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=17501
+:ATTREND
+*-----------------------------------
+*-----------------------------------
+* Used to select spindle directions -BAS
+:ATTRNAME=spindle directions select
+:ATTRTYPE=SELECT
+:ATTRVTYPE=CHARACTER
+:ATTRID=17502
+:ATTREND
+*-----------------------------------
+* ID 17503 thru ID 17506 were added to help track post source files because end users rename the .ctl & .lng files over years.
+*-----------------------------------
+* POSTREV is the Post Revision Number -BAS
+:ATTRNAME=POSTREV
+:ATTRTYPE=DESCRIPTOR
+:ATTRVTYPE=CHARACTER
+:ATTRID=17503
+:ATTREND
+*-----------------------------------
+* POSTLIB is the Post Library File Name -BAS
+:ATTRNAME=POSTLIB
+:ATTRTYPE=DESCRIPTOR
+:ATTRVTYPE=CHARACTER
+:ATTRID=17504
+:ATTREND
+*-----------------------------------
+* POSTSRC is the Post Source File Name -BAS
+:ATTRNAME=POSTSRC
+:ATTRTYPE=DESCRIPTOR
+:ATTRVTYPE=CHARACTER
+:ATTRID=17505
+:ATTREND
+*-----------------------------------
+* POSTCREATOR is the Post Source File Name -BAS
+:ATTRNAME=POSTCREATOR
+:ATTRTYPE=DESCRIPTOR
+:ATTRVTYPE=CHARACTER
+:ATTRID=17506
+:ATTREND
+*-----------------------------------
+:ATTRNAME=dec var 1
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=18001
+:ATTREND
+*-----------------------------------
+:ATTRNAME=dec var 2
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=18002
+:ATTREND
+*-----------------------------------
+:ATTRNAME=dec var 3
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=18003
+:ATTREND
+*-----------------------------------
+:ATTRNAME=dec var 4
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=18004
+:ATTREND
+*-----------------------------------
+:ATTRNAME=dec var 5
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=18005
+:ATTREND
+*-----------------------------------
+:ATTRNAME=dec var 6
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=18006
+:ATTREND
+*-----------------------------------
+:ATTRNAME=dec var 7
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=18007
+:ATTREND
+*-----------------------------------
+:ATTRNAME=dec var 8
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=18008
+:ATTREND
+*-----------------------------------
+:ATTRNAME=change cut conditions
+:ATTRTYPE=SELECT
+:ATTRID=18009
+:ATTREND
+*
+*  Added on 7-27-15
+*-----------------------------------
+:ATTRNAME=large thread stepover
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=18010
+:ATTREND
+*-----------------------------------
+:ATTRNAME=tc after stop
+:ATTRTYPE=SELECT
+:ATTRID=18011
+:ATTREND
+*-----------------------------------
+:OPERID=Preload Tool
+:ATTRID=18012
+:ATTREND
+*-----------------------------------
+:ATTRNAME=C position angle
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=18013
+:ATTREND
+*-----------------------------------
+:ATTRNAME=Hein Drill Retract Feed
+:ATTRTYPE=DESCRIPTOR
+:ATTRVTYPE=CHARACTER
+:ATTRID=18014
+:ATTREND
+*-----------------------------------
+:ATTRNAME=char var 1
+:ATTRTYPE=VALUE
+:ATTRVTYPE=CHARACTER
+:ATTRID=18015
+:ATTREND
+*-----------------------------------
+:ATTRNAME=char var 2
+:ATTRTYPE=VALUE
+:ATTRVTYPE=CHARACTER
+:ATTRID=18016
+:ATTREND
+*-----------------------------------
+:ATTRNAME=char var 3
+:ATTRTYPE=VALUE
+:ATTRVTYPE=CHARACTER
+:ATTRID=18017
+:ATTREND
+*-----------------------------------
+:ATTRNAME=char var 4
+:ATTRTYPE=VALUE
+:ATTRVTYPE=CHARACTER
+:ATTRID=18018
+:ATTREND
+*-----------------------------------
+:ATTRNAME=select 1
+:ATTRTYPE=SELECT
+:ATTRID=18019
+:ATTREND
+*-----------------------------------
+:ATTRNAME=select 2
+:ATTRTYPE=SELECT
+:ATTRID=18020
+:ATTREND
+*-----------------------------------
+:ATTRNAME=select 3
+:ATTRTYPE=SELECT
+:ATTRID=18021
+:ATTREND
+*-----------------------------------
+:ATTRNAME=select 4
+:ATTRTYPE=SELECT
+:ATTRID=18022
+:ATTREND
+*-----------------------------------
+:OPERID=End Program TC
+:ATTRID=18023
+:ATTREND
+*-----------------------------------
+:ATTRNAME=int var 1
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=18024
+:ATTREND
+*-----------------------------------
+:ATTRNAME=int var 2
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=18025
+:ATTREND
+*-----------------------------------
+:ATTRNAME=int var 3
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=18026
+:ATTREND
+*-----------------------------------
+:ATTRNAME=int var 4
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=18027
+:ATTREND
+*-----------------------------------
+:ATTRNAME=multiaxis polar
+:ATTRTYPE=SELECT
+:ATTRID=18028
+:ATTREND
+*-----------------------------------
+*//Next two attributes have same ID=18030. Do not use both in the post.
+*  It has been left here because it might be in use in some post.
+*  Please define new attribute and use that instead of this.
+*-----------------------------------
+:ATTRNAME=multiaxis rapid feedrate
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=18030
+:ATTREND
+*-----------------------------------
+:ATTRNAME=swivel type
+:ATTRTYPE=SELECT
+:ATTRID=18030
+:ATTREND
+*-----------------------------------
+:ATTRNAME=Orientate Spindle
+:ATTRID=18031
+:ATTREND
+*-----------------------------------
+*  Used to select the setting for G54.4 Px for Mazak (12-12-14)
+:ATTRNAME=wp error dataset
+:ATTRTYPE=SELECT
+:ATTRID=18032
+:ATTREND
+*-----------------------------------
+:ATTRNAME=tapping head
+:ATTRTYPE=SELECT
+:ATTRID=18033
+:ATTREND
+*----------------------------------
+:ATTRNAME=fourth coolant type
+:ATTRTYPE=SELECT
+:ATTRID=18034
+:ATTREND
+*-----------------------------------
+:ATTRNAME=fadal output format
+:ATTRTYPE=SELECT
+:ATTRID=18035
+:ATTREND
+*-----------------------------------
+* Is the compile date.
+:ATTRNAME=COMPILEDATE
+:ATTRTYPE=DESCRIPTOR
+:ATTRVTYPE=CHARACTER
+:ATTRID=18036
+:ATTREND
+*-----------------------------------
+* Is the compile time.
+:ATTRNAME=COMPILETIME
+:ATTRTYPE=DESCRIPTOR
+:ATTRVTYPE=CHARACTER
+:ATTRID=18037
+:ATTREND
+*-----------------------------------
+:ATTRNAME=tool offset value
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=18038
+:ATTREND
+*-----------------------------------
+:ATTRNAME=acme retract distance
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=18039
+:ATTREND
+*-----------------------------------
+:OPERID=bar stop feed
+:ATTRTYPE=VALUE
+:ATTRID=18040
+:ATTRVTYPE=DECIMAL
+:ATTREND
+*-----------------------------------
+:OPERID=back bore clearance
+:ATTRTYPE=VALUE
+:ATTRID=18041
+:ATTRVTYPE=DECIMAL
+:ATTREND
+*-----------------------------------
+*-------Transfer post op's---------
+:ATTRNAME=c sync transfer
+:ATTRID=18042
+:ATTREND
+*-----------------------------------
+:ATTRNAME=c sync push transfer
+:ATTRID=18043
+:ATTREND
+*-----------------------------------
+:ATTRNAME=phase transfer
+:ATTRID=18044
+:ATTREND
+*-----------------------------------
+:ATTRNAME=phase push transfer
+:ATTRID=18045
+:ATTREND
+*-----------------------------------
+:ATTRNAME=speed transfer
+:ATTRID=18046
+:ATTREND
+*-----------------------------------
+:ATTRNAME=speed push transfer
+:ATTRID=18047
+:ATTREND
+*-----------------------------------
+:ATTRNAME=spindle clamp distance
+:ATTRTYPE=VALUE
+:ATTRVTYPE=DECIMAL
+:ATTRID=18048
+:ATTREND
+*-----------------------------------
+*---------end post transfer-------
+*----------------------------------
+:ATTRNAME=ccs turret
+:ATTRTYPE=SELECT
+:ATTRID=18049
+:ATTREND
+*-----------------------------------
+:ATTRNAME=spindle one max
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=18050
+:ATTREND
+*-----------------------------------
+:ATTRNAME=spindle two max
+:ATTRTYPE=VALUE
+:ATTRVTYPE=INTEGER
+:ATTRID=18051
+:ATTREND
+*-----------------------------------
+
+
