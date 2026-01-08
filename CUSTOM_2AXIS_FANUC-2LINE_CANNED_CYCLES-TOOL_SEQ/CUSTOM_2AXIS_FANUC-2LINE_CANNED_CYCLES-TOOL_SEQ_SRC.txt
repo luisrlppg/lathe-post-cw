@@ -117,8 +117,6 @@
 :ATTRLISTDEF=10
 :ATTRLIST=maximum rpm
 :ATTRLISTDEF=2500
-:ATTRLIST=program name
-:ATTRLISTDEF=ALUMINIO13
 :ATTRUSED=1
 :ATTRDEFAULT=1
 :ATTREND
@@ -200,9 +198,7 @@
 *------------------------------
 :SECTION=START_OF_TAPE
 :T:%<EOL>
-:T:O<"%4LT":program_number><EOL>
-:T:<N>(Nombre del programa <"%4T":program_name>)<EOL>
-:T:<N>(Mi primer Variable<"%4T":variable_pelon>)<EOL>
+:T:O<"%4LT":program_number><PART_NAME><EOL>
 :T:<N><G:ENGMET><EOL>
 :T:<N><G:50> S<"%4T":maximum_rpm><EOL>
 :T:<N>T0000G00X<"#3.4":10.>Z<"#3.4":12.><EOL>

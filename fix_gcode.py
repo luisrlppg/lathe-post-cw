@@ -1,6 +1,8 @@
 import re
 import sys
 import os
+import tkinter
+from tkinter import filedialog
 
 def process_gcode_file(file_path):
     """
@@ -68,9 +70,15 @@ def process_gcode_file(file_path):
         print(f"Error writing to file: {e}")
 
 if __name__ == "__main__":
-    if len(sys.argv) != 2:
-        print("Usage: python fix_gcode.py <path_to_gcode_file>")
-        sys.exit(1)
+    root = tkinter.Tk()
+    root.withdraw() # Hide the main window
 
-    gcode_file = sys.argv[1]
-    process_gcode_file(gcode_file)
+    file_path = filedialog.askopenfilename(
+        title="Select G-code file",
+        filetypes=[("G-code files", "*.txt *.nc *.cnc"), ("All files", "*.*")]
+    )
+
+    if file_path:
+        process_gcode_file(file_path)
+    else:
+        print("File selection cancelled.")

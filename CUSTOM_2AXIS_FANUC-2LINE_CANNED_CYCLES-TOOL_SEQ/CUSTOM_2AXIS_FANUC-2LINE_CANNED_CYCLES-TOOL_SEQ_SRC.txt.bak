@@ -117,8 +117,6 @@
 :ATTRLISTDEF=10
 :ATTRLIST=maximum rpm
 :ATTRLISTDEF=2500
-:ATTRLIST=program name
-:ATTRLISTDEF=ALUMINIO13
 :ATTRUSED=1
 :ATTRDEFAULT=1
 :ATTREND
@@ -201,8 +199,7 @@
 :SECTION=START_OF_TAPE
 :T:%<EOL>
 :T:O<"%4LT":program_number><EOL>
-:T:<N>(Nombre del programa <"%4T":program_name>)<EOL>
-:T:<N>(Mi primer Variable<"%4T":variable_pelon>)<EOL>
+:T:<PART_NAME><EOL>
 :T:<N><G:ENGMET><EOL>
 :T:<N><G:50> S<"%4T":maximum_rpm><EOL>
 :T:<N>T0000G00X<"#3.4":10.>Z<"#3.4":12.><EOL>
@@ -376,7 +373,7 @@
 :T:<N><G:00>Z<"#3.4":.1><EOL>
 :T:<N>(<SUB_PECK>)<EOL>
 :T:<N><G:74> R<"#3.4":OPR_CYCLE_CLEARANCE><EOL>
-:T:<N><G:74><G:99><Z><drill_depth><drill_feed><EOL>
+:T:<N><G:74><G:99><Z>Q<drill_depth>F<drill_feed><EOL>
 *
 :SECTION=CANNED_DRILLING_MULTIPLE
 :T:<N><G:74> R<"#3.4":OPR_CYCLE_CLEARANCE><EOL>
