@@ -209,13 +209,13 @@
 *
 :SECTION=INIT_TOOL_CHANGE_LATHE
 :T:<BLANK><EOL>
-:T:<N><TLP_OPER_NAME><EOL>
-:T:<N><TOOL_COMMENT><EOL>
+:T:<TLP_OPER_NAME><EOL>
+:T:<TOOL_COMMENT><EOL>
 *:T:<N><G:28> U0 W0<EOL>
 :T:<N><M:05><EOL>
 :T:<N>T0000X<"#3.4":10.>Z<"#3.4":12.><EOL>
 :T:<N><M:M_OPT_STOP><EOL>
-:T:<N><T><"%2LT":TOOL><G!:42><EOL>
+:T:IF OPR_TYPE=LATHE_DRILLING THEN <N><T><"%2LT":TOOL><EOL> ELSE <N><T><"%2LT":TOOL><G!:42><EOL>ENDIF
 *:T:<N><G:50> S<"%4T":maximum_rpm><EOL>
 *:T:<N><T><"%2LT":TOOL><M:spindle_range><EOL>
 *:T:<N><G!:00><T><"%2LT":TOOL><EOL>
@@ -234,7 +234,7 @@
 :T:<N><M:05><EOL>
 :T:<N>T0000X<"#3.4":10.>Z<"#3.4":12.><EOL>
 :T:<N><M:M_OPT_STOP><EOL>
-:T:<N><T><"%2LT":TOOL><G!:42><EOL>
+:T:IF OPR_TYPE=LATHE_DRILLING THEN <N><T><"%2LT":TOOL><EOL> ELSE <N><T><"%2LT":TOOL><G!:42><EOL>ENDIF
 *:T:<N><G:50> S<"%4T":maximum_rpm><EOL>
 *:T:<N><T><"%2LT":TOOL><M:spindle_range><EOL>
 *:T:<N><G!:00><T><"%2LT":TOOL><EOL>
@@ -328,7 +328,7 @@
 :T:<N><G:72><P_SEQ><X_FINISH><Z_FINISH><F!><EOL>
 *
 :SECTION=END_BOUNDARY
-:T:<N>(Q-HERE)<EOL>
+:T:(Q-HERE)<EOL>
 *
 :SECTION=RAPID_MOVE_LATHE_X
 :T:<N><W_COORD><G:00><X><EOL>
@@ -373,6 +373,7 @@
 :T:<N>(<SUB_PECK>)<EOL>
 :T:<N><G:74> R<"#3.4":OPR_CYCLE_CLEARANCE><EOL>
 :T:<N><G:74><G:99><Z>Q<drill_depth>F<drill_feed><EOL>
+*:T:<N><G:74><G:99><Z>Q<"#T":(OPR_PECK_AMOUNT*10000)>F<drill_feed><EOL>
 *
 :SECTION=CANNED_DRILLING_MULTIPLE
 :T:<N><G:74> R<"#3.4":OPR_CYCLE_CLEARANCE><EOL>
@@ -450,7 +451,7 @@ None*
 *
 :SECTION=LINE_LEADIN_MOVE_LATHE
 *--------------------fanuc-------------------------
-:T:<N><G:COMP><G:01><X><Z><F><M:08><attributes><EOL>
+:T:<N><G:COMP><G:01><X><Z><F><M:08><M!:SPINDLE_DIR><attributes><EOL>
 *--------------------generic-----------------------
 :T:<N><G:COMP><G:01><X><Z><F><M:08><EOL>
 *
