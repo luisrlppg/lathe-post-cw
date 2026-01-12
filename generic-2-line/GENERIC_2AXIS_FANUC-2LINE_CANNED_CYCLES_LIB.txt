@@ -135,33 +135,6 @@
 :ATTRUSED=1
 :ATTREND
 *-----------------------------------
-:ATTRNAME=PART NAME
-:ATTRTYPE=POST
-:ATTREMARK=
-:CODETYPE=FORMAT
-:WORD_ADDRESS_BEF=|(
-:VAR=PART NAME
-:WORD_ADDRESS_AFT=|)
-:LEFT_PLACES=0
-:RIGHT_PLACES=0
-:UNITFLAG=NON_CONVERT
-:ATTRUSED=1
-:ATTREND
-*-----------------------------------
-*:ATTRNAME=variable pelon
-*:ATTRTYPE=VALUE
-*:ATTRVTYPE=INTEGER
-*:ATTREMARK=Variable Pelon
-*:ATTRSEL=N
-*:ATTRINLEN=3
-*:ATTRSHORT=Variable Pelon
-*:ATTRLONG=ENTER Variable Pelon
-*:ATTRHIGH=99
-*:ATTRLOW=0
-*:ATTRDEFAULT=15
-*:ATTRUSED=1
-*:ATTREND
-*-----------------------------------
 *----------------------------------------------------------
 * Define Attributes used in a VAR= statement
 *----------------------------------------------------------
@@ -202,8 +175,10 @@
 :SELECT=0
 :WORD_ADDRESS_BEF=N
 :VARB=SEQ
-:LEFT_PLACES=0
+:LEFT_PLACES=4
 :RIGHT_PLACES=0
+:CANNOT_BE_LEADING
+:MUST_BE_TRAILING
 :CANNOT_BE_DECIMAL
 :CANNOT_BE_SIGNED
 :SELECT=1
@@ -226,43 +201,6 @@
 :CANNOT_BE_SIGNED
 :UNITFLAG=NON_CONVERT
 :ATTREND
-*-----------------------------------
-*:ATTRNAME=NUEVO
-*:ATTRTYPE=POST
-*:ATTRVTYPE=INTEGER
-*:ATTREMARK=Sequence number
-*:CODETYPE=SELECT_FORMAT
-*:ATTRCFUNC=CALC_MY_VAL(SEQ)
-*:VAR=variable_pelon
-*:SELECT=0
-*:WORD_ADDRESS_BEF=N
-*:VARB=SEQ
-*:LEFT_PLACES=4
-*:RIGHT_PLACES=0
-*:CANNOT_BE_LEADING
-*:MUST_BE_TRAILING
-*:CANNOT_BE_DECIMAL
-*:CANNOT_BE_SIGNED
-*:SELECT=1
-*:WORD_ADDRESS_BEF=N
-*:VARB=SEQ
-*:LEFT_PLACES=4
-*:RIGHT_PLACES=0
-*:MUST_BE_LEADING
-*:MUST_BE_TRAILING
-*:CANNOT_BE_DECIMAL
-*:CANNOT_BE_SIGNED
-*:SELECT=2
-*:WORD_ADDRESS_BEF=N
-*:VARB=SEQ
-*:LEFT_PLACES=3
-*:RIGHT_PLACES=0
-*:MUST_BE_LEADING
-*:MUST_BE_TRAILING
-*:CANNOT_BE_DECIMAL
-*:CANNOT_BE_SIGNED
-*:UNITFLAG=NON_CONVERT
-*:ATTREND
 *-----------------------------------
 :ATTRNAME=P SEQ
 :ATTRTYPE=POST
@@ -332,7 +270,6 @@
 :CODETYPE=FORMAT
 :ATTRCFUNC=CALC_INT_REGISTER(T,MACH,TOOL,REG_T2)
 :WORD_ADDRESS_BEF=|T
-:LEFT_PLACES=2
 :RIGHT_PLACES=0
 :CANNOT_BE_DECIMAL
 :CANNOT_BE_SIGNED
@@ -569,38 +506,6 @@
 :MODAL=FALSE
 :ATTREND
 *-----------------------------------
-:ATTRNAME=drill feed
-:ATTRTYPE=VALUE
-*:ATTRTYPE=POST
-:ATTRVTYPE=DECIMAL
-:ATTREMARK=Drilling Feedrate
-:ATTRSHORT=Drilling Feedrate
-:ATTRLONG=ENTER Drilling Feedrate
-:CODETYPE=FORMAT
-*:ATTRCFUNC=CALC_DEC_REGISTER(DR_FEED,MACH,OPR_DR_FEED,REG_F)
-*:WORD_ADDRESS_BEF=|F
-:LEFT_PLACES=3
-:RIGHT_PLACES=4
-:CANNOT_BE_SIGNED
-:MODAL=FALSE
-:ATTREND
-*-----------------------------------
-:ATTRNAME=drill depth
-:ATTRTYPE=VALUE
-*:ATTRTYPE=POST
-:ATTRVTYPE=INTEGER
-:ATTREMARK=Tenthousandth Peck Depth
-:ATTRSHORT=Tenthousandt Peck Depth
-:ATTRLONG=ENTER Tenthousandt Peck Depth
-:CODETYPE=FORMAT
-*:ATTRCFUNC=CALC_DEC_REGISTER(DR_PECK,MACH,OPR_DR_PECK,REG_K)
-*:WORD_ADDRESS_BEF=|Q
-:LEFT_PLACES=0
-:RIGHT_PLACES=0
-:CANNOT_BE_SIGNED
-:MODAL=FALSE
-:ATTREND
-*-----------------------------------
 :ATTRNAME=S BAR Z DEPTH
 :ATTRTYPE=POST
 :ATTRVTYPE=DECIMAL
@@ -702,6 +607,32 @@
 :MODAL=YES
 :ATTREND
 *-----------------------------------
+*
+:SECTION=CALC_THREAD_HEIGHT(HNUM)
+*
+*   G76 Thread Height
+*
+:C: SETON()
+:C: HNUM=(ABS(ABS(ABS_X_START)-(OPR_THREAD_MINOR_DIAM/2)))
+*:C: HNUM=(HNUM*1000)
+*-----------------------------------
+*
+:SECTION=CALC_THREAD_CUT(HNUM)
+*
+*   G76 Thread Cut Depth
+*
+:C: SETON()
+:C: HNUM=OPR_THREAD_FIRST_CUT
+*:C: HNUM=(HNUM*1000)
+*-----------------------------------
+*
+:SECTION=CALC_INFEED_ANGLE(ANUM)
+*
+*   G76 Z Thread Angle
+*
+:C: SETON()
+:C: ANUM=OPR_INFEED_ANGLE
+*-----------------------------------
 :SECTION=CALC_PARTS_CATCHER_IN(PVAL,CVAL)
 :C: SETON()
 :C: PVAL=MC(M_PARTS_IN)
@@ -712,192 +643,5 @@
 :C: PVAL=MC(M_PARTS_OUT)
 :C: IF CVAL=1 THEN SETOFF() ENDIF
 *-----------------------------------
-*   G76 Thread Height
-*-----------------------------------
-:SECTION=CALC_THREAD_HEIGHT(HNUM)
-:C: SETON()
-:C: HNUM=(ABS(ABS(ABS_X_START)-(OPR_THREAD_MINOR_DIAM/2)))
-*:C: HNUM=(HNUM*1000)
-*-----------------------------------
-*   G76 Thread Cut Depth
-*-----------------------------------
-:SECTION=CALC_THREAD_CUT(HNUM)
-:C: SETON()
-:C: HNUM=OPR_THREAD_FIRST_CUT
-*:C: HNUM=(HNUM*1000)
-*-----------------------------------
-*   G76 Z Thread Angle
-*-----------------------------------
-:SECTION=CALC_INFEED_ANGLE(ANUM)
-:C: SETON()
-:C: ANUM=OPR_INFEED_ANGLE
-*-----------------------------------
 
-*---------------------------------------------------
-*   Canned Turning or Facing
-*---------------------------------------------------
-:SECTION=CALC_START_BOUNDARY_LATHE
-:C: IF SECTIONEXIST(DEBUG) THEN
-:C: DEBUG=14 CALL(DEBUG)
-:C: ENDIF
-:C: IF OPR_TYPE=LATHE_PROFILING THEN
-:C:    IF TURRET=FRONT THEN
-:C:    X_POS=ABS_U_START
-:C:    Z_POS=ABS_W_START
-:C:    ELSE
-:C:    X_POS=ABS_X_START
-:C:    Z_POS=ABS_Z_START
-:C:    ENDIF
-:C: CALL(CALC_POSITION_TO_START)
-:C: CURRENT_POST_CYCLE_TYPE=MACHINE
-:C: RETURN
-:C: ENDIF
-:C: IF SECTIONEXIST(CANNED_ROUGH_ID_OD) THEN
-:C: X_FINISH=OPR_X_PART_CLEARANCE
-:C:    IF ID=1 THEN X_FINISH=(-X_FINISH) ENDIF
-:C:    IF OPR_CYCLE_TYPE=TURNING THEN
-:C:       IF TURRET=FRONT THEN
-:C:       X_POS=ABS_U_END
-:C:       Z_POS=ABS_W_START
-:C:       ELSE
-:C:       X_POS=ABS_X_END
-:C:       Z_POS=ABS_Z_START
-:C:       ENDIF
-:C:    CALL(CALC_POSITION_TO_START)
-:C:       IF TURRET=FRONT THEN
-:C:          IF SECTIONEXIST(CANNED_ROUGH_ID_OD_FRONT) THEN
-:C:          CALL(CANNED_ROUGH_ID_OD_FRONT)
-:C:          ELSE
-:C:          CALL(CANNED_ROUGH_ID_OD)
-:C:          ENDIF
-:C:       ELSE
-:C:       CALL(CANNED_ROUGH_ID_OD)
-:C:       ENDIF
-:C:       SEQ = SAVE_P
-:C:       IF TURRET=FRONT THEN
-:C:       X_POS=N_ABS_U_START
-:C:       ELSE
-:C:       X_POS=N_ABS_X_START
-:C:       ENDIF
-:C:    CALL(CALC_CANNED_POSITION_TO_START)
-:C:    MACH(REG_F)=0
-:C:       IF TURRET=FRONT THEN
-:C:          IF X_POS<>N_ABS_U_START OR Z_POS<>N_ABS_W_START THEN
-:C:          X_POS=N_ABS_U_START
-:C:          Z_POS=N_ABS_W_START
-:C:          CALL(LINE_MOVE_LATHE)
-:C:          ENDIF
-:C:       ELSE
-:C:          IF X_POS<>N_ABS_X_START OR Z_POS<>N_ABS_Z_START THEN
-:C:          X_POS=N_ABS_X_START
-:C:          Z_POS=N_ABS_Z_START
-:C:          CALL(LINE_MOVE_LATHE)
-:C:          ENDIF
-:C:       ENDIF
-:C:    RETURN
-:C:    ENDIF
-:C:    IF OPR_CYCLE_TYPE=FACING THEN
-:C:       IF TURRET=FRONT THEN
-:C:       X_POS=ABS_U_START
-:C:       Z_POS=ABS_W_END
-:C:       ELSE
-:C:       X_POS=ABS_X_START
-:C:       Z_POS=ABS_Z_END
-:C:       ENDIF
-:C:    CALL(CALC_POSITION_TO_START)
-:C:       IF TURRET=FRONT THEN
-:C:          IF SECTIONEXIST(CANNED_ROUGH_FACE_FRONT) THEN
-:C:          CALL(CANNED_ROUGH_FACE_FRONT)
-:C:          ELSE
-:C:          CALL(CANNED_ROUGH_FACE)
-:C:          ENDIF
-:C:       ELSE
-:C:       CALL(CANNED_ROUGH_FACE)
-:C:       ENDIF
-:C:       SEQ = SAVE_P
-:C:       IF TURRET=FRONT THEN
-:C:       Z_POS=N_ABS_W_START
-:C:       ELSE
-:C:       Z_POS=N_ABS_Z_START
-:C:       ENDIF
-:C:    CALL(CALC_CANNED_POSITION_TO_START)
-:C:    MACH(REG_F)=0
-:C:       IF TURRET=FRONT THEN
-:C:          IF X_POS<>N_ABS_U_START OR Z_POS<>N_ABS_W_START THEN
-:C:          X_POS=N_ABS_U_START
-:C:          Z_POS=N_ABS_W_START
-:C:          CALL(LINE_MOVE_LATHE)
-:C:          ENDIF
-:C:       ELSE
-:C:          IF X_POS<>N_ABS_X_START OR Z_POS<>N_ABS_Z_START THEN
-:C:          X_POS=N_ABS_X_START
-:C:          Z_POS=N_ABS_Z_START
-:C:          CALL(LINE_MOVE_LATHE)
-:C:          ENDIF
-:C:       ENDIF
-:C:    ENDIF
-:C: ELSE
-:C: CURRENT_POST_CYCLE_TYPE=SYSTEM
-:C: SYS_CANNED(2,SYSTEM)
-:C: ENDIF
-*---------------------------------------------------
-*   Calculate canned position to start
-*---------------------------------------------------
-:SECTION=CALC_CANNED_POSITION_TO_START
-:C: IF SECTIONEXIST(CANNED_X_POSITION) THEN
-:C:    IF OPR_CYCLE_TYPE=TURNING THEN
-:C:    CALL(CANNED_X_POSITION)
-:C:    RETURN
-:C:    ENDIF
-:C: ENDIF
-:C: IF SECTIONEXIST(CANNED_Z_POSITION) THEN
-:C:    IF OPR_CYCLE_TYPE=FACING THEN
-:C:    CALL(CANNED_Z_POSITION)
-:C:    RETURN
-:C:    ENDIF
-:C: ENDIF
-:C: IF P_MOVE_TYPE=TOOL_CHANGE
-:C: THEN CALL(RAPID_FROM_TOOL_CHANGE_LATHE) RETURN
-:C: ELSE CALL(RAPID_MOVE_LATHE)
-:C: ENDIF
-*-----------------------------------
-*   P Sequence register
-*-----------------------------------
-:SECTION=CALC_REG_P_SEQ(NVAL)
-:C: SETON()
-:C: SEQ = (SEQ + SEQ_INCREMENT) 
-:C: NVAL=SEQ
-:C: SAVE_P=SEQ
-*-----------------------------------
-*   Q Sequence register
-*   Uses SAVE_Q value set at END_BOUNDARY
-*-----------------------------------
-:SECTION=CALC_REG_Q_SEQ(NVAL)
-:C: SETON()
-:C: NVAL=(SEQ+(SEQ_INCREMENT*(MOVE_COUNT+1)))
-*-----------------------------------
-*   My Own Function 4 testing
-*-----------------------------------
-:SECTION=CALC_MY_VAL(NVAL)
-:C: IF NVAL>variable_pelon THEN
-:C:   SEQ=SEQ_INCREMENT
-:C:   NVAL=SEQ
-:C: ENDIF
 
-*-----------------------------------
-*   BACKUPS
-*-----------------------------------
-*   P Sequence register (backup)
-*-----------------------------------
-*:SECTION=CALC_REG_P_SEQ(NVAL)
-*:C: SETON()
-*:C: NVAL=(P_SEQ+1)
-*:C: SAVE_P=NVAL
-*-----------------------------------
-*   Q Sequence register (backup)
-*-----------------------------------
-*:SECTION=CALC_REG_Q_SEQ(NVAL)
-*:C: SETON()
-*:C: NVAL=(P_SEQ+1)
-*:C: SAVE_Q=NVAL
-*:C: P_SEQ=NVAL

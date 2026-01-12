@@ -4,7 +4,7 @@
 :TRAILING=FALSE
 :DECIMAL=TRUE
 :QUAD=TRUE
-:SPACE=FALSE
+:SPACE=TRUE
 :ARCS=RADIAL
 :METRIC_SHIFT=1
 :G_LEFT_PLACES=3
@@ -20,12 +20,11 @@
 :MACROS_TAPE=SEPARATE
 :DUAL_SPINDLE=FALSE
 :SORT_BY_TURRET=FALSE
-:ALLOW_FIRST_FEED_SYNC_ON_CANNED_CYCLE=FALSE
 :ALLOW_B_AXIS_OFFSET_REAR=FALSE
 :ALLOW_PART_MAX_RPM=FALSE
 :ALLOW_MAX_RPM_BY_OPER=FALSE
+:ALLOW_FIRST_FEED_SYNC_ON_CANNED_CYCLE=FALSE
 :GENERIC_POST=FALSE
-:ALLOW_B_AXIS_SIMULTANEOUS_CUTTING=FALSE
 *-----------------------------------
 :ATTRNAME=MACHINE NAME
 :ATTRTYPE=DESCRIPTOR
@@ -100,8 +99,20 @@
 :ATTRUSED=1
 :ATTREND
 *-----------------------------------
-:LIBRARY=.\CUSTOM_2AXIS_FANUC-2LINE_CANNED_CYCLES-TOOL_SEQ.LIB
-:LIBRARY=.\..\MasterLibraryFiles\LATHE.LIB
+:LIBRARY=.\GENERIC_2AXIS_FANUC-2LINE_CANNED_CYCLES.LIB
+:LIBRARY=..\MasterLibraryFiles\LATHE.LIB
+*-----------------------------------
+:ATTRNAME=attachable
+:ATTRTYPE=LIST
+:ATTRSEL=N
+:ATTRTITLE=Attachable
+:ATTRLIST=program stop
+:ATTRLISTDEF=1
+:ATTRLIST=optional stop
+:ATTRLISTDEF=1
+:ATTRUSED=1
+:ATTRDEFAULT=1
+:ATTREND
 *-----------------------------------
 :ATTRNAME=setup
 :ATTRTYPE=LIST
@@ -112,11 +123,11 @@
 :ATTRLIST=material
 :ATTRLISTDEF=STEEL
 :ATTRLIST=z preset
-:ATTRLISTDEF=12
+:ATTRLISTDEF=10
 :ATTRLIST=x preset
 :ATTRLISTDEF=10
 :ATTRLIST=maximum rpm
-:ATTRLISTDEF=2500
+:ATTRLISTDEF=3000
 :ATTRUSED=1
 :ATTRDEFAULT=1
 :ATTREND
@@ -124,21 +135,16 @@
 :OPERID=LATHE_DRILLING
 :OPERLIST=tool tip center
 :OPERLIST=abs inc
-:OPERLIST=coolant
-:OPERLIST=spindle range
 :OPERLIST=work coord
-:OPERLIST=variable pelon
-:OPERLIST=drill feed
-:OPERLIST=drill depth
+:OPERLIST=coolant
 :OPEREND
 *-----------------------------------
 :OPERID=LATHE_PROFILING
 :OPERLIST=tool tip center
 :OPERLIST=machine compensation
 :OPERLIST=abs inc
-:OPERLIST=coolant
-:OPERLIST=spindle range
 :OPERLIST=work coord
+:OPERLIST=coolant
 :OPEREND
 *-----------------------------------
 :OPERID=LATHE_ROUGHING
@@ -146,62 +152,48 @@
 :OPERLIST=machine compensation
 :OPERLIST=machine path type
 :OPERLIST=abs inc
-:OPERLIST=coolant
-:OPERLIST=spindle range
 :OPERLIST=work coord
+:OPERLIST=coolant
 :OPEREND
 *-----------------------------------
 :OPERID=LATHE_GROOVING
 :OPERLIST=tool tip center
 :OPERLIST=abs inc
-:OPERLIST=coolant
-:OPERLIST=spindle range
 :OPERLIST=work coord
+:OPERLIST=coolant
 :OPEREND
 *-----------------------------------
 :OPERID=LATHE_THREADING
 :OPERLIST=tool tip center
 :OPERLIST=abs inc
-:OPERLIST=coolant
-:OPERLIST=spindle range
 :OPERLIST=work coord
+:OPERLIST=coolant
 :OPEREND
 *-----------------------------------
 :OPERID=LATHE_MISC
 :OPERLIST=tool tip center
 :OPERLIST=abs inc
-:OPERLIST=coolant
-:OPERLIST=spindle range
 :OPERLIST=work coord
+:OPERLIST=coolant
 :OPEREND
 *-----------------------------------
 :OPERID=LATHE_CUTOFF
 :OPERLIST=tool tip center
 :OPERLIST=abs inc
-:OPERLIST=coolant
-:OPERLIST=spindle range
 :OPERLIST=work coord
+:OPERLIST=coolant
 :OPEREND
-*-----------------------------------
-:OPERID=Bar Puller
-:OPERLIST=bar x rapid
-:OPERLIST=bar z rapid
-:OPERLIST=bar z depth
-:OPERLIST=bar z pullout
-:OPERLIST=bar feed
-:OPERLIST=bar tool
-:OPEREND
-*-----------------------------------
+*------------------------------
 :OPERID=Post Program Stop
 :OPERLIST=tape output
 :OPEREND
 *------------------------------
 :SECTION=START_OF_TAPE
-:T:%<EOL>
-:T:O<"%4LT":program_number><PART_NAME><EOL>
-:T:<N><G:ENGMET><EOL>
-:T:<N><G:50> S<"%4T":maximum_rpm><EOL>
-:T:<N>T0000G00X<"#3.4":10.>Z<"#3.4":12.><EOL>
+:T:O<"%4LT":program_number><EOL>
+*
+:SECTION=OPR_NAME
+:T:<BLANK><EOL>
+:T:<N><TLP_OPER_NAME><EOL>
 *
 *:SECTION=START_OF_TAPE_REAR
 *
@@ -209,16 +201,10 @@
 *
 :SECTION=INIT_TOOL_CHANGE_LATHE
 :T:<BLANK><EOL>
-:T:<TLP_OPER_NAME><EOL>
-:T:<TOOL_COMMENT><EOL>
-*:T:<N><G:28> U0 W0<EOL>
-:T:<N><M:05><EOL>
-:T:<N>T0000X<"#3.4":10.>Z<"#3.4":12.><EOL>
-:T:<N><M:M_OPT_STOP><EOL>
-:T:IF OPR_TYPE=LATHE_DRILLING THEN <N><T><"%2LT":TOOL><EOL> ELSE <N><T><"%2LT":TOOL><G!:42><EOL>ENDIF
-*:T:<N><G:50> S<"%4T":maximum_rpm><EOL>
-*:T:<N><T><"%2LT":TOOL><M:spindle_range><EOL>
-*:T:<N><G!:00><T><"%2LT":TOOL><EOL>
+:T:<N><TLP_OPER_NAME><EOL>
+:T:<N><G:28> U0 W0<EOL>
+:T:<N><G:50> S<"%4T":maximum_rpm><EOL>
+:T:<N><G!:00><T><"%2LT":TOOL><EOL>
 :T:<N><G!:SPEED_TYPE><S!><M!:SPINDLE_DIR><EOL>
 :T:<N><G!:FEED_TYPE><EOL>
 *
@@ -229,15 +215,9 @@
 :SECTION=SUB_TOOL_CHANGE_LATHE
 :T:<BLANK><EOL>
 :T:<N><TLP_OPER_NAME><EOL>
-:T:<N><TOOL_COMMENT><EOL>
-*:T:<N><G:28> U0 W0<EOL>
-:T:<N><M:05><EOL>
-:T:<N>T0000X<"#3.4":10.>Z<"#3.4":12.><EOL>
-:T:<N><M:M_OPT_STOP><EOL>
-:T:IF OPR_TYPE=LATHE_DRILLING THEN <N><T><"%2LT":TOOL><EOL> ELSE <N><T><"%2LT":TOOL><G!:42><EOL>ENDIF
-*:T:<N><G:50> S<"%4T":maximum_rpm><EOL>
-*:T:<N><T><"%2LT":TOOL><M:spindle_range><EOL>
-*:T:<N><G!:00><T><"%2LT":TOOL><EOL>
+:T:<N><G:28> U0 W0<EOL>
+:T:<N><G:50> S<"%4T":maximum_rpm><EOL>
+:T:<N><G!:00><T><"%2LT":TOOL><EOL>
 :T:<N><G!:SPEED_TYPE><S!><M!:SPINDLE_DIR><EOL>
 :T:<N><G!:FEED_TYPE><EOL>
 *
@@ -251,51 +231,8 @@
 :SECTION=CHANGE_DIRECT_RPM
 :T:<N><G!:SPEED_TYPE><S!><EOL>
 *
-:SECTION=RAPID_PULLOUT_X_MOVE_LATHE
-:T:<N><M:05><G:40><G!:00><X!><EOL>
-*
-:SECTION=RAPID_PULLOUT_Z_MOVE_LATHE
-:T:<N><M:05><G:40><G!:00><Z!><EOL>
-*
-:SECTION=RAPID_TO_TOOL_CHANGE_LATHE
-*--------------------custom--------------------------
-:T:<N><G:40><G!:00><X><Z><M:05><attributes><EOL>
-*--------------------fanuc---------------------------
-*:T:<N><G:40><G:00><X><Z><T!>00<M:09><attributes><EOL>
-*-------------------generic--------------------------
-*:T:<N><G:40><G:00><X><Z><M:09><EOL>
-*
-*:SECTION=START_OF_TAPE_REAR1
-*
-*:SECTION=START_OF_TAPE_REAR2
-*
-*:SECTION=START_OF_TAPE_FRONT1
-*
-*:SECTION=START_OF_TAPE_FRONT2
-*
-*:SECTION=ADD_REAR_SYNC_CODE
-*
-*:SECTION=ADD_REAR_SYNC_CODE_MULTI
-*
-*:SECTION=ADD_FRONT_SYNC_CODE
-*
-*:SECTION=ADD_FRONT_SYNC_CODE_MULTI
-*
-*:SECTION=INIT_TOOL_CHANGE_LATHE_REAR1
-*
-*:SECTION=INIT_TOOL_CHANGE_LATHE_REAR2
-*
-*:SECTION=INIT_TOOL_CHANGE_LATHE_FRONT1
-*
-*:SECTION=INIT_TOOL_CHANGE_LATHE_FRONT2
-*
-*:SECTION=SUB_TOOL_CHANGE_LATHE_REAR1
-*
-*:SECTION=SUB_TOOL_CHANGE_LATHE_REAR2
-*
-*:SECTION=SUB_TOOL_CHANGE_LATHE_FRONT1
-*
-*:SECTION=SUB_TOOL_CHANGE_LATHE_FRONT2
+:SECTION=CHANGE_SPEED
+:T:<N><G:SPEED_TYPE><S><EOL>>
 *
 :SECTION=SHIFT_OFFSET_PRIMARY
 :T:<N><T!><"%2LT":TOOL><EOL>
@@ -303,19 +240,38 @@
 :SECTION=SHIFT_OFFSET_SECONDARY
 :T:<N><T!><"%2LT":(TOOL+10)><EOL>
 *
+:SECTION=RAPID_PULLOUT_X_MOVE_LATHE
+:T:<N><G:40><G!:00><X!><EOL>
+*
+:SECTION=RAPID_PULLOUT_Z_MOVE_LATHE
+:T:<N><G:40><G!:00><Z!><EOL>
+*
+:SECTION=RAPID_TO_TOOL_CHANGE_LATHE
+:T:<N><G:40><G:00><X><Z><M:09><EOL>
+*
+:SECTION=RAPID_TO_TOOL_CHANGE_LATHE_X
+:T:<N><G:40><G:00><X><M:09><EOL>
+*
+:SECTION=RAPID_TO_TOOL_CHANGE_LATHE_Z
+:T:<N><G:40><G:00><Z><M:09><EOL>
+*
 :SECTION=RAPID_MOVE_LATHE
-*--------------------fanuc---------------------------
-:T:<N><G:00><X><Z><attributes><EOL>
-*--------------------generic---------------------------
 :T:<N><W_COORD><G:00><X><Z><EOL>
 *
+:SECTION=RAPID_MOVE_LATHE_X
+:T:<N><W_COORD><G:00><X><EOL>
+*
+:SECTION=RAPID_MOVE_LATHE_Z
+:T:<N><W_COORD><G:00><Z><EOL>
+*
 :SECTION=RAPID_FROM_TOOL_CHANGE_LATHE
-*--------------------custom-------------------------
-*:T:<N><G!:00><X!><Z!><M!:13><attributes><EOL>
-*--------------------fanuc--------------------------
-:T:<N><G!:00><X!><Z!><M!:08><attributes><EOL>
-*--------------------generic------------------------
-*:T:<N><W_COORD!><G!:00><X!><Z!><M:COOLANT_TYPE><EOL>
+:T:<N><W_COORD!><G!:00><X!><Z!><M:COOLANT_TYPE><EOL>
+*
+:SECTION=RAPID_MOVE_LATHE_X_FROM_TC
+:T:<N><W_COORD!><G!:00><X!><M:COOLANT_TYPE><EOL>
+*
+:SECTION=RAPID_MOVE_LATHE_Z_FROM_TC
+:T:<N><W_COORD!><G!:00><Z!><M:COOLANT_TYPE><EOL>
 *
 *:SECTION=END_DRILL_CYCLE
 *
@@ -326,25 +282,6 @@
 :SECTION=CANNED_ROUGH_FACE
 :T:<N><G:72> W<"#-3.4":OPR_CUT_AMOUNT> R<"#3.4":OPR_CYCLE_CLEARANCE><EOL>
 :T:<N><G:72><P_SEQ><Q_SEQ><X_FINISH><Z_FINISH><F!><EOL>
-*
-*
-:SECTION=RAPID_MOVE_LATHE_X
-:T:<N><W_COORD><G:00><X><EOL>
-*
-:SECTION=RAPID_MOVE_LATHE_Z
-:T:<N><W_COORD><G:00><Z><EOL>
-*
-:SECTION=RAPID_MOVE_LATHE_X_FROM_TC
-:T:<N><W_COORD!><G!:00><X!><M:COOLANT_TYPE><EOL>
-*
-:SECTION=RAPID_MOVE_LATHE_Z_FROM_TC
-:T:<N><W_COORD!><G!:00><Z!><M:COOLANT_TYPE><EOL>
-*
-:SECTION=RAPID_TO_TOOL_CHANGE_LATHE_X
-:T:<N><G:40><G:00><X><M:09><EOL>
-*
-:SECTION=RAPID_TO_TOOL_CHANGE_LATHE_Z
-:T:<N><G:40><G:00><Z><M:09><EOL>
 *
 :SECTION=SYS_THREADING
 :T:<N><G:32><X><Z><F><M:08><EOL>
@@ -360,31 +297,6 @@
 :T:<"#20LTN":60> Q<"#34T":OPR_THREAD_MIN_CUT> R<"#3.4":OPR_THREAD_MIN_CUT><EOL>
 :T:<N><G:76><X!><Z!><TAPER><THREAD_HEIGHT><THREAD_FIRST_CUT><F!><EOL>
 *
-:SECTION=FIRST_SYS_DRILLING
-:T:<N><G:01><Z><F!><M!:08><EOL>
-*
-:SECTION=SYS_DRILLING
-:T:<N><G:01><Z><EOL>
-*
-:SECTION=CANNED_DRILLING_SINGLE
-:T:<N><G:00>Z<"#3.4":.1><EOL>
-:T:<N>(<SUB_PECK>)<EOL>
-:T:<N><G:74> R<"#3.4":OPR_CYCLE_CLEARANCE><EOL>
-:T:<N><G:74><G:99><Z>Q<drill_depth>F<drill_feed><EOL>
-*:T:<N><G:74><G:99><Z>Q<"#T":(OPR_PECK_AMOUNT*10000)>F<drill_feed><EOL>
-*
-:SECTION=CANNED_DRILLING_MULTIPLE
-:T:<N><G:74> R<"#3.4":OPR_CYCLE_CLEARANCE><EOL>
-:T:<N><G:74><Z><SUB_PECK><F!><EOL>
-*
-*:SECTION=BAR_PULLER
-*
-*:SECTION=TAIL_STOCK_IN
-*
-*:SECTION=TAIL_STOCK_OUT
-*
-*:SECTION=TAPPING_CYCLE
-*
 :SECTION=SYS_TAPPING_CYCLE
 :T:<N><G:01><Z><F:OPR_THREAD_PITCH><M:05><EOL>
 :T:<N><G:04> X<#:.5><EOL>
@@ -397,17 +309,48 @@
 :T:<N><G:84><Z> R<#:OPR_CYCLE_CLEARANCE><F!:OPR_THREAD_PITCH><EOL>
 :T:<N><G:80><Z!:OPR_CYCLE_CLEARANCE><EOL>
 *
+:SECTION=FIRST_SYS_DRILLING
+:T:<N><G:01><Z><F!><M!:08><EOL>
+*
+:SECTION=SYS_DRILLING
+:T:<N><G:01><Z><EOL>
+*
+:SECTION=CANNED_DRILLING_SINGLE
+:T:<N><G:74> R<"#34":OPR_CYCLE_CLEARANCE><EOL>
+:T:<N><G:74><Z><F!><EOL>
+*
+:SECTION=CANNED_DRILLING_MULTIPLE
+:T:<N><G:74> R<"#34":OPR_CYCLE_CLEARANCE><EOL>
+:T:<N><G:74><Z><SUB_PECK><F!><EOL>
+*
+:SECTION=CANCEL_TOOL
+:T:<N><M:09><EOL>
+*
+:SECTION=ABSOLUTE_PRESET
+:T:<N><G:92><X><Z><EOL>
+*
+:SECTION=END_OF_TAPE
+:T:<N><G:28> U0 W0<EOL>
+:T:<N><M:09><EOL>
+:T:<N><M:05><EOL>
+:T:<N><M:30><EOL>
+*
+*:SECTION=END_OF_TAPE_FRONT
+*
+:SECTION=LINE_LEADIN_MOVE_LATHE
+:T:<N><G:COMP><G:01><X><Z><F><M:08><EOL>
+*
+:SECTION=LINE_MOVE_LATHE
+:T:<N><G:COMP><G:01><X><Z><F><M:08><EOL>
+*
+:SECTION=LINE_LEADOUT_MOVE_LATHE
+:T:<N><G:40><G:01><X><Z><EOL>
+*
 :SECTION=ARC_MOVE_LATHE
-*--------------------fanuc-------------------------
-:T:<N><G><X><Z><I><K><attributes><EOL>
-*--------------------generic-----------------------
-*:T:<N><G><X><Z><I><K><EOL>
+:T:<N><G><X><Z><I><K><EOL>
 *
 :SECTION=RADIUS_MOVE_LATHE
-*--------------------fanuc-------------------------
-:T:<N><G><X><Z><R><attributes><EOL>
-*--------------------generic-----------------------
-*:T:<N><G><X><Z><R><EOL>
+:T:<N><G><X><Z><R><EOL>
 *
 :SECTION=CANNED_X_POSITION
 :T:<N><G!:00><X!><EOL>
@@ -415,123 +358,12 @@
 :SECTION=CANNED_Z_POSITION
 :T:<N><G!:00><Z!><EOL>
 *
-:SECTION=LINE_MOVE_LATHE_BAXIS
-*
-:SECTION=LINE_LEADIN_MOVE_LATHE_BAXIS
-*
-:SECTION=LINE_LEADOUT_MOVE_LATHE_BAXIS
-None*
-:SECTION=ARC_MOVE_LATHE_BAXIS
-None*
-:SECTION=RADIUS_MOVE_LATHE_BAXIS
-None*
-:SECTION=CANCEL_TOOL
-*--------------------custom------------------------
-:T:<N><T!>00<M:05><EOL>
-*--------------------fanuc-------------------------
-*:T:<N><T!>00<M:09><EOL>
-*--------------------generic-----------------------
-*:T:<N><M:09><EOL>
-*
-:SECTION=ABSOLUTE_PRESET
-:T:<N><G:92><X><Z><EOL>
-*
-:SECTION=END_OF_TAPE
-*:T:<N><G:28> U0 W0<EOL>
-*:T:<N><M:09><EOL>
-:T:<N><M:05><EOL>
-:T:<N><M:30><EOL>
-:T:%<EOL>
+:SECTION=OUTPUT_OPER_COMMENT
+:T:<N><OPR_COMMENT><EOL>
 *
 *:SECTION=BAR_FEEDER
 *
-*:SECTION=END_OF_TAPE_FRONT
-*
-:SECTION=LINE_LEADIN_MOVE_LATHE
-*--------------------fanuc-------------------------
-:T:<N><G:COMP><G:01><X><Z><F><M:08><M!:SPINDLE_DIR><attributes><EOL>
-*--------------------generic-----------------------
-:T:<N><G:COMP><G:01><X><Z><F><M:08><EOL>
-*
-:SECTION=LINE_MOVE_LATHE
-*--------------------custom------------------------
-:T:<N><G:01><X><Z><F><attributes><EOL>
-*--------------------fanuc-------------------------
-*:T:<N><G:01><X><Z><F><M:08><attributes><EOL>
-*--------------------generic-----------------------
-*:T:<N><G:COMP><G:01><X><Z><F><M:08><EOL>
-*
-:SECTION=LINE_LEADOUT_MOVE_LATHE
-*--------------------fanuc-------------------------
-:T:<N><G:40><G:01><X><Z><attributes><EOL>
-*--------------------generic-----------------------
-:T:<N><G:40><G:01><X><Z><EOL>
-*
-*:SECTION=END_OF_TAPE_REAR1
-*
-*:SECTION=END_OF_TAPE_REAR2
-*
-*:SECTION=END_OF_TAPE_FRONT1
-*
-*:SECTION=END_OF_TAPE_FRONT2
-*
-*:SECTION=TRANSFER_STARTUP
-*
-*:SECTION=OUTPUT_SPINDLE_STATE
-*
-*:SECTION=OUTPUT_CHUCK_OPEN
-*
-*:SECTION=OUTPUT_CHUCK_CLOSE
-*
-*:SECTION=OUTPUT_ARBOR_OPEN
-*
-*:SECTION=OUTPUT_ARBOR_CLOSE
-*
-*:SECTION=OUTPUT_COLLET_OPEN
-*
-*:SECTION=OUTPUT_COLLET_CLOSE
-*
-*:SECTION=OUTPUT_SPINDLE_ORIENTATION
-*
-*:SECTION=OUTPUT_SPINDLE_COMMENT
-*
-*:SECTION=OUTPUT_SPINDLE_COMMAND
-*
-*:SECTION=OUTPUT_FEEDRATE
-*
-*:SECTION=OUTPUT_SPEED
-*
-*:SECTION=OUTPUT_REFERENCE_POINT
-*
-*:SECTION=OUTPUT_RAPID_SPINDLE_TO_POSITION
-*
-*:SECTION=OUTPUT_FEED_SPINDLE_TO_POSITION
-*
-*:SECTION=OUTPUT_SPINDLE_SYNC
-*
-*:SECTION=OUTPUT_RAPID_SPINDLE_TO_HOME
-*
-*:SECTION=OUTPUT_FEED_SPINDLE_TO_HOME
-*
-*:SECTION=TRANSFER_END
-*
-*:SECTION=OUTPUT_DWELL
-*
-:SECTION=CHANGE_SPEED
-:T:<N><G:SPEED_TYPE><S><EOL>
-*
-:SECTION=OPR_NAME
-:T:<BLANK><EOL>
-:T:<N><TLP_OPER_NAME><EOL>
-*
-:SECTION=PROGRAM_STOP
-:T:<N><M:00><EOL>
-*
-:SECTION=OPTIONAL_STOP
-:T:<N><M:01><EOL>
-*
-:SECTION=OUTPUT_OPER_COMMENT
-:T:<N><OPR_COMMENT><EOL>
+*:SECTION=TAPPING_CYCLE
 *
 :SECTION=BEFORE_ATTRIBUTES
 :T:<N><G:ABSINC><EOL>
@@ -569,31 +401,32 @@ None*
 :C: CALL(CALC_SPINDLE_DIR)
 :C: CALL(CALC_ROUNDING_POINT)
 *
-*
 :SECTION=CALC_INIT_CODES
 :C: SEQ=1
 :C: SEQ_INCREMENT=1
 :C: MAX_SEQUENCE=9999
 :C: RAD_OR_DIAM=2
 :C: AIC=1
-:C: SX=1
-:C: SI=1
+:C: SX=(1)
+:C: SI=(1)
 :C: CURRENT_MODE=1
 :C: SEQ_CONFIG=0
-:C: P_SEQ=999
 :C: NO_SMALL_ARC=NO
 :C: ARC_ROUNDING_POINT=.00005
 :C: ZGAUGE=(0)
 :C: XGAUGE=(0)
 :C: DOING_MACROS=0
+:C: CURRENT_MODE=1
 *   if this value is "1" then it will be OPR_CAP model, if "0" then it will force output with CAP is checked on.
 :C: S_RPM_CAP_MODAL=1
 *   if this value is "1" then if will force the CAP on each tool change.
 :C: FORCE_RPM_MAX_EACH_TOOL=0
+*
 * This determines if outputting a file per turret or not, if set to YES the it will only create one file for all turrets.
 :C: NOT_USING_MULTIPLE_FILES=NO
-* if NOT_USING_MULTIPLE_FILES=YES then This determines if outputting seq numbers per turret or not,
-* if set to YES then it will resequence at the start of a new turret.
+*
+* if NOT_USING_MULTIPLE_FILES=YES then This determines if outputting seq numbers per turret or not, if set to YES then it will resequence
+* at the start of a new turret.
 :C: SEQ_NUMBERS_PER_TURRET=NO
 :C: WORK_COORDINATE_SUPPORT=YES
 :C: WORK_AND_SUB_SUPPORT=NO
@@ -633,12 +466,12 @@ None*
 :C: GC(G_ENGLISH)      = 20  GG(G_ENGLISH)      =  6  GM(G_ENGLISH)      = YES
 :C: GC(G_METRIC)       = 21  GG(G_METRIC)       =  6  GM(G_METRIC)       = YES
 :C: GC(G_DWELL)        =  4  GG(G_DWELL)        =  0  GM(G_DWELL)        = NO
-:C: GC(G_WORK_1)       = 54  GG(G_WORK_1)       = 12  GM(G_WORK_1)       = YES
-:C: GC(G_WORK_2)       = 55  GG(G_WORK_2)       = 12  GM(G_WORK_2)       = YES
-:C: GC(G_WORK_3)       = 56  GG(G_WORK_3)       = 12  GM(G_WORK_3)       = YES
-:C: GC(G_WORK_4)       = 57  GG(G_WORK_4)       = 12  GM(G_WORK_4)       = YES
-:C: GC(G_WORK_5)       = 58  GG(G_WORK_5)       = 12  GM(G_WORK_5)       = YES
-:C: GC(G_WORK_6)       = 59  GG(G_WORK_6)       = 12  GM(G_WORK_6)       = YES
+:C: GC(G_WORK_1)       = 54  GG(G_WORK_1)       =  8  GM(G_WORK_1)       = YES
+:C: GC(G_WORK_2)       = 55  GG(G_WORK_2)       =  8  GM(G_WORK_2)       = YES
+:C: GC(G_WORK_3)       = 56  GG(G_WORK_3)       =  8  GM(G_WORK_3)       = YES
+:C: GC(G_WORK_4)       = 57  GG(G_WORK_4)       =  8  GM(G_WORK_4)       = YES
+:C: GC(G_WORK_5)       = 58  GG(G_WORK_5)       =  8  GM(G_WORK_5)       = YES
+:C: GC(G_WORK_6)       = 59  GG(G_WORK_6)       =  8  GM(G_WORK_6)       = YES
 :C: GC(G_FINISH_CYCLE) = 70  GG(G_FINISH_CYCLE) =  0  GM(G_FINISH_CYCLE) = NO
 :C: GC(G_TURN_CYCLE)   = 71  GG(G_TURN_CYCLE)   =  0  GM(G_TURN_CYCLE)   = NO
 :C: GC(G_FACE_CYCLE)   = 72  GG(G_FACE_CYCLE)   =  0  GM(G_FACE_CYCLE)   = NO
@@ -671,12 +504,13 @@ None*
 :C: MC(M_END_PROG)     = 30  MG(M_END_PROG)     =  0  MM(M_END_PROG)     = NO
 :C: MC(M_SUB_CALL)     = 98  MG(M_SUB_CALL)     =  0  MM(M_SUB_CALL)     = NO
 :C: MC(M_SUB_END)      = 99  MG(M_SUB_END)      =  0  MM(M_SUB_END)      = NO
-:C: MC(M_SUB_CW)       = 203 MG(M_SUB_CW)       =  1  MM(M_SUB_CW)       = YES
-:C: MC(M_SUB_CCW)      = 204 MG(M_SUB_CCW)      =  1  MM(M_SUB_CCW)      = YES
 :C: MC(M_PARTS_IN)     = 26  MG(M_PARTS_IN)     =  3  MM(M_PARTS_IN)     = NO
 :C: MC(M_PARTS_OUT)    = 25  MG(M_PARTS_OUT)    =  3  MM(M_PARTS_OUT)    = NO
+:C: MC(M_SUB_CW)       = 203 MG(M_SUB_CW)       =  1  MM(M_SUB_CW)       = YES
+:C: MC(M_SUB_CCW)      = 204 MG(M_SUB_CCW)      =  1  MM(M_SUB_CCW)      = YES
 *
 *
 *START COMMENTS
 
 *END COMMENTS
+

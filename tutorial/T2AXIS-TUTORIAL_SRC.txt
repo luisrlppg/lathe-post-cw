@@ -1,0 +1,875 @@
+*     Universal LATHE Post
+*-----------------------------									     *
+*  Controller  : GENERAL FANUC
+*  Machine     : ALL
+*  Company     : Geometric
+*  Version     : 19.0 SP1
+*  Date	       : 10/31/2018
+*  Programmer  : M.L.S.
+*-----------------------------
+*
+* This post will support new IMS simulator requirements.
+* This post will support new sub spindle operations.
+* This post supports 1 turret, 2 spindles.
+* This post will support Work coord and Sub Work coordinates.
+* This post will output TLP_OPER_NAME
+* This post will handle the SETUP_REVERSE_Z_DIR variable
+* This post will support New B axis output in turning
+* This post will support New RPM Cap output.
+*
+:SYSTEM=LATHE
+:LEADING=FALSE
+:TRAILING=FALSE
+:DECIMAL=TRUE
+:QUAD=FALSE
+:SPACE=TRUE
+:ARCS=RADIAL
+*:ARCS=CENTER
+:METRIC_SHIFT=1
+:G_LEFT_PLACES=3
+:G_RIGHT_PLACES=4
+:G_INT_LEFT_PLACES=2
+:INT_LEADING=TRUE
+:INT_TRAILING=TRUE
+:DUAL_SPINDLE=TRUE
+*:LENGTH_DIAM_OFFSET_FROM_TOOL=TRUE
+:ALLOW_B_AXIS_OFFSET_REAR=TRUE
+:ALLOW_PART_MAX_RPM=TRUE
+:ALLOW_MAX_RPM_BY_OPER=TRUE
+:ALLOW_B_AXIS_SIMULTANEOUS_CUTTING=TRUE
+*
+*  Macro Definition
+*
+:SINGLE_MACROS=NO
+:MULT_MACROS=NO
+:MACROS_MAIN=AFTER
+*----------------------------------------------------------
+* Define Machine attributes
+*----------------------------------------------------------
+:ATTRNAME=MACHINE NAME
+:ATTRTYPE=DESCRIPTOR
+:ATTRVTYPE=CHARACTER
+:ATTRSEL=N
+:ATTRINLEN=20
+:ATTRSHORT=Machine Name
+:ATTRDEFAULT=2AXIS GENERIC
+:CODETYPE=FORMAT
+:WORD_ADDRESS_BEF=|(|MACHINE=
+:VAR=MACHINE NAME
+:WORD_ADDRESS_AFT=|)
+:LEFT_PLACES=0
+:RIGHT_PLACES=0
+:UNITFLAG=NON_CONVERT
+:ATTRUSED=1
+:ATTREND
+*-----------------------------------
+:ATTRNAME=CONTROLLER TYPE
+:ATTRTYPE=DESCRIPTOR
+:ATTRVTYPE=CHARACTER
+:ATTRSEL=N
+:ATTRINLEN=20
+:ATTRSHORT=Controller Type
+:ATTRDEFAULT=GENERIC FANUC
+:CODETYPE=FORMAT
+:WORD_ADDRESS_BEF=|(|CONTROLLER=
+:VAR=CONTROLLER TYPE
+:WORD_ADDRESS_AFT=|)
+:LEFT_PLACES=0
+:RIGHT_PLACES=0
+:ATTRSPACES=YES
+:UNITFLAG=NON_CONVERT
+:ATTRUSED=1
+:ATTREND
+*-----------------------------------
+:ATTRNAME=TRAVERSE RATE
+:ATTRTYPE=DESCRIPTOR
+:ATTRVTYPE=INTEGER
+:ATTRSEL=N
+:ATTRINLEN=10
+:ATTRSHORT=Traverse Rate
+:ATTRDEFAULT=250
+:ATTREND
+*-----------------------------------
+:ATTRNAME=CAMWORKS VERSION
+:ATTRTYPE=DESCRIPTOR
+:ATTRVTYPE=CHARACTER
+:ATTRSEL=N
+:ATTRINLEN=30
+:ATTRSHORT=Version
+:ATTRDEFAULT=2023 OR LATER
+:CODETYPE=FORMAT
+:WORD_ADDRESS_BEF=|(|CAMWORKS|VERSION=
+:VAR=CAMWORKS VERSION
+:WORD_ADDRESS_AFT=|)
+:LEFT_PLACES=0
+:RIGHT_PLACES=0
+:ATTRSPACES=YES
+:UNITFLAG=NON_CONVERT
+:ATTRUSED=1
+:ATTREND
+*-----------------------------------
+:ATTRNAME=VERSION DATE
+:ATTRTYPE=DESCRIPTOR
+:ATTRVTYPE=CHARACTER
+:ATTRSEL=N
+:ATTRINLEN=30
+:ATTRSHORT=Version Date
+:ATTRDEFAULT=8-01-2022
+:CODETYPE=FORMAT
+:WORD_ADDRESS_BEF=|(|VERSION|DATE=
+:VAR=VERSION DATE
+:WORD_ADDRESS_AFT=|)
+:LEFT_PLACES=0
+:RIGHT_PLACES=0
+:ATTRSPACES=YES
+:UNITFLAG=NON_CONVERT
+:ATTRUSED=1
+:ATTREND
+*-----------------------------------
+:ATTRNAME=LIBRARY VERSION
+:ATTRTYPE=DESCRIPTOR
+:ATTRVTYPE=CHARACTER
+:ATTRSEL=N
+:ATTRINLEN=30
+:ATTRSHORT=Library Version
+:ATTRDEFAULT=2023
+:CODETYPE=FORMAT
+:WORD_ADDRESS_BEF=|(|LIBRARY|VERSION=
+:VAR=LIBRARY_VERSION
+:WORD_ADDRESS_AFT=|)
+:LEFT_PLACES=0
+:RIGHT_PLACES=0
+:ATTRSPACES=YES
+:UNITFLAG=NON_CONVERT
+:ATTRUSED=1
+:ATTREND
+*-----------------------------------
+:ATTRNAME=LIBRARY SUBVERSION
+:ATTRTYPE=DESCRIPTOR
+:ATTRVTYPE=CHARACTER
+:ATTRSEL=N
+:ATTRINLEN=30
+:ATTRSHORT=Library Subversion
+:ATTRDEFAULT=1
+:CODETYPE=FORMAT
+:WORD_ADDRESS_BEF=|(|LIBRARY|SUBVERSION=
+:VAR=LIBRARY_SUBVERSION
+:WORD_ADDRESS_AFT=|)
+:LEFT_PLACES=0
+:RIGHT_PLACES=0
+:ATTRSPACES=YES
+:UNITFLAG=NON_CONVERT
+:ATTRUSED=1
+:ATTREND
+*----------------------------------------------------------
+* Define   L I B R A R I E S
+*----------------------------------------------------------
+:LIBRARY=C:\Posts-SVN\TUTORIAL_POSTS\TURN\CW2023-TUTORIAL\T2AXIS-TUTORIAL.LIB
+:LIBRARY=C:\Posts-SVN\MASTER_LIBRARY_FILES\LATHE.LIB
+*----------------------------------------------------------
+*----------------------------------------------------------
+* Define Attachable Questions
+*----------------------------------------------------------
+:ATTRNAME=attachable
+:ATTRTYPE=LIST
+:ATTRSEL=N
+:ATTRTITLE=Attachable
+:ATTRLIST=program stop
+:ATTRLISTDEF=1
+:ATTRLIST=optional stop
+:ATTRLISTDEF=
+:ATTRUSED=1
+:ATTRDEFAULT=1
+:ATTREND
+*----------------------------------------------------------
+* Operation List Questions
+*----------------------------------------------------------
+:OPERID=LATHE_DRILLING
+*:OPERLIST=spindle range
+:OPERLIST=abs inc
+:OPERLIST=coolant
+:OPERLIST=tool tip center
+:OPERLIST=work coord
+:OPERLIST=sub work coord
+:OPERLIST=fixture offset
+:OPEREND
+*----------------------------------------------------------
+:OPERID=LATHE_PROFILING
+:OPERLIST=machine compensation
+*:OPERLIST=spindle range
+:OPERLIST=abs inc
+:OPERLIST=coolant
+:OPERLIST=tool tip center
+:OPERLIST=work coord
+:OPERLIST=sub work coord
+:OPERLIST=fixture offset
+:OPEREND
+*----------------------------------------------------------
+:OPERID=LATHE_ROUGHING
+:OPERLIST=machine compensation
+*:OPERLIST=spindle range
+:OPERLIST=abs inc
+:OPERLIST=coolant
+:OPERLIST=tool tip center
+:OPERLIST=machine path type
+:OPERLIST=work coord
+:OPERLIST=sub work coord
+:OPERLIST=fixture offset
+:OPEREND
+*----------------------------------------------------------
+:OPERID=LATHE_GROOVING
+:OPERLIST=machine compensation
+*:OPERLIST=spindle range
+:OPERLIST=abs inc
+:OPERLIST=coolant
+:OPERLIST=tool tip center
+:OPERLIST=work coord
+:OPERLIST=sub work coord
+:OPERLIST=fixture offset
+:OPEREND
+*----------------------------------------------------------
+:OPERID=LATHE_THREADING
+*:OPERLIST=spindle range
+:OPERLIST=abs inc
+:OPERLIST=coolant
+:OPERLIST=tool tip center
+:OPERLIST=work coord
+:OPERLIST=sub work coord
+:OPERLIST=fixture offset
+:OPEREND
+*----------------------------------------------------------
+:OPERID=LATHE_MISC
+:OPERLIST=machine compensation
+*:OPERLIST=spindle range
+:OPERLIST=abs inc
+:OPERLIST=coolant
+:OPERLIST=tool tip center
+:OPERLIST=work coord
+:OPERLIST=sub work coord
+:OPERLIST=fixture offset
+:OPEREND
+*----------------------------------------------------------
+:OPERID=LATHE_CUTOFF
+:OPERLIST=machine compensation
+*:OPERLIST=spindle range
+:OPERLIST=abs inc
+:OPERLIST=coolant
+:OPERLIST=tool tip center
+:OPERLIST=work coord
+:OPERLIST=sub work coord
+:OPERLIST=fixture offset
+:OPEREND
+*----------------------------------------------------------
+:OPERID=LATHE_SPINDLE_OP
+:OPERLIST=work coord
+:OPERLIST=sub work coord
+:OPERLIST=fixture offset
+:OPERLIST=coolant
+:OPERLIST=spindle code
+:OPEREND
+*----------------------------------------------------------
+*:OPERID=MILL_SPINDLE_OP
+*:OPERLIST=work coord
+*:OPERLIST=sub work coord
+*:OPERLIST=fixture offset
+*:OPERLIST=coolant
+*:OPERLIST=spindle code
+*:OPEREND
+*----------------------------------------------------------
+*:OPERID=Bar Puller
+*:OPERLIST=bar z rapid
+*:OPERLIST=bar z depth
+*:OPERLIST=bar z pullout
+*:OPERLIST=bar x rapid
+*:OPERLIST=bar feed
+*:OPERLIST=bar tool
+*:OPEREND
+*----------------------------------------------------------
+*:OPERID=Tailstock
+*:OPERLIST=tail stock
+*:OPEREND
+*----------------------------------------------------------
+:OPERID=Post Program Stop
+:OPERLIST=tape output
+:OPEREND
+*----------------------------------------------------------
+*----------------------------------------------------------
+* Define Setup Questions
+*----------------------------------------------------------
+:ATTRNAME=setup
+:ATTRTYPE=LIST
+:ATTRSEL=N
+:ATTRTITLE=Setup
+:ATTRLIST=program number
+:ATTRLISTDEF=1
+*:ATTRLIST=material
+*:ATTRLISTDEF=
+:ATTRLIST=z preset
+:ATTRLISTDEF=10
+:ATTRLIST=x preset
+:ATTRLISTDEF=10
+:ATTRLIST=sub z preset
+:ATTRLISTDEF=10
+:ATTRLIST=sub x preset
+:ATTRLISTDEF=10
+*:ATTRLIST=maximum rpm
+*:ATTRLISTDEF=3000
+:ATTRUSED=1
+:ATTRDEFAULT=1
+:ATTREND
+*----------------------------------------------------------
+* Define Tool File ( 32 tool registers)
+*----------------------------------------------------------
+*:INCLUDE=F:\LATHE\TOOLS\GENERAL.T32
+*----------------------------------------------------------
+*----------------------------------------------------------
+*  Define Template Sections
+*----------------------------------------------------------
+*
+*    Avaliable Code Blocks
+*
+*   <N> <G> <X> <Z> <I> <K> <R> <F> <S> <T> <M>
+*
+*----------------------------------------------------------
+*
+*    Start of Tape
+*
+:SECTION=START_OF_TAPE
+:T:O<"%4LT":program_number><EOL>
+*
+:SECTION=OPR_NAME
+:T:<BLANK><EOL>
+:T:<N><TLP_OPER_NAME><EOL>
+:T:IF CAMWORKS_VER>CAM_REV2015_SP2 AND OPR_TYPE<3000 THEN <N><B><EOL>ENDIF
+*
+:SECTION=MAIN_SPINDLE
+*:T:(Main Spindle)<EOL>
+*:T:(Must Customize Main Spindle Per Machine)<EOL>
+*
+:SECTION=SUB_SPINDLE
+*:T:(Sub Spindle)<EOL>
+*:T:(Must Customize Sub Spindle Per Machine)<EOL>
+*
+:SECTION=INIT_TOOL_CHANGE_LATHE
+:T:<N><TOOL_COMMENT><EOL>
+*:T:<N><G:50> S<"%4T":maximum_rpm><EOL>
+:T:IF OUTPUT_RPM_CAP=1 THEN <N><G:50> S<"%4T":S_RPM_CAP><EOL>ENDIF
+:T: IF HAVE_SUB_STATIONS=TRUE THEN <N><T><"%2LT":TOOL><DECIMAL_POINT><"%1T":SUB_STATION><SUB_STATION_ID><EOL>ENDIF
+:T: IF HAVE_SUB_STATIONS=FALSE THEN <N><T><"%2LT":TOOL><EOL>ENDIF
+:T:<N><B!><EOL>
+:T:<N><G!:00><G!:SPEED_TYPE><S!><M!:SPINDLE_DIR><EOL>
+*:T:<N><G:FEED_TYPE><EOL>
+:T:<BLANK><EOL>
+:T:<N><TLP_OPER_NAME><EOL>
+*
+:SECTION=SUB_TOOL_CHANGE_LATHE
+:T:<N><M:01><EOL>
+:T:<BLANK><EOL>
+:T:<N><TOOL_COMMENT><EOL>
+*:T:<N><G:50> S<"%4T":maximum_rpm><EOL>
+:T:IF OUTPUT_RPM_CAP=1 THEN <N><G:50> S<"%4T":S_RPM_CAP><EOL>ENDIF
+:T: IF HAVE_SUB_STATIONS=TRUE THEN <N><T><"%2LT":TOOL><DECIMAL_POINT><"%1T":SUB_STATION><SUB_STATION_ID><EOL>ENDIF
+:T: IF HAVE_SUB_STATIONS=FALSE THEN <N><T><"%2LT":TOOL><EOL>ENDIF
+:T:<N><B!><EOL>
+:T:<N><G!:00><G!:SPEED_TYPE><S!><M!:SPINDLE_DIR><EOL>
+*:T:<N><G:FEED_TYPE><EOL>
+:T:<BLANK><EOL>
+:T:<N><TLP_OPER_NAME><EOL>
+*
+:SECTION=CHANGE_CSS
+:T:<N><G!:SPEED_TYPE><S!><EOL>
+*
+:SECTION=CHANGE_DIRECT_RPM
+:T:<N><G!:SPEED_TYPE><S!><EOL>
+*
+:SECTION=CHANGE_SPEED
+:T:<N><G:SPEED_TYPE><S><EOL>
+*
+:SECTION=SHIFT_OFFSET_PRIMARY
+:T:<N><T!><"%2LT":TOOL><EOL>
+*
+:SECTION=SHIFT_OFFSET_SECONDARY
+:T:<N><T!><"%2LT":(TOOL+10)><EOL>
+*
+*    Line Move Code Sections
+*
+:SECTION=LINE_LEADIN_MOVE_LATHE
+:T:<N><G:COMP><G:FEED_TYPE><G:01><X><Z><F><M:08><EOL>
+*
+:SECTION=LINE_LEADIN_MOVE_LATHE_BAXIS
+:T:<N><G:COMP><G:FEED_TYPE><G:01><X><Z><B><F><M:08><EOL>
+*
+:SECTION=LINE_MOVE_LATHE
+:T:<N><G:FEED_TYPE><G:01><X><Z><F><M:08><EOL>
+*
+:SECTION=LINE_MOVE_LATHE_BAXIS
+:T:<N><G:FEED_TYPE><G:01><X><Z><B><F><M:08><EOL>
+*
+:SECTION=LINE_LEADOUT_MOVE_LATHE
+:T:<N><G:40><G:01><X><Z><EOL>
+*
+:SECTION=LINE_LEADOUT_MOVE_LATHE_BAXIS
+:T:<N><G:40><G:01><X><Z><B><EOL>
+*
+*    Arc Move Code Sections
+*
+:SECTION=ARC_MOVE_LATHE
+:T:<N><G:ARC_DIR><X><Z><I><K><F><EOL>
+*
+:SECTION=ARC_MOVE_LATHE_BAXIS
+:T:<N><G:ARC_DIR><X><Z><I><K><B><F><EOL>
+*
+*    Arc Radius Move Code Sections
+*
+:SECTION=RADIUS_MOVE_LATHE
+:T:<N><G:ARC_DIR><X><Z><R><F><EOL>
+*
+:SECTION=RADIUS_MOVE_LATHE_BAXIS
+:T:<N><G:ARC_DIR><X><Z><R><B><F><EOL>
+*
+*    Rapid Move Code Sections
+*
+:SECTION=RAPID_FROM_TOOL_CHANGE_LATHE
+:T: IF COORD_TYPE=1 AND OPR_BAXIS_TURNING=FALSE THEN <N><G!:00><X!><Z!><FC_NUMBER!><M!:COOLANT_TYPE><attributes><EOL>ENDIF
+:T: IF OPR_BAXIS_TURNING=FALSE AND COORD_TYPE=2 OR COORD_TYPE=0 THEN <N><G!:work_coord><G!:00><X!><Z!><M!:COOLANT_TYPE><attributes><EOL>ENDIF
+:T: IF COORD_TYPE=3 AND OPR_BAXIS_TURNING=FALSE THEN <N><W_COORD_ALL!><G!:00><X!><Z!><M!:COOLANT_TYPE><attributes><EOL>ENDIF
+:T: IF COORD_TYPE=1 AND OPR_BAXIS_TURNING=TRUE THEN <N><G!:00><X!><Z!><FC_NUMBER!><B!><M!:COOLANT_TYPE><attributes><EOL>ENDIF
+:T: IF OPR_BAXIS_TURNING=TRUE AND COORD_TYPE=2 OR COORD_TYPE=0 THEN <N><G!:work_coord><G!:00><X!><Z!><B!><M!:COOLANT_TYPE><attributes><EOL>ENDIF
+:T: IF COORD_TYPE=3 AND OPR_BAXIS_TURNING=TRUE THEN <N><W_COORD_ALL!><G!:00><X!><Z!><B!><M!:COOLANT_TYPE><attributes><EOL>ENDIF
+*
+:SECTION=RAPID_MOVE_LATHE
+:T: IF COORD_TYPE=1 AND OPR_BAXIS_TURNING=FALSE THEN <N><G:00><X><Z><FC_NUMBER><attributes><EOL>ENDIF
+:T: IF OPR_BAXIS_TURNING=FALSE AND COORD_TYPE=2 OR COORD_TYPE=0 THEN <N><G:work_coord><G:00><X><Z><attributes><EOL>ENDIF
+:T: IF COORD_TYPE=3 AND OPR_BAXIS_TURNING=FALSE THEN <N><W_COORD_ALL><G:00><X><Z><attributes><EOL>ENDIF
+:T: IF COORD_TYPE=1 AND OPR_BAXIS_TURNING=TRUE THEN <N><G:00><X><Z><FC_NUMBER><B><attributes><EOL>ENDIF
+:T: IF OPR_BAXIS_TURNING=TRUE AND COORD_TYPE=2 OR COORD_TYPE=0 THEN <N><G:work_coord><G:00><X><Z><B><attributes><EOL>ENDIF
+:T: IF COORD_TYPE=3 AND OPR_BAXIS_TURNING=TRUE THEN <N><W_COORD_ALL><G:00><X><Z><B><attributes><EOL>ENDIF
+*
+:SECTION=RAPID_PULLOUT_X_MOVE_LATHE
+:T: IF OPR_BAXIS_TURNING=FALSE THEN <N><G:40><G:00><X!><EOL>ENDIF
+:T: IF OPR_BAXIS_TURNING=TRUE THEN <N><G:40><G:00><X!><B><EOL>ENDIF
+*
+:SECTION=RAPID_PULLOUT_Z_MOVE_LATHE
+:T: IF OPR_BAXIS_TURNING=FALSE THEN <N><G:00><G:40><G:00><Z!><EOL>ENDIF
+:T: IF OPR_BAXIS_TURNING=TRUE THEN <N><G:00><G:40><G:00><Z!><B><EOL>ENDIF
+*
+:SECTION=RAPID_TO_TOOL_CHANGE_LATHE
+:T: IF OPR_BAXIS_TURNING=FALSE THEN <N><G:40><G:00><X><Z><M:09><attributes><EOL>ENDIF
+:T: IF OPR_BAXIS_TURNING=TRUE THEN <N><G:40><G:00><X><Z><B><M:09><attributes><EOL>ENDIF
+*
+:SECTION=RAPID_MOVE_LATHE_X
+:T: IF COORD_TYPE=1 AND OPR_BAXIS_TURNING=FALSE THEN <N><G:00><X><FC_NUMBER><attributes><EOL>ENDIF
+:T: IF OPR_BAXIS_TURNING=FALSE AND COORD_TYPE=2 OR COORD_TYPE=0 THEN <N><G:work_coord><G:00><X><attributes><EOL>ENDIF
+:T: IF COORD_TYPE=3 AND OPR_BAXIS_TURNING=FALSE THEN <N><W_COORD_ALL><G:00><X><attributes><EOL>ENDIF
+:T: IF COORD_TYPE=1 AND OPR_BAXIS_TURNING=TRUE THEN <N><G:00><X><FC_NUMBER><B><attributes><EOL>ENDIF
+:T: IF OPR_BAXIS_TURNING=TRUE AND COORD_TYPE=2 OR COORD_TYPE=0 THEN <N><G:work_coord><G:00><X><B><attributes><EOL>ENDIF
+:T: IF COORD_TYPE=3 AND OPR_BAXIS_TURNING=TRUE THEN <N><W_COORD_ALL><G:00><X><B><attributes><EOL>ENDIF
+*
+:SECTION=RAPID_MOVE_LATHE_X_FROM_TC
+:T: IF COORD_TYPE=1 AND OPR_BAXIS_TURNING=FALSE THEN <N><G!:00><X!><FC_NUMBER!><M!:COOLANT_TYPE><attributes><EOL>ENDIF
+:T: IF OPR_BAXIS_TURNING=FALSE AND COORD_TYPE=2 OR COORD_TYPE=0 THEN <N><G!:work_coord><G!:00><X!><M!:COOLANT_TYPE><attributes><EOL>ENDIF
+:T: IF COORD_TYPE=3 AND OPR_BAXIS_TURNING=FALSE THEN <N><W_COORD_ALL!><G!:00><X!><M!:COOLANT_TYPE><attributes><EOL>ENDIF
+:T: IF COORD_TYPE=1 AND OPR_BAXIS_TURNING=TRUE THEN <N><G!:00><X!><FC_NUMBER!><B><M!:COOLANT_TYPE><attributes><EOL>ENDIF
+:T: IF OPR_BAXIS_TURNING=TRUE AND COORD_TYPE=2 OR COORD_TYPE=0 THEN <N><G!:work_coord><G!:00><X!><B><M!:COOLANT_TYPE><attributes><EOL>ENDIF
+:T: IF COORD_TYPE=3 AND OPR_BAXIS_TURNING=TRUE THEN <N><W_COORD_ALL!><G!:00><X!><B><M!:COOLANT_TYPE><attributes><EOL>ENDIF
+*
+:SECTION=RAPID_MOVE_LATHE_Z
+:T: IF COORD_TYPE=1 AND OPR_BAXIS_TURNING=FALSE THEN <N><G:00><Z><FC_NUMBER><attributes><EOL>ENDIF
+:T: IF OPR_BAXIS_TURNING=FALSE AND COORD_TYPE=2 OR COORD_TYPE=0 THEN <N><G:work_coord><G:00><Z><attributes><EOL>ENDIF
+:T: IF COORD_TYPE=3 AND OPR_BAXIS_TURNING=FALSE THEN <N><W_COORD_ALL><G:00><Z><attributes><EOL>ENDIF
+:T: IF COORD_TYPE=1 AND OPR_BAXIS_TURNING=TRUE THEN <N><G:00><Z><FC_NUMBER><B><attributes><EOL>ENDIF
+:T: IF OPR_BAXIS_TURNING=TRUE AND COORD_TYPE=2 OR COORD_TYPE=0 THEN <N><G:work_coord><G:00><Z><B><attributes><EOL>ENDIF
+:T: IF COORD_TYPE=3 AND OPR_BAXIS_TURNING=TRUE THEN <N><W_COORD_ALL><G:00><Z><B><attributes><EOL>ENDIF
+*
+:SECTION=RAPID_MOVE_LATHE_Z_FROM_TC
+:T: IF COORD_TYPE=1 AND OPR_BAXIS_TURNING=FALSE THEN <N><G!:00><Z!><FC_NUMBER!><M!:COOLANT_TYPE><attributes><EOL>ENDIF
+:T: IF OPR_BAXIS_TURNING=FALSE AND COORD_TYPE=2 OR COORD_TYPE=0 THEN <N><G!:work_coord><G!:00><Z!><M!:COOLANT_TYPE><attributes><EOL>ENDIF
+:T: IF COORD_TYPE=3 AND OPR_BAXIS_TURNING=FALSE THEN <N><W_COORD_ALL!><G!:00><Z!><M!:COOLANT_TYPE><attributes><EOL>ENDIF
+:T: IF COORD_TYPE=1 AND OPR_BAXIS_TURNING=TRUE THEN <N><G!:00><Z!><FC_NUMBER!><B><M!:COOLANT_TYPE><attributes><EOL>ENDIF
+:T: IF OPR_BAXIS_TURNING=TRUE AND COORD_TYPE=2 OR COORD_TYPE=0 THEN <N><G!:work_coord><G!:00><Z!><B><M!:COOLANT_TYPE><attributes><EOL>ENDIF
+:T: IF COORD_TYPE=3 AND OPR_BAXIS_TURNING=TRUE THEN <N><W_COORD_ALL!><G!:00><Z!><B><M!:COOLANT_TYPE><attributes><EOL>ENDIF
+*
+:SECTION=RAPID_TO_TOOL_CHANGE_LATHE_X
+:T: IF OPR_BAXIS_TURNING=FALSE THEN <N><G:40><G:00><X!><M:09><attributes><EOL>ENDIF
+:T: IF OPR_BAXIS_TURNING=TRUE THEN <N><G:40><G:00><X!><B><M:09><attributes><EOL>ENDIF
+*
+:SECTION=RAPID_TO_TOOL_CHANGE_LATHE_Z
+:T: IF OPR_BAXIS_TURNING=FALSE THEN <N><G:40><G:00><Z!><M:09><attributes><EOL>ENDIF
+:T: IF OPR_BAXIS_TURNING=TRUE THEN <N><G:40><G:00><Z!><B><M:09><attributes><EOL>ENDIF
+*
+:SECTION=END_DRILL_CYCLE
+*
+*    Canned Roughing Code Sections
+*
+:SECTION=CANNED_ROUGH_ID_OD
+:T:<N><G:71><P_SEQ><Q_SEQ><X_FINISH><Z_FINISH><CUT_AMOUNT><F!><EOL>
+*
+:SECTION=CANNED_ROUGH_FACE
+:T:<N><G:72><P_SEQ><Q_SEQ><X_FINISH><Z_FINISH><CUT_AMOUNT><F!><EOL>
+*
+*    System Threading Code Sections
+*
+:SECTION=SYS_THREADING
+:T:<N><G:32><X><Z><F><M:COOLANT_TYPE><EOL>
+*
+*    Repetitive Threading Code Sections
+*
+:SECTION=FIRST_MULT_THREADING
+:T:<N><G:92><X><Z><TAPER><F><M:COOLANT_TYPE><EOL>
+*
+:SECTION=MULT_THREADING
+:T:<N><X!><EOL>
+*
+*    Canned Threading Code Section
+*
+:SECTION=CANNED_THREADING
+:T:<N><G:76><X><Z><THREAD_HEIGHT><THREAD_FIRST_CUT><TAPER><F><INFEED_ANGLE><EOL>
+*
+*    System Drilling Code Sections
+*
+:SECTION=FIRST_SYS_DRILLING
+:T:<N><G:01><Z><F!><M!:COOLANT_TYPE><EOL>
+*
+:SECTION=SYS_DRILLING
+:T:<N><G:01><Z><EOL>
+*
+:SECTION=SYS_TAPPING_CYCLE
+:T:<N><G:01><Z><F:OPR_THREAD_PITCH><M:05><EOL>
+:T:<N><G:04> X<#:.5><EOL>
+:T:<N><G:01><Z:OPR_CYCLE_CLEARANCE><M:MC(M_SPIN_CCW)><EOL>
+:T:<N><G:00><M:MC(M_SPIN_CW)><EOL>
+*
+:SECTION=CANNED_TAPPING_CYCLE
+:T:<N><G:84><Z><F!:OPR_THREAD_PITCH><EOL>
+*
+*    Canned Drilling Code Sections
+*
+:SECTION=CANNED_DRILLING_SINGLE
+:T:<N><G:74><Z><F!><EOL>
+*
+:SECTION=CANNED_DRILLING_MULTIPLE
+:T:<N><G:74><Z><SUB_PECK><F!><EOL>
+*
+:SECTION=BAR_PULLER
+:T:<N> T<"%2LT":bar_tool><"%2LT":bar_tool><EOL>
+:T:<N><G:00><S_BAR_X_RAPID><S_BAR_Z_RAPID><EOL>
+:T:<N><G:98><G:01><S_BAR_Z_DEPTH><S_BAR_FEED><EOL>
+:T:<N><M:21><EOL>
+:T:<N><M:00><EOL>
+:T:<N><M:22><EOL>
+:T:<N><G:00><S_BAR_X_RAPID><S_BAR_Z_PULLOUT><EOL>
+*
+:SECTION=TAIL_STOCK_IN
+:T:<N><M:05><EOL>
+:T:<N><M:84><EOL>
+*
+:SECTION=TAIL_STOCK_OUT
+:T:<N><M:05><EOL>
+:T:<N><M:85><EOL>
+*
+:SECTION=CANCEL_TOOL
+:T:<N><M:09><EOL>
+*
+*
+:SECTION=ABSOLUTE_PRESET
+:T:<N><G:92><X><Z><EOL>
+*
+*    End of Tape
+*
+:SECTION=END_OF_TAPE
+:T:<N><M:30><EOL>
+*
+*****************************************************************
+* New Sub Spindle operations
+*****************************************************************
+*
+:SECTION=TRANSFER_STARTUP
+:T:<N><M:01><EOL>
+:T:<BLANK><EOL>
+:T:(TRANSFER START)<EOL>
+:T:<N><M!:05><EOL>
+:T: IF coolant=2 THEN <N><M!:09><EOL>ENDIF
+:T: IF coolant=1 THEN <N><M!:08><EOL>ENDIF
+:T: IF spindle_code=1 THEN <N><G!:98><M!:03><EOL>ENDIF
+:T: IF spindle_code=2 THEN <N><G!:98><M!:04><EOL>ENDIF
+:T:<N><G!:59><EOL>
+*
+:SECTION=OUTPUT_SPINDLE_STATE
+*
+* In CW2014 0-OFF,1-ON are not supported.
+* SPINDLE_STATE=2-LOCK,3-UNLOCK,4-ENGAGE_MILL_MODE,5-DISENGAGE_MILL_MODE.
+*
+:T: IF DSPINDLE=MAIN_SPINDLE AND SPINDLE_STATE=0 THEN <N><M!:46><EOL>ENDIF
+:T: IF DSPINDLE=SUB_SPINDLE AND SPINDLE_STATE=0 THEN <N><M!:246><EOL>ENDIF
+:T: IF DSPINDLE=MAIN_SPINDLE AND SPINDLE_STATE=1 THEN <N><M!:45><EOL>ENDIF
+:T: IF DSPINDLE=SUB_SPINDLE AND SPINDLE_STATE=1 THEN <N><M!:245><EOL>ENDIF
+:T: IF DSPINDLE=MAIN_SPINDLE AND SPINDLE_STATE=2 THEN <N><M!:68><EOL>ENDIF
+:T: IF DSPINDLE=SUB_SPINDLE AND SPINDLE_STATE=2 THEN <N><M!:268><EOL>ENDIF
+:T: IF DSPINDLE=MAIN_SPINDLE AND SPINDLE_STATE=3 THEN <N><M!:69><EOL>ENDIF
+:T: IF DSPINDLE=SUB_SPINDLE AND SPINDLE_STATE=3 THEN <N><M!:269><EOL>ENDIF
+:T: IF DSPINDLE=MAIN_SPINDLE AND SPINDLE_STATE=4 THEN <N><M!:45><EOL>ENDIF
+:T: IF DSPINDLE=SUB_SPINDLE AND SPINDLE_STATE=4 THEN <N><M!:245><EOL>ENDIF
+:T: IF DSPINDLE=MAIN_SPINDLE AND SPINDLE_STATE=5 THEN <N><M!:46><EOL>ENDIF
+:T: IF DSPINDLE=SUB_SPINDLE AND SPINDLE_STATE=5 THEN <N><M!:246><EOL>ENDIF
+*
+:SECTION=OUTPUT_CHUCK_OPEN
+:T: IF DSPINDLE=MAIN_SPINDLE THEN <N><M!:11><EOL>ENDIF
+:T: IF DSPINDLE=SUB_SPINDLE THEN <N><M!:211><EOL>ENDIF
+*
+:SECTION=OUTPUT_CHUCK_CLOSE
+:T: IF DSPINDLE=MAIN_SPINDLE THEN <N><M!:10><EOL>ENDIF
+:T: IF DSPINDLE=SUB_SPINDLE THEN <N><M!:210><EOL>ENDIF
+*
+:SECTION=OUTPUT_ARBOR_OPEN
+:T:----Output Arbor Open commands<EOL>
+*
+:SECTION=OUTPUT_ARBOR_CLOSE
+:T:----Output Arbor Close commands<EOL>
+*
+:SECTION=OUTPUT_COLLET_OPEN
+:T:----Output Collet Open commands<EOL>
+*
+:SECTION=OUTPUT_COLLET_CLOSE
+:T:----Output Collet Close commands<EOL>
+*
+:SECTION=OUTPUT_SPINDLE_ORIENTATION
+:T:<N> C<"-#3.4N":SPINDLE_ORIENTATION><EOL>
+*
+:SECTION=OUTPUT_SPINDLE_COMMENT
+*  This will output text as a comment  "N1 ( M05 )"
+:T:<N><SPINDLE_COMMENT><EOL>
+*
+:SECTION=OUTPUT_SPINDLE_COMMAND
+*  This will output raw text (hardcoded) output "N1 M05"
+:T:<N><SPINDLE_COMMAND><EOL>
+*
+:SECTION=OUTPUT_FEEDRATE
+*:T:<N><G!:FEED_TYPE><F!><EOL>
+*
+:SECTION=OUTPUT_SPEED
+*:T:------OPR_SPEED_RPM=<%:OPR_SPEED_RPM><EOL>
+*:T:------OPR_SPEED_TYPE=<%:OPR_SPEED_TYPE><EOL>
+:T: IF DSPINDLE=MAIN_SPINDLE AND OPR_SPEED_DIR=1 THEN <N><G!:SPEED_TYPE><S!:OPR_RPM><M!:MC(M_SPIN_CW)><EOL>ENDIF
+:T: IF DSPINDLE=MAIN_SPINDLE AND OPR_SPEED_DIR<>1 THEN <N><G!:SPEED_TYPE><S!:OPR_RPM><M!:MC(M_SPIN_CCW)><EOL>ENDIF
+:T: IF DSPINDLE=SUB_SPINDLE AND OPR_SPEED_DIR=1 THEN <N><G!:SPEED_TYPE><S!:OPR_RPM><M!:MC(M_SUB_CW)><EOL>ENDIF
+:T: IF DSPINDLE=SUB_SPINDLE AND OPR_SPEED_DIR<>1 THEN <N><G!:SPEED_TYPE><S!:OPR_RPM><M!:MC(M_SUB_CCW)><EOL>ENDIF
+*
+:SECTION=OUTPUT_REFERENCE_POINT
+:T: Ouput Reference Point<EOL>
+*
+:SECTION=OUTPUT_RAPID_SPINDLE_TO_POSITION
+*:T: Spindle=1 - Main Spindle -- spindle=2 - Sub Spindle<EOL>
+*:T:<N> Spindle=<"%2LT":DSPINDLE><EOL>
+:T:<N><G!:00> A<"#-3.4":ABS_SPINDLE_Z_END><EOL>
+*
+:SECTION=OUTPUT_FEED_SPINDLE_TO_POSITION
+*:T: Spindle=1 - Main Spindle -- spindle=2 - Sub Spindle<EOL>
+*:T:<N> Spindle=<"%2LT":DSPINDLE><EOL>
+:T:<N><G!:01> A<"#-3.4":ABS_SPINDLE_Z_END><F!:OPR_FEED_FPM><EOL>
+*
+:SECTION=OUTPUT_SPINDLE_SYNC
+*
+* CW2013 only supported 0-SYNC_SPEED,1-SYNC_PHASE
+* SPINDLE_SYNC_TYPE=0-SYNC_SPEED,1-SYNC_PHASE,2-SYNC_OFF,3-SYNC_MILL_CAXIS,4-SYNC_MILL_OFF
+*
+:T: IF DSPINDLE=MAIN_SPINDLE AND SPINDLE_SYNC_TYPE=0 THEN <N><M!:35><EOL>ENDIF
+:T: IF DSPINDLE=SUB_SPINDLE AND SPINDLE_SYNC_TYPE=0 THEN <N><M!:235><EOL>ENDIF
+:T: IF DSPINDLE=MAIN_SPINDLE AND SPINDLE_SYNC_TYPE=1 THEN <N><M!:34><EOL>ENDIF
+:T: IF DSPINDLE=SUB_SPINDLE AND SPINDLE_SYNC_TYPE=1 THEN <N><M!:234><EOL>ENDIF
+:T: IF DSPINDLE=MAIN_SPINDLE AND SPINDLE_SYNC_TYPE=2 THEN <N><M!:36><EOL>ENDIF
+:T: IF DSPINDLE=SUB_SPINDLE AND SPINDLE_SYNC_TYPE=2 THEN <N><M!:236><EOL>ENDIF
+:T: IF DSPINDLE=MAIN_SPINDLE AND SPINDLE_SYNC_TYPE=3 THEN <N><M!:280><EOL>ENDIF
+:T: IF DSPINDLE=SUB_SPINDLE AND SPINDLE_SYNC_TYPE=3 THEN <N><M!:480><EOL>ENDIF
+:T: IF DSPINDLE=MAIN_SPINDLE AND SPINDLE_SYNC_TYPE=4 THEN <N><M!:281><EOL>ENDIF
+:T: IF DSPINDLE=SUB_SPINDLE AND SPINDLE_SYNC_TYPE=4 THEN <N><M!:481><EOL>ENDIF
+*
+:SECTION=OUTPUT_RAPID_SPINDLE_TO_HOME
+*:T: Spindle=1 - Main Spindle -- spindle=2 - Sub Spindle<EOL>
+*:T:<N> Spindle=<"%2LT":DSPINDLE><EOL>
+:T:<N><G!:00><G:28> W0<EOL>
+*
+:SECTION=OUTPUT_FEED_SPINDLE_TO_HOME
+*:T: Spindle=1 - Main Spindle -- spindle=2 - Sub Spindle<EOL>
+*:T:<N> Spindle=<"%2LT":DSPINDLE><EOL>
+:T:<N><G!:01> A<"#-3.4":ABS_SPINDLE_Z_END><F!:OPR_FEED_FPM><EOL>
+*
+:SECTION=OUTPUT_DWELL
+:T:<N><G:04> X<#:CW_DWELL><EOL>
+*
+:SECTION=TRANSFER_END
+:T:(TRANSFER END)<EOL>
+:T:<BLANK><EOL>
+*****************************************************************
+*
+*:SECTION=DEBUG
+*:T:<DEBUG><EOL>
+*
+:SECTION=SETUP_SHEET_LATHE
+:T:<PART_NAME><EOL>
+:T:<S_PROGRAM_NUMBER><EOL>
+:T:<MACHINE_NAME><EOL>
+:T:<CONTROLLER_TYPE><EOL>
+:T:<S_MATERIAL><EOL>
+*
+:SECTION=OUTPUT_ESTIMATED_TIME
+:T:<LEFT_PAR><TIME_HOURS><TIME_MINUTES><TIME_SECONDS><EOL>
+*
+:SECTION=OUTPUT_OPER_COMMENT
+:T:<N><OPR_COMMENT><EOL>
+*
+:SECTION=BEFORE_ATTRIBUTES
+:T:<N><attributes><EOL>
+*
+:SECTION=AFTER_ATTRIBUTES
+:T:<N><attributes><EOL>
+*
+:SECTION=program_stop
+:T:<N><M:00><EOL>
+*
+:SECTION=optional_stop
+:T:<N><M:01><EOL>
+*
+:SECTION=CALC_INITIALIZE
+:C: CALL(CALC_INIT_GCODES)
+:C: CALL(CALC_INIT_MCODES)
+:C: CALL(CALC_INIT_CODES)
+:C: CALL(CALC_RESET_REGISTERS)
+:C: CALL(CALC_ENGMET)
+:C: CALL(CALC_ABS_INC)
+:C: CALL(CALC_FEED_TYPE)
+:C: CALL(CALC_SPEED_TYPE)
+:C: CALL(CALC_SPINDLE_DIR)
+:C: CALL(CALC_ROUNDING_POINT)
+*-----------------------------------
+:SECTION=CALC_INIT_CODES
+*
+*   Sequence number configuration
+*
+:C: SEQ=1
+:C: SEQ_INCREMENT=1
+:C: MAX_SEQUENCE=9999
+*
+*   Arc Center configuration
+*
+*   AIC = 0  - Absolute Center
+*   AIC = 1  - Incremental distance from Start to Center
+*   AIC = 2  - Absolute or Incremental distance from Start to Center
+*   AIC = 3  - Incremental distance from Center to Start
+*
+:C: AIC = 1
+*
+*   Radius or Diameter configuration
+*
+*   RAD_OR_DIAM = 1  - Radius Definition
+*   RAD_OR_DIAM = 2  - Diameter Definition
+*
+:C: RAD_OR_DIAM = 2
+*
+*   + or -  X above centerline (Rear Turret)
+*
+*   SX = 1  - outputs + X Values on Rear Turret
+*   SX = -1 - outputs - X Values on Rear Turret
+*
+:C: SX = 1
+:C: SI = 1
+:C: SZ = 1
+*
+*   Theoretical Tool Tip on your machine roughing cycles
+*   CYCLE_BOUNDARY_CENTER=TRUE  = No Theoretical Tool tip
+*   CYCLE_BOUNDARY_CENTER=FALSE = Theoretical Tool tip
+*
+:C: CYCLE_BOUNDARY_CENTER=FALSE
+*
+:C: CURRENT_MODE=1
+*
+*   Setup Sheet Output Configuration
+*
+*   SETUP_CONFIG=0  - Setup Sheet is Output to *.SET File.
+*   SETUP_CONFIG=1  - Setup Sheet is Output to *.TXT File.
+*
+:C: SETUP_CONFIG=0
+*   if this value is "1" then it will be OPR_CAP model, if "0" then it will force output with CAP is checked on.
+:C: S_RPM_CAP_MODAL=1
+*   if this value is "1" then if will force the CAP on each tool change.
+:C: FORCE_RPM_MAX_EACH_TOOL=0
+:C: CREATE_SMALLER_LATHE_ARCS=NO
+*
+:SECTION=CALC_RESET_REGISTERS
+:C: MACH(REG_X)=x_preset PREV(REG_X)=x_preset
+:C: MACH(REG_Z)=z_preset PREV(REG_Z)=z_preset
+:C: MACH(REG_F)=0
+:C: MACH(REG_G)=0
+:C: MACH(REG_S)=0
+:C: MACH(REG_T)=0
+:C: M_GROUP(MG(M_COOL_OFF))=0
+:C: M_GROUP(MG(M_SPIN_STOP))=0
+:C: G_GROUP(GG(G_ABS))=0
+:C: G_GROUP(GG(G_ENGLISH))=0
+:C: G_GROUP(GG(G_LINE))=999
+:C: G_GROUP(GG(G_COMP_OFF))=0
+:C: G_GROUP(GG(G_FPR))=0
+*:C: G_GROUP(GG(G_FPR))=GC(G_FPR)
+:C: G_GROUP(GG(G_WORK_1))=0
+*
+:SECTION=CALC_INIT_GCODES
+*----------------------------------------------------------------------------*
+*   G Code Definition     G Group Definition          G Modal Definition     *
+*----------------------------------------------------------------------------*
+:C: GC(G_RAPID)        =  0  GG(G_RAPID)        =  1  GM(G_RAPID)        = YES
+:C: GC(G_LINE)         =  1  GG(G_LINE)         =  1  GM(G_LINE)         = YES
+:C: GC(G_CW_ARC)       =  2  GG(G_CW_ARC)       =  1  GM(G_CW_ARC)       = YES
+:C: GC(G_CCW_ARC)      =  3  GG(G_CCW_ARC)      =  1  GM(G_CCW_ARC)      = YES
+:C: GC(G_THREADING)    = 32  GG(G_THREADING)    =  1  GM(G_THREADING)    = YES
+:C: GC(G_STAN_THREAD)  = 92  GG(G_STAN_THREAD)  =  1  GM(G_STAN_THREAD)  = YES
+:C: GC(G_ABS)          = 90  GG(G_ABS)          =  3  GM(G_ABS)          = YES
+:C: GC(G_INC)          = 91  GG(G_INC)          =  3  GM(G_INC)          = YES
+:C: GC(G_COMP_OFF)     = 40  GG(G_COMP_OFF)     =  7  GM(G_COMP_OFF)     = YES
+:C: GC(G_COMP_LEFT)    = 41  GG(G_COMP_LEFT)    =  7  GM(G_COMP_LEFT)    = YES
+:C: GC(G_COMP_RIGHT)   = 42  GG(G_COMP_RIGHT)   =  7  GM(G_COMP_RIGHT)   = YES
+:C: GC(G_ENGLISH)      = 20  GG(G_ENGLISH)      =  6  GM(G_ENGLISH)      = YES
+:C: GC(G_METRIC)       = 21  GG(G_METRIC)       =  6  GM(G_METRIC)       = YES
+:C: GC(G_DWELL)        =  4  GG(G_DWELL)        =  0  GM(G_DWELL)        = NO
+:C: GC(G_WORK_1)       = 54  GG(G_WORK_1)       =  8  GM(G_WORK_1)       = YES
+:C: GC(G_WORK_2)       = 55  GG(G_WORK_2)       =  8  GM(G_WORK_2)       = YES
+:C: GC(G_WORK_3)       = 56  GG(G_WORK_3)       =  8  GM(G_WORK_3)       = YES
+:C: GC(G_WORK_4)       = 57  GG(G_WORK_4)       =  8  GM(G_WORK_4)       = YES
+:C: GC(G_WORK_5)       = 58  GG(G_WORK_5)       =  8  GM(G_WORK_5)       = YES
+:C: GC(G_WORK_6)       = 59  GG(G_WORK_6)       =  8  GM(G_WORK_6)       = YES
+:C: GC(G_FINISH_CYCLE) = 72  GG(G_FINISH_CYCLE) =  0  GM(G_FINISH_CYCLE) = NO
+:C: GC(G_TURN_CYCLE)   = 73  GG(G_TURN_CYCLE)   =  0  GM(G_TURN_CYCLE)   = NO
+:C: GC(G_FACE_CYCLE)   = 74  GG(G_FACE_CYCLE)   =  0  GM(G_FACE_CYCLE)   = NO
+:C: GC(G_DRILL_CYCLE)  = 76  GG(G_DRILL_CYCLE)  =  0  GM(G_DRILL_CYCLE)  = NO
+:C: GC(G_GROOVE_CYCLE) = 77  GG(G_GROOVE_CYCLE) =  0  GM(G_GROOVE_CYCLE) = NO
+:C: GC(G_THREAD_CYCLE) = 76  GG(G_THREAD_CYCLE) =  0  GM(G_THREAD_CYCLE) = NO
+:C: GC(G_HOME)         = 28  GG(G_HOME)         =  0  GM(G_HOME)         = NO
+:C: GC(G_SFPM)         = 96  GG(G_SFPM)         =  2  GM(G_SFPM)         = YES
+:C: GC(G_RPM)          = 97  GG(G_RPM)          =  2  GM(G_RPM)          = YES
+:C: GC(G_FPR)          = 99  GG(G_FPR)          =  5  GM(G_FPR)          = YES
+:C: GC(G_FPM)          = 98  GG(G_FPM)          =  5  GM(G_FPM)          = YES
+:C: GC(G_PRESET)       = 50  GG(G_PRESET)       =  0  GM(G_PRESET)       = NO
+*----------------------------------------------------------
+* Define M CODE Definitions
+*----------------------------------------------------------
+:SECTION=CALC_INIT_MCODES
+*----------------------------------------------------------------------------*
+*   M Code                M Group               M Modal                      *
+*----------------------------------------------------------------------------*
+:C: MC(M_STOP)         =  0  MG(M_STOP)         =  0  MM(M_STOP)         = NO
+:C: MC(M_OPT_STOP)     =  1  MG(M_OPT_STOP)     =  0  MM(M_OPT_STOP)     = NO
+:C: MC(M_PROG_END)     =  2  MG(M_PROG_END)     =  0  MM(M_PROG_END)     = NO
+:C: MC(M_SPIN_CW)      =  3  MG(M_SPIN_CW)      =  1  MM(M_SPIN_CW)      = YES
+:C: MC(M_SPIN_CCW)     =  4  MG(M_SPIN_CCW)     =  1  MM(M_SPIN_CCW)     = YES
+:C: MC(M_SPIN_STOP)    =  5  MG(M_SPIN_STOP)    =  1  MM(M_SPIN_STOP)    = YES
+:C: MC(M_TOOL_CHANGE)  =  6  MG(M_TOOL_CHANGE)  =  0  MM(M_TOOL_CHANGE)  = NO
+:C: MC(M_COOL_ON)      =  8  MG(M_COOL_ON)      =  2  MM(M_COOL_ON)      = YES
+:C: MC(M_COOL_OFF)     =  9  MG(M_COOL_OFF)     =  2  MM(M_COOL_OFF)     = YES
+:C: MC(M_CW_FLOOD)     = 13  MG(M_CW_FLOOD)     =  2  MM(M_CW_FLOOD)     = YES
+:C: MC(M_CCW_FLOOD)    = 14  MG(M_CCW_FLOOD)    =  2  MM(M_CCW_FLOOD)    = YES
+:C: MC(M_ORIENT)       = 19  MG(M_ORIENT)       =  0  MM(M_ORIENT)       = NO
+:C: MC(M_END_PROG)     = 30  MG(M_END_PROG)     =  0  MM(M_END_PROG)     = NO
+:C: MC(M_SUB_CALL)     = 98  MG(M_SUB_CALL)     =  0  MM(M_SUB_CALL)     = NO
+:C: MC(M_SUB_END)      = 99  MG(M_SUB_END)      =  0  MM(M_SUB_END)      = NO
+*
+********************************************************
+* 7-11-06 Added section CHANGE_SPEED for CAMWorks 2007
+********************************************************
